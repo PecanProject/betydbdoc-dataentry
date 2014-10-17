@@ -212,9 +212,11 @@ Some trait variables allow or even require corresponding covariate information t
 
 An \verb|SE| column is required if and only if an \verb|n| column is included;
     this datum will be inserted into the \verb|stat| column of the \verb|traits| table,
-    and the \verb|statname| column value will be set to "SE".  \textit\textbf{Note that if you have more than one trait variable column, each trait will get the same values ofr \verb|n| and \verb|SE|.  There is currently no way to use different sample size and standard error values for different trait variables.  Also, the \verb|n| and \verb|SE| values for any associated covariates will be set to NULL.}  (Eventually, we may enable associating differing values of \verb|n| and \verb|SE| to different trait variables and covariates.  In this case, we might add columns
+    and the \verb|statname| column value will be set to "SE".  \textit\textbf{Note that if you have more than one trait variable column, each trait will get the same values of \verb|n| and \verb|SE|.  There is currently no way to use different sample size and standard error values for different trait variables.  Also, the \verb|n| and \verb|SE| values for any associated covariates will be set to NULL.}  (Eventually, we may enable associating differing values of \verb|n| and \verb|SE| to different trait variables and covariates.  In this case, we might add columns
  \verb|[trait variable 1] n| and \verb|[trait variable 1] SE|, etc. or
- \verb|[covariate 1] n| and \verb|[covariate 1] SE|, etc. as needed.)  Again,
+ \verb|[covariate 1] n| and \verb|[covariate 1] SE|, prefixing the usual column heading with a variable name to indicate which variable the sample size and standard error value is to be associated with.)  
+ 
+ Again,
  values of \verb|n| must be at least 2, and columns for \verb|n| and \verb|SE|
  must both be present or both be absent.
 
