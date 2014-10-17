@@ -14,7 +14,7 @@ Adding Traits and Yields.md
 figures/Addnewtrait1/Addnewtrait1.jpg
 Adding PFTs Species Cultivars.md
 figures/Addnewcultivar/Addnewcultivar.jpg
-bulk upload.md
+Bulk Upload.tex
 figures/yieldtemplatebulk/yieldtemplatebulk.jpg
 QAQC.md
 Extracting Data From Figures.md
