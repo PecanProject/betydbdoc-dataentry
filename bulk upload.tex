@@ -131,7 +131,7 @@ Some trait variables allow or even require corresponding covariate information t
 \begin{itemize}
  \item If a single date applies to all of the data in the data set, the date may be specified interactively.
  \item Otherwise, a \verb|date| column is required.
- \item Date values must be in one of the forms "2003-07-25", "2003-07", or "2003".
+ \item Date values must be in the form YYYY-MM-DD.  For example, July 25, 2003 must be entered as "2003-07-25".  (Eventually, month and day may become optional, in which case any of the forms "2003-07-25", "2003-07", and "2003" would represent dates of varying degrees of specificity.  Note that uploading dateloc, time, and timeloc information is not supported.)
 \end{itemize}
 
 \item Rounding
@@ -210,12 +210,13 @@ Some trait variables allow or even require corresponding covariate information t
  
 \item Sample Size and Standard Error
 
- To enter \verb|n| and \verb|SE|, add additional columns
+An \verb|SE| column is required if and only if an \verb|n| column is included;
+    this datum will be inserted into the \verb|stat| column of the \verb|traits| table,
+    and the \verb|statname| column value will be set to "SE".  \textit\textbf{Note that if you have more than one trait variable column, each trait will get the same values ofr \verb|n| and \verb|SE|.  There is currently no way to use different sample size and standard error values for different trait variables.  Also, the \verb|n| and \verb|SE| values for any associated covariates will be set to NULL.}  (Eventually, we may enable associating differing values of \verb|n| and \verb|SE| to different trait variables and covariates.  In this case, we might add columns
  \verb|[trait variable 1] n| and \verb|[trait variable 1] SE|, etc. or
- \verb|[covariate 1] n| and \verb|[covariate 1] SE|, etc. as needed.  Again,
+ \verb|[covariate 1] n| and \verb|[covariate 1] SE|, etc. as needed.)  Again,
  values of \verb|n| must be at least 2, and columns for \verb|n| and \verb|SE|
- must both be present or both be absent for any particular trait variable or
- covariate.
+ must both be present or both be absent.
 
   \end{enumerate}
 
