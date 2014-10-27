@@ -1,6 +1,7 @@
 abstract.md
 TOC.md
 introduction.md
+finding_data.md
 Finding Published Data.md
 Overview.md
 Add Citation.md
