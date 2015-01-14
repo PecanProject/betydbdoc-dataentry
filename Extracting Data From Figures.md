@@ -1,4 +1,4 @@
-#  Extracting information from tables and graphs \label{sec:extracting-data}
+#  Extracting information from figures \label{sec:extracting-data}
 
 To extract information from a figure, the general method is: 
 
