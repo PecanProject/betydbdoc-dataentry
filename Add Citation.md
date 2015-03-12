@@ -19,6 +19,7 @@ A PDF copy of each paper should be available through Mendeley.
         URL are optional. This can be located in the article or in the
         article website. Use Ctrl+F 'DOI' to find it. Some older
         articles do not have a DOI.
-    *  **URL**: Web address of the article, preferably from publisher's website
-    *  **PDF**: URL of the PDF of the article 
+        When entering the DOI, don't include a "doi:" prefix; the DOI should start with "10.".
+    *  **URL**: Web address of the article, preferably from publisher's website.  Include the "http://" or "https://" prefix.
+    *  **PDF**: URL of the PDF of the article.    Include the "http://" or "https://" prefix.
 
