@@ -20,6 +20,6 @@ A PDF copy of each paper should be available through Mendeley.
         article website. Use Ctrl+F 'DOI' to find it. Some older
         articles do not have a DOI.
         When entering the DOI, don't include a "doi:" prefix; the DOI should start with "10.".
-    *  **URL**: Web address of the article, preferably from publisher's website.  Include the "http://" or "https://" prefix.  If no on-line version is available, but some other information about how to obtain the citation is available, you may use a parenthesize note in lieu of a bona fide URL, e.g. "(e-mail Dr. No at no@example.com for a written copy)".
-    *  **PDF**: URL of the PDF of the article.    Include the "http://" or "https://" prefix.
+    *  **URL**: Web address of the article, preferably from publisher's website.  Include the "http://" or "https://" prefix.  If no on-line version is available, but some other information about how to obtain the citation is available, you may use a parenthesized note in lieu of a bona fide URL, e.g. "(e-mail Dr. No at no@example.com for a written copy)".
+    *  **PDF**: URL of the PDF of the article.    Include the "http://" or "https://" prefix.  (A parenthesized note is allowed here as well.)
 
