@@ -1,5 +1,7 @@
 #  Extracting information from figures \label{sec:extracting-data}
 
+The easiest program to use for extracting points is [WebPlotDigitzer](http://arohatgi.info/WebPlotDigitizer/app/). WebPlotDigitizer is free, browser-based, and cross-platform. Extracts data from images. Demo [here](http://blog.plot.ly/post/70293893434/automatically-grab-data-from-an-image-with). 
+
 To extract information from a figure, the general method is: 
 
 1. upload an image 
@@ -7,7 +9,6 @@ To extract information from a figure, the general method is:
 3. indicate if the scale is linear, log, etc, 
 4. click on the points. 
  
-
 Some software programs automatically recognize lines or points. However, since points are usually sought after, the results are often too inconsistent to be helpful even with 100s of points. Also, no program has yet been found to be able to distinguish different symbols. This feature could be worth the trouble for digitizing lines, but this is not commonly required.
 
 The program returns each point as an x-y matrix.
@@ -31,7 +32,6 @@ plug-in
 
 I have not used these:
 
-* [WebPlotDigitzer](http://arohatgi.info/WebPlotDigitizer/app/) (free, online). Extracts data from images. Demo [here](http://blog.plot.ly/post/70293893434/automatically-grab-data-from-an-image-with). 
 * [GraphClick](http://www.arizona-software.ch/graphclick/) (Mac, $8)
 * [g3data](http://www.frantz.fi/software/g3data.php) (open source - GNU GPL) Has zoom window, no auto-recognition. Available in Ubuntu repository.
 
