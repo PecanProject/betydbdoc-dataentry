@@ -56,6 +56,10 @@ among independent studies.
  
 ## Site Location 
 
+Points can be added via the web interface; spatial geometries, e.g. a plot, site, or country boundary, must be entered via the PostgreSQL command line. 
+
+### Point Locations
+
 If latitude and longitude coordinates are not available, it is often
 possible to determine the site location based on the site name, city,
 and other information. One way to do this would be to look up a location
@@ -78,6 +82,49 @@ Use Table \ref{tab:location_accuracy} to determine the number of significant dig
 | Acre            |                    0.001 |
 | 10 Meters       |                   0.0001 |
  
+### Boundaries
+
+A vector boundary must be obtained. Here is one way to obtain a site boundary using R:
+
+
+#### A rectangular plot (with bounding box)
+
+Here I set the bounding box for a plot by specifying the plot corners and elevation. Notice that it is necessary to specify the first point twice, once at the beginning and once at the end. 
+
+```sql
+
+UPDATE sites
+SET geometry = ST_Geomfromtext('POLYGON((-76.116081 42.794448 415, 
+                                         -76.116679 42.794448 415, 
+                                         -76.116679 42.79231 415, 
+                                         -76.116081 42.79231 415,
+                                         -76.116081 42.794448 415))', 4326)
+WHERE
+    ID = 1123
+```
+#### A country boundary:
+
+```r
+library(prevR)# for `create.boundary` function
+library(sp)
+library(rgeos)
+
+UK_boundary <- create.boundary('United Kingdom')
+writeLines(paste("insert into sites (country, sitename, geometry) values ('UK', 'United Kingdom', ST_GEOMFromText('", writeWKT(UK_boundary), "',4326)) ;"), con = 'uk.sql')
+```
+
+Then import at the command line (can also copy / paste to terminal, but this boundary is long)
+
+```sh
+psql -U bety -d bety < uk.sql
+```
+
+#### References 
+
+* PostGIS `ST_GeomFromText` documentation: http://www.postgis.org/docs/ST_GeomFromText.html
+* gis.stackexchange: http://gis.stackexchange.com/q/111212/1239
+* Github issues: https://github.com/PecanProject/pecan/issues/570
+
 
 
 
