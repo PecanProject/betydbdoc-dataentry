@@ -91,33 +91,32 @@ A vector boundary must be obtained. Here is one way to obtain a site boundary us
 
 Here I set the bounding box for a plot by specifying the plot corners and elevation. Notice that it is necessary to specify the first point twice, once at the beginning and once at the end. 
 
-```sql
+    UPDATE sites
+    SET geometry = ST_Geomfromtext('POLYGON((-76.116081 42.794448 415, 
+                                             -76.116679 42.794448 415, 
+                                             -76.116679 42.79231 415, 
+                                             -76.116081 42.79231 415,
+                                             -76.116081 42.794448 415))', 4326)
+    WHERE
+        ID = 1123;
+    
 
-UPDATE sites
-SET geometry = ST_Geomfromtext('POLYGON((-76.116081 42.794448 415, 
-                                         -76.116679 42.794448 415, 
-                                         -76.116679 42.79231 415, 
-                                         -76.116081 42.79231 415,
-                                         -76.116081 42.794448 415))', 4326)
-WHERE
-    ID = 1123
-```
 #### A country boundary:
 
-```r
-library(prevR)# for `create.boundary` function
-library(sp)
-library(rgeos)
 
-UK_boundary <- create.boundary('United Kingdom')
-writeLines(paste("insert into sites (country, sitename, geometry) values ('UK', 'United Kingdom', ST_GEOMFromText('", writeWKT(UK_boundary), "',4326)) ;"), con = 'uk.sql')
-```
+    library(prevR)# for `create.boundary` function
+    library(sp)
+    library(rgeos)
+
+    UK_boundary <- create.boundary('United Kingdom')
+    writeLines(
+      paste("insert into sites (country, sitename, geometry) values ('UK', 'United Kingdom', ST_GEOMFromText('",
+             writeWKT(UK_boundary), "',4326)) ;"), con = 'uk.sql')
+
 
 Then import at the command line (can also copy / paste to terminal, but this boundary is long)
 
-```sh
-psql -U bety -d bety < uk.sql
-```
+    psql -U bety -d bety < uk.sql
 
 #### References 
 
