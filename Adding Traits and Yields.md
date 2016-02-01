@@ -125,7 +125,6 @@ Yield is equivalent to aboveground biomass on a per-area
 basis, and has units of Mg ha^-1 y^-1  
 
 
-
 # [Adding a Covariate](http:www.betydb.org/covariates/new)
 
 Covariates are required for many of the traits. Covariates generally
