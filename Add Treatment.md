@@ -42,6 +42,27 @@ crops, this could be how a farmer would be most likely to treat a crop.
 
 ## [Managements](https://www.betydb.org/managements/new) 
 
+
+**Managements** This is a list of  managements to enter, with the most common management types in bold. It is more important to have management records for Yields than for traits. For greenhouse experiments, it is not necessary to include informaton on fertilizaton, lighting, or greenhouse temperature.
+
+| Management Type | Units | Definition | Notes |
+|:----------------|:------|:-----------|:------|
+| Burned | aboveground biomass burned |
+| CO2 fumigation | ppm | | |
+| Fertilization_X      | kg x ha\(^{-1}\) | fertilization rate, element X | | 
+| Fungicide | kg x ha\(^{-1}\) |  | add type of fungicide to notes |
+| Grazed | years | livestock grazing | pre-experiment land use |
+| Harvest | | | no units, just date, equivalent to coppice, aboveground biomass removal |
+| Herbicide | kg x ha\(^{-1}\) |   | add type of herbicide to notes: glyphosate, atrazine, many others |
+| Irrigation | cm | | convert volume \ area to depth as required |
+| Light | W m\(^{-2}\) | | |
+| O3 fumigation | ppm | | |
+| Pesticide | kg x ha\(^{-1}\) |  | add type of pesticide to notes |
+| Planting | plants m\(^{-2}\) |    | Convert row spacing to planting density if possible |
+| Seeding  | kg seeds x ha\(^{-1}\) |   |   |
+| Tillage | | | no units, maybe depth; *tillage* is equivalent to *cultivate* | 
+
+
 ![](figures/Addnewmanagement/Addnewmanagement.jpg)
 
 Managements refers to something that occurs at a specific time and has a
@@ -76,6 +97,3 @@ management, then edit the management and add treatment relationships.
 **Units**:   refers to the units of the level. Units should be converted to those
     in  Table \ref{tab:managements}
     
-## [Editing Management-Treatment Relationships](https://www.betydb.org/treatments)
-
-Under Construction for Fall 2014
