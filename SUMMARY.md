@@ -10,11 +10,9 @@
   * [Adding PFTs, Species, and Cultivars](Adding PFTs Species Cultivars.md)
 * Adding Trait and Yield Data
   * [Web Interface](Adding Traits and Yields.md)
-  * [Bulk Upload](Bulk Upload.md)
+  * [Bulk Upload](bulk upload.md)
 
 
-bulk upload.tex
-figures/yieldtemplatebulk/yieldtemplatebulk.jpg
 QAQC.md
 Extracting Data From Figures.md
 stat conversions.md
