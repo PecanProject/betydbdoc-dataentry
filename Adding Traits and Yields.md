@@ -109,6 +109,22 @@ will be an F-value that can be useful, but this should not be recorded
 if MSE is available. Only if there is no other information available should you
 record the P-value.
 
+
+
+
+**Table \ref{tab:stats}: List of statistical summaries** \label{tab:stats} List of the statistics that can be entered into the statname field of traits and yields tables. Please see David (or Mike) if you have questions about statistics that do not appear in this list. If you have P, or LSD in a study with \(n\neq b\) (e.g. not a RCBD, see Table 8), please convert these values prior to entering the data, and add a note that stat was transformed to the table. Note: These are listed in order of preference, e.g., if SD, SE, or MSE are provided then use these values.
+
+| Statname | Name | Definition | Notes |
+|:----------|:-----|:-----------|:------|
+| SD | Standard Deviation | \(\sqrt{\frac{1}{N} \sum{(x_i - \bar{x})^2}}\) | \(\bar{x}\) is the mean |
+| SE | Standard Error | \(\frac{s}{\sqrt{n}}\)&  | |
+| MSE | Mean Squared Error | | | like SD, but with multiple treatments; in R: \(\frac{mean(aov(y~x)\)residuals{^2}\(/{aov(y~x)df}\) |
+| 95\%CI | 95% Confidence Interval| \(t_{1-^{\alpha}/_2,n}*s\) | measure the 95% CI from the mean, this is actually \(^1/_2\) of the CI |
+| LSD | Least Significant Difference | \(t_{1-\frac{\alpha}{2},n}\sqrt{2\text{MSE}/b}\) | \(b\) is the number of blocks (Rosenberg 2004) |
+| MSD | Minimum Significant Difference |  |  |
+
+
+
 # [Adding a Yield](http://www.betydb.org/yields/new)
 
 The protocol for entering yield data is identical to entering data for a
