@@ -12,7 +12,7 @@ At a minimum, you should create an account on the instance of BETYdb that you wi
 | Boston University| https://psql-pecan.bu.edu/bety | Mike Dietze |
 | Brookhaven National Lab| http://modex.test.bnl.gov/bety| Shawn Serbin |
 | University of Wisconsin | http://tree.aos.wisc.edu:6480/bety | Ankur Desai |
-| TERRA Ref | | David LeBauer | 
+| TERRA Ref | https://terraref.ncsa.illinois.edu/bety | David LeBauer | 
 
 
 There are multiple research groups running the database. To use the database; request "creator" access during signup to enter data; request "manager" to perform QA/QC.   
