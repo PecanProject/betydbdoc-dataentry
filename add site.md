@@ -82,8 +82,8 @@ Use Table \ref{tab:location_accuracy} to determine the number of significant dig
 
 **Table \ref{tab:location_accuracy}** \label{tab:location_accuracy} Level of accuracy to record in lat and lon fields. 
                  
-| Location Detail |         Degree Accuracy  |
-|:----------------|-------------------------:|
+| **Location Detail** |         **Degree Accuracy**  |
+|-----------------------------|-------------------------|
 | City            |                      0.1 |
 | Mile            |                     0.01 |
 | Acre            |                    0.001 |
