@@ -81,9 +81,9 @@ It provides the values that should be entered in this field.
 ## Statistics
 
 Our goal is to record statistics that can be used to estimate standard
-deviation or standard error (https://www.authorea.com/users/5574/articles/6811/). Many different methods can be used to
-summarize data, and this is reflected in the diversity of statistics
-that are reported. An overview of these methods is given in a
+deviation or standard error (https://www.authorea.com/users/5574/articles/6811/). 
+Many different methods can be used to summarize data, and this is reflected in the diversity of statistics that are reported. 
+An overview of these methods is given in a
 description below.
 
 Where available, direct estimates of variance are preferred, including
