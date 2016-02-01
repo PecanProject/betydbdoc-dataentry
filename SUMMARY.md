@@ -14,9 +14,8 @@
 * Appendices
   * [Quality Assurance](QAQC.md)
   * [Extracting Data From Figures](Extracting Data From Figures.md)
-  * [Converting 
-stat conversions.md
-unit conversions.md
+  * [Estimating SE from Summary Statistics](stat conversions.md)
+  * [Common Unit Conversions](unit conversions.md)
 Tables.md
 license-citation.md
 Acknowledgements.md
