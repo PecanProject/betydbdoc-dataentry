@@ -1,24 +1,5 @@
 #  Reference Tables
 
-**Table \ref{tab:managements} Managements** \label{tab:managements} This is a list of  managements to enter, with the most common management types in bold. It is more important to have management records for Yields than for traits. For greenhouse experiments, it is not necessary to include informaton on fertilizaton, lighting, or greenhouse temperature.
-
-| Management Type | Units | Definition | Notes |
-|:----------------|:------|:-----------|:------|
-| Burned | aboveground biomass burned |
-| CO2 fumigation | ppm | | |
-| Fertilization_X      | kg x ha\(^{-1}\) | fertilization rate, element X | | 
-| Fungicide | kg x ha\(^{-1}\) |  | add type of fungicide to notes |
-| Grazed | years | livestock grazing | pre-experiment land use |
-| Harvest | | | no units, just date, equivalent to coppice, aboveground biomass removal |
-| Herbicide | kg x ha\(^{-1}\) |   | add type of herbicide to notes: glyphosate, atrazine, many others |
-| Irrigation | cm | | convert volume \ area to depth as required |
-| Light | W m\(^{-2}\) | | |
-| O3 fumigation | ppm | | |
-| Pesticide | kg x ha\(^{-1}\) |  | add type of pesticide to notes |
-| Planting | plants m\(^{-2}\) |    | Convert row spacing to planting density if possible |
-| Seeding  | kg seeds x ha\(^{-1}\) |   |   |
-| Tillage | | | no units, maybe depth; *tillage* is equivalent to *cultivate* | 
-
 
 
 **Table \ref{tab:dateloc}: Date level of confidence (DateLOC) field** Numbering convention for the DateLOC (Date level of confidence) and TimeLOC (Time level of confidence) field, used in managements, traits, and yields table. \label{tab:dateloc}.
