@@ -7,9 +7,8 @@
   * [Adding a citation](Add Citation.md)
   * [Adding a Site](add site.md)
   * [Adding a Treatment](Add Treatment.md)
+  * [Adding Traits and Yields](Adding Traits and Yields.md)
 
-Adding Traits and Yields.md
-figures/Addnewtrait1/Addnewtrait1.jpg
 Adding PFTs Species Cultivars.md
 figures/Addnewcultivar/Addnewcultivar.jpg
 bulk upload.tex
