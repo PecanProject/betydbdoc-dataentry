@@ -14,6 +14,7 @@ At a minimum, you should create an account on the instance of BETYdb that you wi
 | University of Wisconsin | http://tree.aos.wisc.edu:6480/bety | Ankur Desai |
 | TERRA Ref | https://terraref.ncsa.illinois.edu/bety | David LeBauer | 
 
+## Other Accounts
 
 There are multiple research groups running the database. To use the database; request "creator" access during signup to enter data; request "manager" to perform QA/QC.   
 * [Mendeley](https://www.mendeley.com/) to track and annotate citaitons.
