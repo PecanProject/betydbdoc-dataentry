@@ -1,6 +1,5 @@
 # Summary
 
-
 * [Getting Started](introduction.md)
 * [Finding and Preparing Published Data](finding_data.md)
   * [Preparing Published Data](preparing_published_data.md)
