@@ -6,10 +6,8 @@
 * [Entering Data](Overview.md)
   * [Adding a citation](Add Citation.md)
   * [Adding a Site](add site.md)
+  * [Adding a Treatment](Add Treatment.md)
 
-Add Treatment.md
-figures/Addnewtreatment/Addnewtreatment.jpg
-figures/Addnewmanagement/Addnewmanagement.jpg
 Adding Traits and Yields.md
 figures/Addnewtrait1/Addnewtrait1.jpg
 Adding PFTs Species Cultivars.md
