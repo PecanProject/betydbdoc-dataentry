@@ -11,10 +11,10 @@
 * Adding Trait and Yield Data
   * [Web Interface](Adding Traits and Yields.md)
   * [Bulk Upload](bulk upload.md)
-
-
-QAQC.md
-Extracting Data From Figures.md
+* Appendices
+  * [Quality Assurance](QAQC.md)
+  * [Extracting Data From Figures](Extracting Data From Figures.md)
+  * [Converting 
 stat conversions.md
 unit conversions.md
 Tables.md
