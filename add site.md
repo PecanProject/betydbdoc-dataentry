@@ -1,4 +1,4 @@
-# [Adding a Site](https://www.betydb.org/sites/new) \label{sec:site}
+# [Adding a Site](https://www.betydb.org/sites/new)
 
 Each experiment is conducted at a unique site. In the context of BETY,
 the term 'site' refers to a specific location and it is common for many
@@ -31,10 +31,17 @@ among independent studies.
     current citation under `Add Citation Relationships`
 4.  If site does not exist, add a new site.  
 
-**Attributes of a site record** \label{tab:sites}
+Interface for adding a new site:
 
-| Descriptors              |      Additional Notes | 
-| :-----------------------------| :-------------------------|
+![](figures/Addnewsite1/Addnewsite1.jpg)
+
+
+
+**Attributes of a site record**
+
+
+| **Descriptors**              | **Notes** | 
+|-----------------------------|-------------------------|
 | Site Name |Site identifier, sufficient to uniquely identify the site within the paper |
 | City         | Nearest city                 |  
 | State           | State, if in the US                |
