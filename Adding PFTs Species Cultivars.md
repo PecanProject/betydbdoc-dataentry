@@ -21,3 +21,5 @@ the Plants table. Look it up there first.
 To add a new Cultivar, go to the [new
 cultivar](https://www.betydb.org/cultivars/new) page: `Cultivar`
  → `new`.  
+
+![](figures/Addnewcultivar/Addnewcultivar.jpg)
