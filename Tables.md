@@ -1,29 +1,6 @@
 #  Reference Tables
 
 
-
-**Table \ref{tab:dateloc}: Date level of confidence (DateLOC) field** Numbering convention for the DateLOC (Date level of confidence) and TimeLOC (Time level of confidence) field, used in managements, traits, and yields table. \label{tab:dateloc}.
-
-| Dateloc | Definition |
-|:--------|:-----------|
-| 9 | no data |
-| 8 | year |
-| 7 | season |
-| 6 | month |
-| 5 | day |
-| 95 | unknown year, known day |
-| 96 | unknown year, known month |
-| ...etc | | 
-
-
-| Timeloc | Definition |
-|:--------|:-----------|
-| 9 | no data |
-| 4 | time of day i.e. morning, afternoon |
-| 3 | hour |
-| 2 | minute |
-| 1 | second |
-
  
 
 **Table \ref{tab:stats}: List of statistical summaries** \label{tab:stats} List of the statistics that can be entered into the statname field of traits and yields tables. Please see David (or Mike) if you have questions about statistics that do not appear in this list. If you have P, or LSD in a study with \(n\neq b\) (e.g. not a RCBD, see Table 8), please convert these values prior to entering the data, and add a note that stat was transformed to the table. Note: These are listed in order of preference, e.g., if SD, SE, or MSE are provided then use these values.
