@@ -110,8 +110,6 @@ if MSE is available. Only if there is no other information available should you
 record the P-value.
 
 
-
-
 **Table \ref{tab:stats}: List of statistical summaries** \label{tab:stats} List of the statistics that can be entered into the statname field of traits and yields tables. Please see David (or Mike) if you have questions about statistics that do not appear in this list. If you have P, or LSD in a study with \(n\neq b\) (e.g. not a RCBD, see Table 8), please convert these values prior to entering the data, and add a note that stat was transformed to the table. Note: These are listed in order of preference, e.g., if SD, SE, or MSE are provided then use these values.
 
 | Statname | Name | Definition | Notes |
