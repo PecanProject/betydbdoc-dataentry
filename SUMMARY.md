@@ -6,9 +6,8 @@
   * [Preparing Published Data](preparing_published_data.md)
 * [Entering Data](Overview.md)
   * [Adding a citation](Add Citation.md)
+  * [Adding a Site](add site.md)
 
-add site.md
-figures/Addnewsite1/Addnewsite1.jpg
 Add Treatment.md
 figures/Addnewtreatment/Addnewtreatment.jpg
 figures/Addnewmanagement/Addnewmanagement.jpg
