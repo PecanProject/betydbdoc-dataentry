@@ -197,5 +197,6 @@ Most important, there will be a strong covariance between `Vcmax` and `stomatal_
 | root biomass | | min. size cutoff, max. size cutoff |
 | root, soil | depth (cm) | used for max and min depths of soil, if only one value, assume min depth = 0; negative values indicate above ground |
 | gs (stomatal conductance) | \(A_{max}\) | see notes in caption |
-| stomatal\_slope (m) | humidity, temperature | specific humidity, assume leaf T =  air T | |SLA| | canopy_level|
+| stomatal\_slope (m) | humidity, temperature | specific humidity, assume leaf T =  air T | 
+|SLA| | canopy_level|
  
