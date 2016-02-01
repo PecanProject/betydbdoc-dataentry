@@ -1,4 +1,4 @@
-#  [Adding a Citation](https://www.betydb.org/citations/new) \label{sec:citation}  
+#  [Adding a Citation](https://www.betydb.org/citations/new)
 
 Citation provides information regarding the source of the data. 
 A PDF copy of each paper should be available through Mendeley.
@@ -23,3 +23,4 @@ A PDF copy of each paper should be available through Mendeley.
     *  **URL**: Web address of the article, preferably from publisher's website.  Include the "http://" or "https://" prefix.  If no on-line version is available, but some other information about how to obtain the citation is available, you may use a parenthesized note in lieu of a bona fide URL, e.g. "(e-mail Dr. No at no@example.com for a written copy)".
     *  **PDF**: URL of the PDF of the article.    Include the "http://" or "https://" prefix.  (A parenthesized note is allowed here as well.)
 
+![](figures/Addnewcitation2/Addnewcitation2.jpg)
