@@ -16,7 +16,6 @@
   * [Extracting Data From Figures](Extracting Data From Figures.md)
   * [Estimating SE from Summary Statistics](stat conversions.md)
   * [Common Unit Conversions](unit conversions.md)
+* [Acknowledgements](Acknowledgements.md)
 
-license-citation.md
-Acknowledgements.md
 
