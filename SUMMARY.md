@@ -8,9 +8,8 @@
   * [Adding a Site](add site.md)
   * [Adding a Treatment](Add Treatment.md)
   * [Adding Traits and Yields](Adding Traits and Yields.md)
+  * [Adding PFTs, Species, and Cultivars](Adding PFTs Species Cultivars.md)
 
-Adding PFTs Species Cultivars.md
-figures/Addnewcultivar/Addnewcultivar.jpg
 bulk upload.tex
 figures/yieldtemplatebulk/yieldtemplatebulk.jpg
 QAQC.md
