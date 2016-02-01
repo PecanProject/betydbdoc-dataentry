@@ -1,4 +1,4 @@
-**Table \ref{tab:conversions}: Useful conversions for entering site, management, yield, and trait data \label{tab:conversions}**
+Table: Useful conversions for entering site, management, yield, and trait data
 
 | From ($X$) | to ($Y$) | Conversion | Notes |
 |:-----------|:---------|:-----------|:------|
