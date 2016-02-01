@@ -37,6 +37,8 @@ by more thorough explanations:
     clearly stated.
   
 
+## Uncertainty in Date or Time
+
 ## dateLOC
 
 The date level of confidence (DateLOC, Table \ref{tab:dateloc}) provides an indication of how accurately the date associated with the trait or yield observation is known. 
@@ -44,9 +46,36 @@ It provides the values that should be entered in this field.
 If the event occurred at a level of precision not defined by an integer in this table, then use fractions. For example, we commonly use 5.5 to indicate a one week level of precision. 
 If the exact year is not known, but the time of year is, then use 91 to 97, with the second digit to indicate the information known within the year.
 
+
+
+
+**Table \ref{tab:dateloc}: Date level of confidence (DateLOC) field** Numbering convention for the DateLOC (Date level of confidence) and TimeLOC (Time level of confidence) field, used in managements, traits, and yields table. \label{tab:dateloc}.
+
+| Dateloc | Definition |
+|:--------|:-----------|
+| 9 | no data |
+| 8 | year |
+| 7 | season |
+| 6 | month |
+| 5 | day |
+| 95 | unknown year, known day |
+| 96 | unknown year, known month |
+| ...etc | | 
+
+
+
+
 ## TimeLOC
 The time level of confidence (TimeLOC, Table \ref{tab:dateloc}) provides an indication of how accurately the time associated with the trait or yield observation is known. 
 It provides the values that should be entered in this field. 
+
+| Timeloc | Definition |
+|:--------|:-----------|
+| 9 | no data |
+| 4 | time of day i.e. morning, afternoon |
+| 3 | hour |
+| 2 | minute |
+| 1 | second |
 
 
 ## Statistics
