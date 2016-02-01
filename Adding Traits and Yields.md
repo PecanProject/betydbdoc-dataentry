@@ -39,7 +39,7 @@ by more thorough explanations:
 
 ## Uncertainty in Date or Time
 
-## dateLOC
+### dateLOC
 
 The date level of confidence (DateLOC, Table \ref{tab:dateloc}) provides an indication of how accurately the date associated with the trait or yield observation is known. 
 It provides the values that should be entered in this field. 
@@ -65,7 +65,7 @@ If the exact year is not known, but the time of year is, then use 91 to 97, with
 
 
 
-## TimeLOC
+### TimeLOC
 
 The time level of confidence (TimeLOC, Table \ref{tab:dateloc}) provides an indication of how accurately the time associated with the trait or yield observation is known. 
 It provides the values that should be entered in this field. 
