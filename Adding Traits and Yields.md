@@ -192,7 +192,7 @@ Most important, there will be a strong covariance between `Vcmax` and `stomatal_
 | vcmax |  temperature (leafT or airT) |irradiance |
 |any leaf measurement | | canopy_height or canopy_layer |
 | root\_respiration\_rate | temperature (rootT or soilT)| soil moisture |
-| | root\_diameter\_max | root size class (usually 2mm) |
+|  root\_diameter\_max | | root size class (usually 2mm) |
 | any respiration | temperature | |
 | root biomass | | min. size cutoff, max. size cutoff |
 | root, soil | depth (cm) | used for max and min depths of soil, if only one value, assume min depth = 0; negative values indicate above ground |
