@@ -1,8 +1,13 @@
 # Overview
 
-This is the user guide for entering data into the BETYdb database. The goal of this guide is to provide a consistent method of data entry that is transparent, reproducible, and well documented. The steps here generally accomplish one of two goals. 
+This is the user guide for entering data into the BETYdb database. The goal of this guide is to provide a consistent method of data entry that is transparent, reproducible, and well documented. The steps here generally accomplish one of two goals.
 
 The first goal is to provide data that is associated with the experimental methods, species, site, and other factors associated with the original study. The second goal is to provide a record of all the transformations, assumptions, and data extraction steps used to migrate data from the primary literature to the standardized framework of the database.
+
+
+# Getting Started 
+
+## Sign up for BETYdb
 
 At a minimum, you should create an account on the instance of BETYdb that you will be using. For example, [BETYdb.org](https://www.betydb.org/signup). Other instances of BETYdb include:
 
