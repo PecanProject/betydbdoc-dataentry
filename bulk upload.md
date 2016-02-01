@@ -83,6 +83,8 @@ There are three phases for a basic bulk upload of data:
         citation interactively (in which case delete the
         `citation_doi` column). **Again, this template must be modified
         before it can be used.**
+        
+        
 
 3.  Use the web interface to upload your data set and insert it into
     the database.
@@ -94,8 +96,16 @@ term “column” may either refer to a column of data in the uploaded CSV
 file or to an attribute of a trait or yield datum in the traits or
 yields table of the database.*
 
+
+
 Detailed CSV Data File Specifications
 -------------------------------------
+
+
+
+[Example of a template for bulk upload of yield data:](https://docs.google.com/spreadsheets/d/1ExLosMvX05jHWO9UYVE4Dxcl2ZbUgPc0KYoUPruaOtM/export?format=csv&gid=0)
+
+![](figures/yieldtemplatebulk/yieldtemplatebulk.jpg)
 
 ### Required fields
 
