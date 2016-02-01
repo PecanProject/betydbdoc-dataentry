@@ -1,5 +1,4 @@
-abstract.md
-TOC.md
+* [Abstract](abstract.md)
 introduction.md
 finding_data.md
 Finding Published Data.md
@@ -24,3 +23,17 @@ unit conversions.md
 Tables.md
 license-citation.md
 Acknowledgements.md
+
+
+* Getting Started \ref{sec:getting_started}
+* Preparing Publications \ref{sec:preparing_publications}
+* Adding Data
+ * Citations \ref{sec:citation}
+ * Site \ref{sec:site}
+ * Treatments \ref{sec:treatments}
+ * Managements \ref{sec:managements}
+ * Traits \ref{sec:traits}
+ * Yields \ref{sec:yields}
+* Bulk uploads \ref{sec:bulk_upload}
+* Extracting Data From Figures \ref{sec:extracting-data}
+* QA/QC \ref{sec:qaqc}
