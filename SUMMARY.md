@@ -10,7 +10,6 @@
    * [Adding a Treatment](Add Treatment.md)
    * [Adding Many Managements](adding_many_managements.md)
    * [Adding PFTs, Species, and Cultivars](Adding PFTs Species Cultivars.md)
-       * Adding Many Managements
 * Adding Trait and Yield Data
    * [Web Interface](Adding Traits and Yields.md)
    * [Bulk Upload](bulk upload.md)
