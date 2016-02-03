@@ -1,4 +1,4 @@
-BETYdb Data Entry Workflow Documentation
+BETYdb Data Entry Workflow
 ===================
 
 There are a few ways to add data to BETYdb. This book focuses on entering data through a BETYdb website. BETYdb provides a sequence of pages that walks users through the process of entering meta-data and data. For entering large tables of data there is  Bulk Upload Wizard. This is useful when entering more than a few dozen trait or yield data from a single source.
