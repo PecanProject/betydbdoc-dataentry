@@ -8,7 +8,7 @@
    * [Adding a citation](Add Citation.md)
    * [Adding a Site](add site.md)
    * [Adding a Treatment](Add Treatment.md)
-   * Adding Many Managements
+   * [Adding Many Managements](adding_many_managements.md)
    * [Adding PFTs, Species, and Cultivars](Adding PFTs Species Cultivars.md)
        * Adding Many Managements
 * Adding Trait and Yield Data
