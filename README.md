@@ -6,3 +6,7 @@ There are a few ways to add data to BETYdb. This book focuses on entering data t
 This documentation provides comprehensive instructions that begin with the collection and organization of papers for meta-analysis. It then describes how to enter data into each table and finally how to perform QA/QC. This document has been used to extract data from hundreds of published scientific articles as well as primary data. The general approach is to dividing the task of identifying which data to enter, which must be done by a scientist, from other steps that can be done by a data entry technician (typically undergraduate biology majors).
 
 For users interested in uploading their own data tables, much of the content on finding, organizing, and annotating journal articles is not necessary. You can just enter the relevant metadata (sites, treatments, managements) and then upload a .csv file.
+
+### Authors
+
+David LeBauer, Moein Azimi, David Bettinardi, Rachel Bonet, Emily Cheng, Michael Dietze, Patrick Mulrooney, Scott Rohde, Andy Tu
