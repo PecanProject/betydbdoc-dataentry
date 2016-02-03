@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-   * Table of Contents
+   * [Table of Contents](table_of_contents.md)
 * [Getting Started](introduction.md)
 * [Finding and Preparing Published Data](finding_data.md)
    * [Preparing Published Data](preparing_published_data.md)
