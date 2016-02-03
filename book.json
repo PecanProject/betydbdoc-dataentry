@@ -2,9 +2,9 @@
     "plugins": [
         "mathjax",
         "atoc",
-        "comment",
-        "github",
-        "hide-published-with",
+//        "comment",
+//        "github",
+//        "hide-published-with",
         "tufte"
     ],
     "pluginsConfig": {}
