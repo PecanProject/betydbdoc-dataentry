@@ -13,7 +13,7 @@
 * [Adding Trait and Yield Data](adding_trait_and_yield_data.md)
    * [Web Interface](Adding Traits and Yields.md)
    * [Bulk Upload](bulk upload.md)
-* Appendices
+* [Appendices](appendices.md)
    * [Quality Assurance](QAQC.md)
    * [Extracting Data From Figures](Extracting Data From Figures.md)
    * [Estimating SE from Summary Statistics](stat conversions.md)
