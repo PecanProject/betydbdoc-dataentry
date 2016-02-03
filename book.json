@@ -3,8 +3,8 @@
         "mathjax",
         "atoc",
 //        "comment",
-//        "github",
-//        "hide-published-with",
+        "github",
+        "hide-published-with",
         "tufte"
     ],
     "pluginsConfig": {}
