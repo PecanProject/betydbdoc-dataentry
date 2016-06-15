@@ -1,0 +1,11 @@
+{
+    "plugins": [
+        "mathjax",
+        "atoc",
+
+        "github",
+        "hide-published-with",
+        "tufte"
+    ],
+    "pluginsConfig": {}
+}
