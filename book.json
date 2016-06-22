@@ -7,5 +7,9 @@
         "hide-published-with",
         "tufte"
     ],
-    "pluginsConfig": {}
+    "pluginsConfig": {
+        "github": {
+            "url": "https://github.com/PecanProject/betydbdoc-dataentry"
+        }
+    }
 }
