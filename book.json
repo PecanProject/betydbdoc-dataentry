@@ -2,10 +2,10 @@
     "plugins": [
         "mathjax",
         "atoc",
-
         "github",
         "hide-published-with",
-        "tufte"
+        "tufte",
+        "autocover"
     ],
     "pluginsConfig": {
         "github": {
