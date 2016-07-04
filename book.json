@@ -4,8 +4,7 @@
         "atoc",
         "github",
         "hide-published-with",
-        "tufte",
-        "autocover"
+        "tufte"
     ],
     "pluginsConfig": {
         "github": {
