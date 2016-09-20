@@ -194,7 +194,9 @@ directory, run the command
 curl -X POST --data-binary @TEST_XML_DATA localhost:3000/api/beta/traits.xml?key=<your API key>
 ```
 (Substitute any of the other sample file names for `TEST_XML_DATA` as desired,
-changing the `.xml` extension to `.json` or `.csv` where appropriate.)
+changing the `.xml` extension to `.json` or `.csv` where appropriate.  **_If a
+CSV file is being uploaded, add the option `-H "Content-Type: text/csv"` to the
+`curl` command._**)
 
 These API calls all generate a response (in XML format for the XML endpoint and
 in JSON format for the JSON endpoints).  If the call is successful, the response
