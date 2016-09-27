@@ -24,7 +24,7 @@ For a multi-year experiment, there may be multiple entries for the same type of 
     
 
 
-**Managements** This is a list of  managements to enter, with the most common management types in bold. It is more important to have management records for Yields than for traits. For greenhouse experiments, it is not necessary to include informaton on fertilizaton, lighting, or greenhouse temperature. \@label(tab:managements)
+**Managements** This is a list of  managements to enter, with the most common management types in bold. It is more important to have management records for Yields than for traits. For greenhouse experiments, it is not necessary to include informaton on fertilizaton, lighting, or greenhouse temperature.
 
 | Management Type | Units | Definition | Notes |
 |:----------------|:------|:-----------|:------|
