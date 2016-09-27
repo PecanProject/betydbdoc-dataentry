@@ -14,7 +14,7 @@ For a multi-year experiment, there may be multiple entries for the same type of 
 
 *note:*Managements are not always required - and the level of detail depends on the scope of research. By default managements are recorded for Yields but not for Traits, unless specifically required by the data or project manager.
 
-
+* **Date**: in format `YYYY-MM-DD` or `YYYY-MM-DD HH:MM` 
 * **Dateloc**:   date level of confidence, explained in Section \ref{sec:traits} and defined in Table \ref{tab:traits}.
 * **Mgmttype**:   the name of the management being used. A list of standardized
     management types can be found in Table \ref{tab:managements}      
