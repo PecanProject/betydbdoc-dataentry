@@ -15,16 +15,16 @@ For a multi-year experiment, there may be multiple entries for the same type of 
 *note:*Managements are not always required - and the level of detail depends on the scope of research. By default managements are recorded for Yields but not for Traits, unless specifically required by the data or project manager.
 
 
-**Dateloc**:   date level of confidence, explained in Section \ref{sec:traits} and defined in Table \ref{tab:traits}.
-**Mgmttype**:   the name of the management being used. A list of standardized
+* **Dateloc**:   date level of confidence, explained in Section \ref{sec:traits} and defined in Table \ref{tab:traits}.
+* **Mgmttype**:   the name of the management being used. A list of standardized
     management types can be found in Table \ref{tab:managements}      
-**Level**:   a quantification of mgmttype   
-**Units**:   refers to the units of the level. Units should be converted to those
+* **Level**:   a quantification of mgmttype   
+* **Units**:   refers to the units of the level. Units should be converted to those
     in  Table \ref{tab:managements}
     
 
 
-**Managements** This is a list of  managements to enter, with the most common management types in bold. It is more important to have management records for Yields than for traits. For greenhouse experiments, it is not necessary to include informaton on fertilizaton, lighting, or greenhouse temperature.
+**Managements** This is a list of  managements to enter, with the most common management types in bold. It is more important to have management records for Yields than for traits. For greenhouse experiments, it is not necessary to include informaton on fertilizaton, lighting, or greenhouse temperature. \@label(tab:managements)
 
 | Management Type | Units | Definition | Notes |
 |:----------------|:------|:-----------|:------|
