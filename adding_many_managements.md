@@ -1,10 +1,67 @@
-# Adding Many Managements
+# Adding Managements
+
+There are two ways to add management information, through the web interface or from a spreadsheet. These are discussed in turn, below. Recall that managements can be associated with one or more treatments. 
+
+Managements refers to something that occurs at a specific time and has a quantity.
+Managements include actions that are done to a plant or ecosystem, such as the planting density or rate of fertilization, for example.
+Managements are distinct from treatments in that a treatment is used to categorically identify an experimental treatment, whereas a management is used to describe what has been done.
+Managements are the way a treatment becomes quantified. Each treatment is often associated with multiple managements. 
+The combination of managements associated with a particular treatment will distinguish it from other treatments. 
+The management types that can be entered into BETY are described in Table \ref{tab:managements}.
+Each management may be associated with one or more treatments. 
+For example, in a fertilization experiment, planting, irrigation, and herbicide managements would be applied to all plots but the fertilization will be specific to a treatment.
+For a multi-year experiment, there may be multiple entries for the same type of management, reflecting, for example, repeated applications of herbicide or fertilizer.
+
+*note:*Managements are not always required - and the level of detail depends on the scope of research. By default managements are recorded for Yields but not for Traits, unless specifically required by the data or project manager.
+
+
+**Dateloc**:   date level of confidence, explained in Section \ref{sec:traits} and defined in Table \ref{tab:traits}.
+**Mgmttype**:   the name of the management being used. A list of standardized
+    management types can be found in Table \ref{tab:managements}      
+**Level**:   a quantification of mgmttype   
+**Units**:   refers to the units of the level. Units should be converted to those
+    in  Table \ref{tab:managements}
+    
+
+
+**Managements** This is a list of  managements to enter, with the most common management types in bold. It is more important to have management records for Yields than for traits. For greenhouse experiments, it is not necessary to include informaton on fertilizaton, lighting, or greenhouse temperature.
+
+| Management Type | Units | Definition | Notes |
+|:----------------|:------|:-----------|:------|
+| Burned | aboveground biomass burned |
+| CO2 fumigation | ppm | | |
+| Fertilization_X      | kg x ha\(^{-1}\) | fertilization rate, element X | | 
+| Fungicide | kg x ha\(^{-1}\) |  | add type of fungicide to notes |
+| Grazed | years | livestock grazing | pre-experiment land use |
+| Harvest | | | no units, just date, equivalent to coppice, aboveground biomass removal |
+| Herbicide | kg x ha\(^{-1}\) |   | add type of herbicide to notes: glyphosate, atrazine, many others |
+| Irrigation | cm | | convert volume \ area to depth as required |
+| Light | W m\(^{-2}\) | | |
+| O3 fumigation | ppm | | |
+| Pesticide | kg x ha\(^{-1}\) |  | add type of pesticide to notes |
+| Planting | plants m\(^{-2}\) |    | Convert row spacing to planting density if possible |
+| Seeding  | kg seeds x ha\(^{-1}\) |   |   |
+| Tillage | | | no units, maybe depth; *tillage* is equivalent to *cultivate* | 
+
+
+
+## Via Web interface
+
+
+Managements can be entered via the web interface. First enter the management, and then associate it with one or more treatments. To associate a management with multiple treatments, first create the
+management, then edit the management and add treatment relationships.
+
+
+![](figures/Addnewmanagement/Addnewmanagement.jpg)
+
+
+
+## Preparing a managements spreadsheet for Upload
 
 When there is a long list of managements, the `insert_managements` scripts enables users to insert data organized in a text based (csv) file.
 
 Preparing the csv file can be done in any spreadsheet program such as Excel or Google Sheets. The insertion is straightforward, but requires familiarity with the bash shell as well as administrative access to the Postgres database.
 
-## Preparing the managements file
 
 ### File format
 
