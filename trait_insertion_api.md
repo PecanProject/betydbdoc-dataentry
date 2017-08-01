@@ -64,32 +64,33 @@ internally and then validated using this schema.
 
   * `site`: This _may_ have any of the attributes `id`, `city`, `state`,
     `country`, and `sitename`.  It _must_ have enough of these attributes to
-    uniquely identify an existing site.  `sitename` _should_ be unique and is
-    the preferred attribute to use in identifying a site.  Unfortunately,
-    uniqueness is not currently enforced and there are in fact several cases of
-    multiple sites sharing the same site name.  **_In general, using the `id`
-    attribute to identify a particular trait association is strongly discouraged
-    and should be used only when necessary._**
+    uniquely identify an existing site.  Withing the database table `sites`, the
+    values of `sitename` _should_ be unique and `sitename` is the preferred
+    attribute to use in identifying a site.  Unfortunately, uniqueness is not
+    currently enforced and there are in fact several cases of multiple sites
+    sharing the same site name.  **_In general, using the `id` attribute to
+    identify a particular trait association is strongly discouraged and should
+    be used only when necessary._**
 
   * `species`: Allowed attributes: `id`, `genus`, `species`, `scientificname`,
     `commonname`, `AcceptedSymbol`.  `scientificname` is the preferred attribute
-    for identifying a species.  It _should_ be unique except in cases where it
-    is left blank.  The `scientificname` is mainly left blank only in cases
-    where a species row represents a category of plant; in this case, the
-    `commonname` column is used to describe the category. Even for rows having
-    non-blank `scientificname`, however, uniqueness is not yet enforced.
+    for identifying a species.  Within the database table `species`, non-blank
+    values of `scientificname` should be unique but this constraint is not yet
+    enforced.  (`scientificname` is left blank in cases where a species row
+    represents a category of plant; in this case, the `commonname` column is
+    used to describe the category.)
 
     If a particular cultivar of the species is intended, a child `cultivar`
     element should be included.  This element may use either a `name` attribute
-    (preferred) or an `id` attribute to identify the cultivar.  (Cultivar names
-    are guaranteed to be unique within a given species.)
+    (preferred) or an `id` attribute to identify the cultivar.  _Cultivar names
+    are guaranteed to be unique within a given species._
 
   * `citation`: Allowed attributes: `id`, `author`, `year`, `title`, `doi`.  The
     preferred method of selecting a citation is by doi or by author, year, and
     title (often just author and year will suffice).
 
   * `treatment`: Allowed attributes: `id`, `name`, `control`.  The preferred
-    method of selection a method is by name.  [In the process of implementation:
+    method of selecting a method is by name.  [In the process of implementation:
     A citation is _required_, either directly on the trait or as a default for a
     group of traits, if a treatment is to be specified.  Moreover, the specified
     treatment must be associated with the specified citation.  This will often
