@@ -14,7 +14,7 @@
 * [Adding Trait and Yield Data](adding_trait_and_yield_data.md)
    * [Web Interface](Adding Traits and Yields.md)
    * [Bulk Upload](bulk upload.md)
-   * [Adding Traits via the Beta API](trait_insertion_api.md)
+   * [Adding Traits via the V1 API](trait_insertion_api.md)
 * [Appendices](appendices.md)
    * [Quality Assurance](QAQC.md)
    * [Extracting Data From Figures](Extracting Data From Figures.md)

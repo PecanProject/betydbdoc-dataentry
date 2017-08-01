@@ -1,14 +1,14 @@
 # Inserting New Traits Via the API
 
-This page provides a general description of how to insert trait data via the
-(new) beta version of the BETYdb API.  For information about _accessing_ data
-via the beta BETYdb API, visit
+This page provides a general description of how to insert trait data via the v1
+version of the BETYdb API.  For information about _accessing_ data via the v1
+BETYdb API, visit
 https://pecan.gitbooks.io/betydb-data-access/content/API/beta_API.html.  For a
 list of URLs of API endpoints, visit https://www.betydb.org/api/docs.
 
 ## Trait Insertion Endpoint.
 
-The path to use for trait insertion is `/api/beta/traits(.EXT)` where `EXT` is
+The path to use for trait insertion is `/api/v1/traits(.EXT)` where `EXT` is
 `csv`, `xml`, or `json`.  These are used to submit data in CSV, XML, and JSON
 format, respectively.  If no extension is given, JSON format is assumed.  **A
 user must have _Creator_ status (page access level 3) in order to use the trait
@@ -363,7 +363,7 @@ You can upload the data in these files using `curl`.  To try this out, start
 your Rails server locally with `rails s` and then, from the `/api/lib/api/test`
 directory, run the command
 ```sh
-curl -X POST --data-binary @TEST_XML_DATA localhost:3000/api/beta/traits.xml?key=<your API key>
+curl -X POST --data-binary @TEST_XML_DATA localhost:3000/api/v1/traits.xml?key=<your API key>
 ```
 (Substitute any of the other sample file names for `TEST_XML_DATA` as desired,
 changing the `.xml` extension to `.json` or `.csv` where appropriate.  **_If a
