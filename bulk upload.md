@@ -203,12 +203,12 @@ value that pertains to the whole data set.*
 
     -   Otherwise, a `date` column is required.
 
-    -   Date values must be in the form YYYY-MM-DD. For example, July
-        25, 2003 must be entered as “2003-07-25”. (Eventually, month and
-        day may become optional, in which case any of the forms
-        “2003-07-25”, “2003-07”, and “2003” would represent dates of
-        varying degrees of specificity. Note that uploading dateloc,
-        time, and timeloc information is not supported.)
+    -   Date values without time of day must be in the form YYYY-MM-DD. For
+        example, July 25, 2003 must be entered as “2003-07-25”. (Eventually,
+        month and day may become optional, in which case any of the forms
+        “2003-07-25”, “2003-07”, and “2003” would represent dates of varying
+        degrees of specificity. Note that uploading dateloc, time, and timeloc
+        information is not supported.)
 
 2.  Rounding
 
