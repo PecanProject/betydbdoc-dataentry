@@ -1,4 +1,4 @@
-# Data Entry Overview
+# Entering Meta-Data
 
 Before entering data, it is first necessary to add and select the
 citation that is the source of the data. It is also necessary for each

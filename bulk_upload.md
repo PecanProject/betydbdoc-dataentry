@@ -1,8 +1,6 @@
-BETYdb: Bulk Data Upload 
-========================
+## Bulk Upload 
 
-Overview
---------
+### Overview
 
 There are three phases for a basic bulk upload of data:
 
@@ -98,16 +96,14 @@ yields table of the database.*
 
 
 
-Detailed CSV Data File Specifications
--------------------------------------
-
+### Detailed CSV Data File Specifications
 
 
 [Example of a template for bulk upload of yield data:](https://docs.google.com/spreadsheets/d/1ExLosMvX05jHWO9UYVE4Dxcl2ZbUgPc0KYoUPruaOtM/export?format=csv&gid=0)
 
 ![](figures/yieldtemplatebulk/yieldtemplatebulk.jpg)
 
-### Required fields
+#### Required fields
 
 1.  For yields uploads, the only required field is a `yield` column.
 
@@ -118,7 +114,7 @@ Detailed CSV Data File Specifications
     the database.) If this trait variable has any required covariates,
     columns for these covariates must be included.
 
-### Information that is required but that *may* be specified interactively for the entire dataset.
+#### Information that is required but that *may* be specified interactively for the entire dataset.
 
 *Data values may be specified interactively only if there is a single
 value that pertains to the whole data set.*
@@ -223,7 +219,7 @@ value that pertains to the whole data set.*
         significant digits. For example, with this default in place,
         999.1 will be rounded to 999 and 1001.1 will be rounded to 1000.
 
-### Numerical Data (This is *never* specified interactively.)
+#### Numerical Data (This is *never* specified interactively.)
 
 ***Data for Yields***
 
@@ -302,7 +298,7 @@ value that pertains to the whole data set.*
     Again, values of `n` must be at least 2, and columns for `n` and
     `SE` must both be present or both be absent.
 
-### Optional data
+#### Optional data
 
 1.  Sample Size and Standard Error
 

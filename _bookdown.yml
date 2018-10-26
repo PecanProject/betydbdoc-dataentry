@@ -1,5 +1,4 @@
 rmd_files: ["README.md",
-               "table_of_contents.md",
             "introduction.md",
             "finding_data.md",
                "preparing_published_data.md",

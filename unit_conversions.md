@@ -1,6 +1,8 @@
 
 ##  Converting Units and Adjustment to Temperature
 
+\@ref(tab:conversions)
+
 For many transformations, particularly when automated, please use the udunits2 software where possible. For example, in R, you can use
 
     library(udunits2)
@@ -14,7 +16,7 @@ For many transformations, particularly when automated, please use the udunits2 s
 NB: Many of these conversions have been automated within [PEcAn](https://github.com/PecanProject/pecan).
 
 
-**Useful conversions for entering site, management, yield, and trait data \label{tab:conversions}**
+Table: Useful conversions for entering site, management, yield, and trait data
 
 | From (\(X\)) | to (\(Y\)) | Conversion | Notes |
 |:-----------|:---------|:-----------|:------|

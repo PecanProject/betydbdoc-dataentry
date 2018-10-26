@@ -1,4 +1,4 @@
-# Adding Managements
+### Adding Managements
 
 There are two ways to add management information, through the web interface or from a spreadsheet. These are discussed in turn, below. Recall that managements can be associated with one or more treatments. 
 
@@ -7,27 +7,31 @@ Managements include actions that are done to a plant or ecosystem, such as the p
 Managements are distinct from treatments in that a treatment is used to categorically identify an experimental treatment, whereas a management is used to describe what has been done.
 Managements are the way a treatment becomes quantified. Each treatment is often associated with multiple managements. 
 The combination of managements associated with a particular treatment will distinguish it from other treatments. 
-The management types that can be entered into BETY are described in Table \ref{tab:managements}.
+The management types that can be entered into BETY are described in the table below.
 Each management may be associated with one or more treatments. 
 For example, in a fertilization experiment, planting, irrigation, and herbicide managements would be applied to all plots but the fertilization will be specific to a treatment.
 For a multi-year experiment, there may be multiple entries for the same type of management, reflecting, for example, repeated applications of herbicide or fertilizer.
 
-*note:*Managements are not always required - and the level of detail depends on the scope of research. By default managements are recorded for Yields but not for Traits, unless specifically required by the data or project manager.
+**_Note:_** Managements are not always required and the level of detail depends on the scope of research. By default managements are recorded for Yields but not for Traits, unless specifically required by the data or project manager.
 
-* **Date**: in format `YYYY-MM-DD` or `YYYY-MM-DD HH:MM` 
-* **Dateloc**:   date level of confidence, explained in Section \ref{sec:traits} and defined in Table \ref{tab:traits}.
-* **Mgmttype**:   the name of the management being used. A list of standardized
-    management types can be found in Table \ref{tab:managements}      
-* **Level**:   a quantification of mgmttype   
-* **Units**:   refers to the units of the level. Units should be converted to those
-    in  Table \ref{tab:managements}
+* **Date**: In format `YYYY-MM-DD` or `YYYY-MM-DD HH:MM`.
+* **Dateloc**:   Date level of confidence, explained in Section [DateLOC] and the accompanying table.
+* **Mgmttype**:   The name of the management being used. A list of standardized
+    management types can be found in the table below.
+* **Level**:   A quantification of mgmttype.
+* **Units**:   Refers to the units of the level. Units should be converted to those
+    in following table.
     
 
 
-**Managements** This is a list of  managements to enter, with the most common management types in bold. It is more important to have management records for Yields than for traits. For greenhouse experiments, it is not necessary to include informaton on fertilizaton, lighting, or greenhouse temperature.
+#### Types of Managements
 
-| Management Type | Units | Definition | Notes |
-|:----------------|:------|:-----------|:------|
+The following table shows a list of  managements to enter.  It is more important to have management records for yields than for traits. For greenhouse experiments, it is not necessary to include informaton on fertilizaton, lighting, or greenhouse temperature.
+
+Table: Management Types
+
+| Management Type | Units | Definition     | Notes                   |
+|:----------------|:------|:---------------|:------------------------|
 | Burned | aboveground biomass burned |
 | CO2 fumigation | ppm | | |
 | Fertilization_X      | kg x ha\(^{-1}\) | fertilization rate, element X | | 
@@ -45,7 +49,7 @@ For a multi-year experiment, there may be multiple entries for the same type of 
 
 
 
-## Via Web interface
+#### Via Web interface
 
 
 Managements can be entered via the web interface. First enter the management, and then associate it with one or more treatments. To associate a management with multiple treatments, first create the
@@ -56,14 +60,14 @@ management, then edit the management and add treatment relationships.
 
 
 
-## Preparing a managements spreadsheet for Upload
+#### Preparing a managements spreadsheet for Upload
 
 When there is a long list of managements, the `insert_managements` scripts enables users to insert data organized in a text based (csv) file.
 
 Preparing the csv file can be done in any spreadsheet program such as Excel or Google Sheets. The insertion is straightforward, but requires familiarity with the bash shell as well as administrative access to the Postgres database.
 
 
-### File format
+##### File format {-}
 
 **Required Fields** the spreadsheet or CSV file must contain the following column headings:
 
@@ -86,16 +90,16 @@ Each row must have non-empty values in each of these columns.  Moreover, the cit
 
 Each optional column heading corresponds to an optional field in the database managements table. The column can contain one or more empty rows.
 
-If the table is prepared in a spreadsheet program, use the "save as --> .csv" option to export a single text based .csv file. 
+If the table is prepared in a spreadsheet program, use the "save as → .csv" option to export a single text based .csv file. 
 
-## Inserting Management Insertion Script
+#### Inserting Management Insertion Script
 
-The [`insert_managements.rb`](https://github.com/PecanProject/bety/blob/master/script/insert_managements.rb) script takes a CSV file describing managements to be added to the database as input and outputs a file containing SQL statements to do the required insertions.
+The [`insert_managements.rb`](https://github.com/PecanProject/bety/blob/master/script/insert_managements.rb){target="_blank"} script takes a CSV file describing managements to be added to the database as input and outputs a file containing SQL statements to do the required insertions.
 
 
-The script `insert_managements.rb` is in the directory `RAILS_ROOT/script`.  The complete usage instructions (also obtainable by running `./insert_managements --man`) follow.  For additional information, see [Github issue #288](https://github.com/PecanProject/bety/issues/288#issuecomment-153440839)
+The script `insert_managements.rb` is in the directory `RAILS_ROOT/script`.  The complete usage instructions (also obtainable by running `./insert_managements --man`) follow.  For additional information, see [Github issue #288](https://github.com/PecanProject/bety/issues/288#issuecomment-153440839){target="_blank"}.
 
-### `insert_managements.rb`
+##### `insert_managements.rb` {-}
 
 
 ```
@@ -110,12 +114,12 @@ where [options] are:
   -h, --help               Show this message
 ```
 
-### DATABASE SPECIFICATION
+##### Database Specification {-}
 
 The database used by the script is determined by the environment specified by the '--environment' option (or 'development' if not specified) and the contents of the configuration file 'config/database.yml'.  
 (Run 'rake dbconf' to view the contents of this file on the command line.)
 
-### USING THE SCRIPT TO UPDATE THE PRODUCTION DATABASE
+##### Using the Script to Update the Production Database {-}
 
 There are three options for using this script to update the production database.
 

@@ -1,4 +1,6 @@
-# [Adding a Trait](https://www.betydb.org/traits/new) 
+## Web Interface
+
+### Adding a Trait
 
 ![](figures/Addnewtrait1/Addnewtrait1.jpg)
 
@@ -71,9 +73,9 @@ by more thorough explanations:
     clearly stated.
   
 
-## Uncertainty in Date or Time
+#### Uncertainty in Date or Time
 
-### DateLOC
+##### DateLOC
 
 The date level of confidence (DateLOC, Table \ref{tab:dateloc}) provides an indication of how accurately the date associated with the trait or yield observation is known. 
 It provides the values that should be entered in this field. 
@@ -83,7 +85,7 @@ If the exact year is not known, but the time of year is, then use 91 to 97, with
 
 
 
-**Table Date level of confidence (DateLOC) field** Numbering convention for the DateLOC (Date level of confidence) and TimeLOC (Time level of confidence) field, used in managements, traits, and yields table. 
+Table: **Date level of confidence (DateLOC) field**: Numbering convention for the DateLOC (Date level of confidence) and TimeLOC (Time level of confidence) field, used in managements, traits, and yields table. 
 
 | Dateloc | Definition |
 |:--------|:-----------|
@@ -99,7 +101,7 @@ If the exact year is not known, but the time of year is, then use 91 to 97, with
 
 
 
-### TimeLOC
+##### TimeLOC
 
 The time level of confidence (TimeLOC) provides an indication of how accurately the time associated with the trait or yield observation is known. 
 It provides the values that should be entered in this field. 
@@ -113,7 +115,7 @@ It provides the values that should be entered in this field.
 | 1 | second |
 
 
-## Statistics
+#### Statistics
 
 Our goal is to record statistics that can be used to estimate standard
 deviation or standard error (https://www.authorea.com/users/5574/articles/6811/). 
@@ -145,7 +147,7 @@ if MSE is available. Only if there is no other information available should you
 record the P-value.
 
 
-# [Adding a Yield](http://www.betydb.org/yields/new)
+### Adding a Yield
 
 The protocol for entering yield data is identical to entering data for a
 trait, with a few exceptions:
@@ -159,7 +161,7 @@ Yield is equivalent to aboveground biomass on a per-area
 basis, and has units of Mg ha^-1 y^-1  
 
 
-# [Adding a Covariate](http:www.betydb.org/covariates/new)
+### Adding a Covariate
 
 Covariates are required for many of the traits. Covariates generally
 indicate the environmental conditions under which a measurement was

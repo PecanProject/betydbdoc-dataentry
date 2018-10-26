@@ -1,4 +1,4 @@
-# Adding a PFT, Species, or Cultivar
+## Adding a PFT, Species, or Cultivar
 
 Plant functional types (PFTs) are used to group plants for statistical
 modeling and analysis. PFTs are associated with both a specific set of
@@ -19,7 +19,7 @@ the Plants table. Look it up there first.
 
 
 To add a new Cultivar, go to the [new
-cultivar](https://www.betydb.org/cultivars/new) page: `Cultivar`
+cultivar](https://www.betydb.org/cultivars/new){target="_blank"} page: `Cultivar`
  → `new`.  
 
 ![](figures/Addnewcultivar/Addnewcultivar.jpg)
