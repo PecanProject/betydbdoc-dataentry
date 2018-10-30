@@ -1,7 +1,5 @@
 
-##  Converting Units and Adjustment to Temperature
-
-\@ref(tab:conversions)
+# Common Unit Conversions
 
 For many transformations, particularly when automated, please use the udunits2 software where possible. For example, in R, you can use
 
@@ -13,15 +11,15 @@ For many transformations, particularly when automated, please use the udunits2 s
     ## it can also handle more complex units
     ud.convert(10, "m/s", "mm/d")
 
-NB: Many of these conversions have been automated within [PEcAn](https://github.com/PecanProject/pecan).
+NB: Many of these conversions have been automated within [PEcAn](https://github.com/PecanProject/pecan){target="_blank"}.
 
 
-Table: Useful conversions for entering site, management, yield, and trait data
+Table: Useful conversions for entering site, management, yield, and trait data [**To-Do: Fix these!**]
 
 | From (\(X\)) | to (\(Y\)) | Conversion | Notes |
 |:-----------|:---------|:-----------|:------|
-| \(X_2=\)root production | \(X_1=\)root biomass & root turnover rate | \(Y = X_2/X_1\) | Gill [2000] |
-| DD\(^{\circ}\) MM'SS | XX.ZZZZ | \(\textrm{XX.ZZZZ} = \textrm{XX} + \textrm{MM}/60+\textrm{SS}/60\) | to convert latitude or longitude from degrees, minutes, seconds to  decimal degrees |
+| \(X_2=\) root production | \(X_1=\) root biomass & root turnover rate | \(Y = X_2/X_1\) | Gill (2000) |
+| DD\(^{\circ}\) MM' SS'' | XX.ZZZZ | \(\textrm{XX.ZZZZ} = \textrm{DD} + \textrm{MM}/60+\textrm{SS}/3600\) | to convert latitude or longitude from degrees, minutes, seconds to  decimal degrees |
 | lb | kg | \(Y=X\times 2.2\) | |
 | mm/s | \(\mu\) mol CO\(_2\) m\(^{2}\) s\(^{-1}\) | \(Y=X\times 0.04\) | |
 | m\(^2\) | ha | \(Y = X/10^6\) | |
@@ -35,7 +33,7 @@ Table: Useful conversions for entering site, management, yield, and trait data
 | mm s\(^{-2}\) | mmol m\(^{-3}\) s\(^{-1}\) | \(Y=X/41\) | Korner et al. [1988] |
 | mg CO\(_2\) g\(^{-1}\) h\(^{-1}\) | \(\mu\) mol kg\(^{-1}\) s\(^{-1}\) | \(Y = X\times 6.31\) | used for root\_respiration\_rate |
 | \(\mu\) mol | mol | \(Y= X\times 10^6\) | |
-| julian day (1--365) | date | | see ref: http://disc.gsfc.nasa.gov/julian_calendar.shtml (NASA Julian Calendar)
+| julian day (1--365) | date | | see [https://www-air.larc.nasa.gov/tools/jday.htm](https://www-air.larc.nasa.gov/tools/jday.htm){target="_blank"} (NASA Julian Calendar)
 | spacing (m) | density (plants m\(^{2}\)) | \(Y=\frac{1}{\textrm{row spacing}\times\textrm{plant spacing}}\)  | |
 | kg ha\(^{-1}\) y\(^{-1}\) | Mg ha\(^{-1}\) y\(^{-1}\) | \(Y= X/1000\) | |
 | g m\(^{-2}\) y\(^{-1}\) | Mg ha\(^{-1}\) y\(^{-1}\)  | \(Y= X/100\) | |
