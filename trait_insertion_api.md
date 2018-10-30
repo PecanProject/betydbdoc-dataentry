@@ -3,8 +3,9 @@
 This page provides a general description of how to insert trait data via the v1
 version of the BETYdb API.  For information about _accessing_ data via the v1
 BETYdb API, visit
-https://pecan.gitbooks.io/betydb-data-access/content/API/beta_API.html.  For a
-list of URLs of API endpoints, visit https://www.betydb.org/api/docs.
+[https://pecan.gitbooks.io/betydb-data-access/content/API/beta_API.html](https://pecan.gitbooks.io/betydb-data-access/content/API/beta_API.html){target="_blank"}.
+For a list of URLs of API endpoints, visit
+[https://www.betydb.org/api/docs](https://www.betydb.org/api/docs){target="_blank"}.
 
 ## Trait Insertion Endpoint.
 
@@ -62,87 +63,88 @@ internally and then validated using this schema.
 
 * A `trait` element _may_ have the following child elements:
 
-  * `site`: This _may_ have any of the attributes `id`, `city`, `state`,
-    `country`, and `sitename`.  It _must_ have enough of these attributes to
-    uniquely identify an existing site.  Withing the database table `sites`, the
-    values of `sitename` _should_ be unique and `sitename` is the preferred
-    attribute to use in identifying a site.  Unfortunately, uniqueness is not
-    currently enforced and there are in fact several cases of multiple sites
-    sharing the same site name.  **_In general, using the `id` attribute to
-    identify a particular trait association is strongly discouraged and should
-    be used only when necessary._**
+    * `site`: This _may_ have any of the attributes `id`, `city`, `state`,
+      `country`, and `sitename`.  It _must_ have enough of these attributes to
+      uniquely identify an existing site.  Withing the database table `sites`, the
+      values of `sitename` _should_ be unique and `sitename` is the preferred
+      attribute to use in identifying a site.  Unfortunately, uniqueness is not
+      currently enforced and there are in fact several cases of multiple sites
+      sharing the same site name.  **_In general, using the `id` attribute to
+      identify a particular trait association is strongly discouraged and should
+      be used only when necessary._**
 
-  * `species`: Allowed attributes: `id`, `genus`, `species`, `scientificname`,
-    `commonname`, `AcceptedSymbol`.  `scientificname` is the preferred attribute
-    for identifying a species.  Within the database table `species`, non-blank
-    values of `scientificname` should be unique but this constraint is not yet
-    enforced.  (`scientificname` is left blank in cases where a species row
-    represents a category of plant; in this case, the `commonname` column is
-    used to describe the category.)
+    * `species`: Allowed attributes: `id`, `genus`, `species`, `scientificname`,
+      `commonname`, `AcceptedSymbol`.  `scientificname` is the preferred attribute
+      for identifying a species.  Within the database table `species`, non-blank
+      values of `scientificname` should be unique but this constraint is not yet
+      enforced.  (`scientificname` is left blank in cases where a species row
+      represents a category of plant; in this case, the `commonname` column is
+      used to describe the category.)
 
-    If a particular cultivar of the species is intended, a child `cultivar`
-    element should be included.  This element may use either a `name` attribute
-    (preferred) or an `id` attribute to identify the cultivar.  _Cultivar names
-    are guaranteed to be unique within a given species._
+          If a particular cultivar of the species is intended, a child
+      `cultivar` element should be included.  This element may use either a
+      `name` attribute (preferred) or an `id` attribute to identify the
+      cultivar.  _Cultivar names are guaranteed to be unique within a given
+      species._
 
-  * `citation`: Allowed attributes: `id`, `author`, `year`, `title`, `doi`.  The
-    preferred method of selecting a citation is by doi or by author, year, and
-    title (often just author and year will suffice).
+    * `citation`: Allowed attributes: `id`, `author`, `year`, `title`, `doi`.  The
+      preferred method of selecting a citation is by doi or by author, year, and
+      title (often just author and year will suffice).
 
-  * `treatment`: Allowed attributes: `id`, `name`, `control`.  The preferred
-    method of selecting a method is by name.  [In the process of implementation:
-    A citation is _required_, either directly on the trait or as a default for a
-    group of traits, if a treatment is to be specified.  Moreover, the specified
-    treatment must be associated with the specified citation.  This will often
-    make it possible to use the `name` attribute to specify a treatment, since
-    only treatments associated with the given citation will be considered when
-    selecting by name.]
+    * `treatment`: Allowed attributes: `id`, `name`, `control`.  The preferred
+      method of selecting a method is by name.  [In the process of implementation:
+      A citation is _required_, either directly on the trait or as a default for a
+      group of traits, if a treatment is to be specified.  Moreover, the specified
+      treatment must be associated with the specified citation.  This will often
+      make it possible to use the `name` attribute to specify a treatment, since
+      only treatments associated with the given citation will be considered when
+      selecting by name.]
 
-  * `variable`: This specifies what the trait measure.  This element must be
-    included if it is not specified in a `defaults` element (see below).
-    Allowed attributes: `id`, `name`, `description`.  `name` is the preferred
-    attribute to use to specify the variable and _should_ be unique, but this
-    isn't yet enforced and there are a few cases of duplicates.
+    * `variable`: This specifies what the trait measure.  This element must be
+      included if it is not specified in a `defaults` element (see below).
+      Allowed attributes: `id`, `name`, `description`.  `name` is the preferred
+      attribute to use to specify the variable and _should_ be unique, but this
+      isn't yet enforced and there are a few cases of duplicates.
 
-  * `method`: Allowed attributes: `name`.  This element _must_ have a citation
-    child element.  (This citation has no ostensive relation to the citation
-    associated with the trait.)  Together, the name and the citation should
-    uniquely determine which method is being used.  [To do: Constrain the
-    `methods` table to ensure that this is always possible.]
+    * `method`: Allowed attributes: `name`.  This element _must_ have a citation
+      child element.  (This citation has no ostensive relation to the citation
+      associated with the trait.)  Together, the name and the citation should
+      uniquely determine which method is being used.  [To do: Constrain the
+      `methods` table to ensure that this is always possible.]
 
-  * `covariates`: This element specifies what covariates are associated with a
-    trait measurement.  It allows no attributes but must contain one or more
-    `covariate` child elements.  Each `covariate` element must contain a
-    `variable` element (specifying what the covariate measures) and have a
-    `level` attribute (specifying the value of that measurement).
+    * `covariates`: This element specifies what covariates are associated with a
+      trait measurement.  It allows no attributes but must contain one or more
+      `covariate` child elements.  Each `covariate` element must contain a
+      `variable` element (specifying what the covariate measures) and have a
+      `level` attribute (specifying the value of that measurement).
 
-  * `entity`: Allowed attributes: `name` and `notes`.  An entity with the given
-    value for `name` and `notes` will be created if no entity with the given
-    name exists.  [To be implemented: It is an error to specify an entity at the
-    trait level having a blank name.  It is an error to supply a `notes`
-    attribute if `name` refers to an existing entity.]  [To do: Guarantee
-    uniqueness of non-blank names in the entities table.]
+    * `entity`: Allowed attributes: `name` and `notes`.  An entity with the given
+      value for `name` and `notes` will be created if no entity with the given
+      name exists.  [To be implemented: It is an error to specify an entity at the
+      trait level having a blank name.  It is an error to supply a `notes`
+      attribute if `name` refers to an existing entity.]  [To do: Guarantee
+      uniqueness of non-blank names in the entities table.]
 
-  The eight elements just mentioned specify how the trait is associated with
-  data in other tables.  In addition, a trait may include two additional
-  elements that further describe the trait:
+    The eight elements just mentioned specify how the trait is associated with
+    data in other tables.  In addition, a trait may include two additional
+    elements that further describe the trait:
 
-  * `stat`: If a trait describes a group of of measurements (as opposed to a
-    single measurement), a `stat` element may be included.  It _must_ have the
-    following three attributes:
+    * `stat`: If a trait describes a group of of measurements (as opposed to a
+      single measurement), a `stat` element may be included.  It _must_ have the
+      following three attributes:
 
-    * `sample_size`, a positive integer.
+        * `sample_size`, a positive integer.
 
-    * `name`, the name of the statistic measured.  Possible values are "SD",
-      "SE", "MSE" "95%Cl", "LSD", and "MSD".
+        * `name`, the name of the statistic measured.  Possible values are "SD",
+          "SE", "MSE" "95%Cl", "LSD", and "MSD".
 
-    * `value`, a double giving the value of the named statistic.
+        * `value`, a double giving the value of the named statistic.
 
-  * `notes`: This is an element having no attributes but containing free-form textual content.
+    * `notes`: This is an element having no attributes but containing free-form textual content.
 
 * Using a single entity for the whole data set.
 
-  If all of the traits in the data set should share the same entity, it is
+      If all of the traits in the data set should share the same entity, it is
   possible to specify this by placing an `entity` element as the first child of
   the root `trait-data-set` element.  The element has the same form as an
   `entity` element contained inside a `trait` element except that this _global_
@@ -153,58 +155,58 @@ internally and then validated using this schema.
 
 * Trait groups.
 
-  If a group of traits share a number of characteristics, it is possible to nest
-  them within a `trait-group` element.  This is mainly useful in the following
-  two cases:
+    If a group of traits share a number of characteristics, it is possible to nest
+    them within a `trait-group` element.  This is mainly useful in the following
+    two cases:
 
-  * Some (but not all) of the traits in the file should be associated with the same entity.
+    * Some (but not all) of the traits in the file should be associated with the same entity.
 
-  * Some (but not all) of the traits in the file share the same metadata (site,
-    citation, treatment, variable, date, species, etcetera).
+    * Some (but not all) of the traits in the file share the same metadata (site,
+      citation, treatment, variable, date, species, etcetera).
 
-  Multiple level of nesting may be used: `trait-group` elements may themselves
-  contain `trait-group` elements.
+    Multiple level of nesting may be used: `trait-group` elements may themselves
+    contain `trait-group` elements.
 
 * Entities for trait groups.
 
-  If a `trait-group` element has no `trait-group` child element, then it may
-  contain, as its first child element, an `entity` element.  This usage is
-  similar to the data-set entity usage describe above except that the entity
-  will only be used for the traits in the trait group.  If a trait group _does_
-  use an `entity` element, then none of the traits in the trait group can have
-  their own `entity` element.
+    If a `trait-group` element has no `trait-group` child element, then it may
+    contain, as its first child element, an `entity` element.  This usage is
+    similar to the data-set entity usage describe above except that the entity
+    will only be used for the traits in the trait group.  If a trait group _does_
+    use an `entity` element, then none of the traits in the trait group can have
+    their own `entity` element.
 
 * Specifying metadata for sets of traits.
 
-  If many traits have a common citation, site, species, etcetera, it is possible
-  to avoid repeating this information for each individual trait by using a
-  `defaults` element.  A `defaults` element may appear as the child of the
-  `trait-data-set` element (in which case the defaults apply to all of the
-  traits in the document) or as the child of a `trait-group` element (in which
-  case it applies only to the traits within that group).
+    If many traits have a common citation, site, species, etcetera, it is possible
+    to avoid repeating this information for each individual trait by using a
+    `defaults` element.  A `defaults` element may appear as the child of the
+    `trait-data-set` element (in which case the defaults apply to all of the
+    traits in the document) or as the child of a `trait-group` element (in which
+    case it applies only to the traits within that group).
 
-  `defaults` elements have many of the same attributes and child elements as
-  `trait` elements:
+    `defaults` elements have many of the same attributes and child elements as
+    `trait` elements:
 
-  * Allowed attributes are `access_level`, `utc_datetime`, and `local_datetime`.
-    `local_datetime` is allowed only if a site having a time zone is specified
-    in the `defaults` element or in a `defaults` element at a higher level and
-    if the specified site is not overridden at a lower level (see below).
+    * Allowed attributes are `access_level`, `utc_datetime`, and `local_datetime`.
+      `local_datetime` is allowed only if a site having a time zone is specified
+      in the `defaults` element or in a `defaults` element at a higher level and
+      if the specified site is not overridden at a lower level (see below).
 
-  * Allowed child elements are `site`, `species`, `citation`, `treatment`,
-    `variable`, and `method`.
+    * Allowed child elements are `site`, `species`, `citation`, `treatment`,
+      `variable`, and `method`.
 
-  * As for the other attributes and elements used with `trait` elements, since
-    the `mean` attribute and the `stat`, `notes`, and `covariates` elements are
-    inherently trait-specific, they cannot be used with the `defaults` element.
-    (`entity` elements applying to groups of traits are direct children of the
-    `trait-data-set` element or a `trait-group` element rather than being nested
-    within a `defaults` element.)
+    * As for the other attributes and elements used with `trait` elements, since
+      the `mean` attribute and the `stat`, `notes`, and `covariates` elements are
+      inherently trait-specific, they cannot be used with the `defaults` element.
+      (`entity` elements applying to groups of traits are direct children of the
+      `trait-data-set` element or a `trait-group` element rather than being nested
+      within a `defaults` element.)
 
-  A default specified by a `defaults` element will apply to all traits occuring
-  within the parent of the `defaults` element unless overridden.  A default may
-  be overridden either by another `defaults` element appearing at a lower level
-  or by attributes and child elements of an individual trait.
+    A default specified by a `defaults` element will apply to all traits occuring
+    within the parent of the `defaults` element unless overridden.  A default may
+    be overridden either by another `defaults` element appearing at a lower level
+    or by attributes and child elements of an individual trait.
 
 ### Schema for JSON Data Files
 
@@ -220,7 +222,7 @@ differences from the bulk-upload case are:
 1. The date of a trait measurement must be given in a column with one of the
 following headings.
 
-    1. If the heading "utc_datetime" is used, the supplied values must conform
+    a. If the heading "utc_datetime" is used, the supplied values must conform
     to one of the following formats: `1918-11-11T10:00:00Z` or `1918-11-11Z`. In
     particular, the time must be given in UTC time (hence the "Z"), and if the
     time is specified (first format), the letter "T" must separate the date and
@@ -229,7 +231,7 @@ following headings.
     `dateloc` value will always be `5` (exact date); the `timeloc` value will be
     `1` (time to the second) if a time is given and `9` (no data) otherwise.
 
-    1. If the heading "local_datetime" is used, the supplied values must conform
+    a. If the heading "local_datetime" is used, the supplied values must conform
     to one of the following formats: `1918-11-11T11:00:00` or `1918-11-11`. In
     particular, if the time is specified (first format), the letter "T" must
     separate the date and the time portions.  If the time is specified, seconds
@@ -238,15 +240,15 @@ following headings.
     value will be `1` (time to the second) if a time is given and `9` (no data)
     otherwise.
 
-    When "local_datetime" is used to specify the date-time value of a trait
+        When "local_datetime" is used to specify the date-time value of a trait
     measurement, the date and time are assumed to be local (site) time if a site
     is given and if that site has a time zone value stored.  Otherwise, the
     value given is assumed to be UTC time.  (The date-time value is always
     stored in the database as UTC time.  This paragraph has to do with how the
     supplied date-time value is interpreted when read.)
 
-  Note that only one or the other of these columns may occur in the CSV file.
-  Otherwise an error results.
+    Note that only one or the other of these columns may occur in the CSV file.
+Otherwise an error results.
 
 1. Meta-data can not be specified interactively.  Thus any associated citation,
 site, species, cultivar, or treatment must be specified in each row of the CSV
@@ -322,7 +324,7 @@ this error usually arises only when a data value of the wrong type is given (for
 example, an alphabetical string where a number is expected).  But there are
 other situations that can trigger a validation error: for example, if a sample
 size column (`n`) is given without including a standard error (`SE`) column, or
-vice versa.[^1]
+vice versa.[^error-detection-note]
 
 ### Model Validation Errors
 
@@ -380,14 +382,18 @@ information about these is not (currently) contained in the response.
 ## Known Bugs
 
 1. It's too easy to make a mistake without realizing it.
- Examples:
-  a. If you misspell a trait variable name in the heading, that column will simple be
- ignored; no error will occur if there exists at least one valid trait variable
- in the heading.
-  b. If you include the same heading twice, the value is one column will overwrite those in the other.
+
+    Examples:
+
+    a. If you misspell a trait variable name in the heading, that column will
+    simple be ignored; no error will occur if there exists at least one valid
+    trait variable in the heading.
+
+    b. If you include the same heading twice, the value is one column will overwrite those in the other.
+
 1. Some error messages are obscure and seemingly unrelated to the error that
-  triggered them.
+triggered them.
 
 
-[^1] These errors should really be detected during CSV file parsing before
+[^error-detection-note]: These errors should really be detected during CSV file parsing before
 attempting to convert to a valid XML file.
