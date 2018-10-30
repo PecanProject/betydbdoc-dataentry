@@ -72,7 +72,7 @@ There are three phases for a basic bulk upload of data:
         columns may also need to be deleted. For a list of recognized
         trait variable names and their corresponding required and
         optional covariates, visit the trait variable/covariates list
-        at www.betydb.org. \[TO-DO: Make this Web page.\]
+        at [https://www.betydb.org/trait_covariate_associations](https://www.betydb.org/trait_covariate_associations){target="_blank"}.
 
     -   [traits\_by\_doi.csv](https://docs.google.com/spreadsheets/d/1Bv4dAPKU6YDJ6yB0DC4bAmHoGxSLgKybMpTR7qBvCu0/export?format=csv&gid=0)
         — As with the corresponding yield data template, use this
