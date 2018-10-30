@@ -17,7 +17,7 @@ At a minimum, you should create an account on the instance of BETYdb that you wi
 |---|---|---|
 | University of Illinois | [https://betydb.org](https://betydb.org){target="_blank"}| David LeBauer |
 | Boston University| [https://psql-pecan.bu.edu/bety](https://psql-pecan.bu.edu/bety){target="_blank"} | Mike Dietze |
-| Brookhaven National Lab| [http://modex.test.bnl.gov/bety](http://modex.test.bnl.gov/bety){target="_blank"}| Shawn Serbin |
+| Brookhaven National Lab| [https://modex.bnl.gov/bety](https://modex.bnl.gov/bety){target="_blank"}| Shawn Serbin |
 | University of Wisconsin | [http://tree.aos.wisc.edu:6480/bety](http://tree.aos.wisc.edu:6480/bety){target="_blank"} | Ankur Desai |
 | TERRA Ref | [https://terraref.ncsa.illinois.edu/bety](https://terraref.ncsa.illinois.edu/bety){target="_blank"} | David LeBauer | 
 
