@@ -4,83 +4,105 @@
 
 There are three phases for a basic bulk upload of data:
 
-1.  Use the web interface
+1. Enter metadata pertaining to your data set (new sites, species, cultivars, citations, or treatments).
 
-    -   to enter metadata pertaining to your data set (new sites,
-        species, cultivars, citations, or treatments);
+2. Create a CSV file of the appropriate form that contains your data.
 
-    -   to obtain a template appropriate for your data set.
+    You may use one of the following sample headings to get started.
 
-2.  Fill in the template with your data. There are four templates to
-    choose from:
 
-    -   [yields.csv](https://docs.google.com/spreadsheets/d/1maK1uKr6i9KERaYdU5zSiXcBndQoiG4Vgn2DTnqdfbA/export?format=csv&gid=0)
-        — Use this template if you are uploading yield data and you wish
-        to specify the citation in the file by author, year, and title.
+    **Heading for yield data with citation specified by author, year, and title.**
 
-        If your data includes standard error and cultivar information
-        and you do not plan to specify any of the required information
-        interactively, you will be able to use this template “as-is”.
-        Otherwise, you will need to delete one or more columns:
+    --------------------------------------------------------------------------------------------------------------------------------------------
+    <span id="yields.csv">citation_author,citation_year,citation_title,cultivar,species,site,treatment,date,yield,n,SE,notes,access_level</span>
 
-        1.  If your data has no standard error information, delete both
-            the `SE` and the `n` column.
+    <button class="js-copy-btn" data="yields.csv">Copy to clipboard</button>
+    --------------------------------------------------------------------------------------------------------------------------------------------
 
-        2.  If your data set has a single uniform value for the site,
-            species, cultivar, treatment, access\_level, or date, then
-            these values may be entered interactively through the web
-            interface; in this case you should delete the
-            corresponding column(s) from the template.
+    If your data includes standard error and cultivar information and you do not
+    plan to specify any of the required information interactively, you will be able
+    to use this template “as-is”.  Otherwise, you will need to delete one or more
+    columns:
 
-        3.  Note that cultivar information can’t be specified
-            interactively unless species information is as well; delete
-            the `cultivar` column if and only if you either have no
-            cultivar information or you are specifying both the species
-            and the cultivar interactively.
+    a.  If your data has no standard error information, delete both
+        the `SE` and the `n` column.
 
-    -   [yields\_by\_doi.csv](https://docs.google.com/spreadsheets/d/1ExLosMvX05jHWO9UYVE4Dxcl2ZbUgPc0KYoUPruaOtM/export?format=csv&gid=0)
-        — Use this template if you are uploading yield data and you wish
-        to specify the citation in the file by doi.
+    a.  If your data set has a single uniform value for the site,
+        species, cultivar, treatment, access\_level, or date, then
+        these values may be entered interactively through the web
+        interface; in this case you should delete the
+        corresponding column(s) from the template.
 
-        Again, if you do not have data for all of the columns listed in
-        the template, or if you plan to specify some of the data
-        interactively, you will have to delete one or more columns.
+    a.  Note that cultivar information can’t be specified
+        interactively unless species information is as well; delete
+        the `cultivar` column if and only if you either have no
+        cultivar information or you are specifying both the species
+        and the cultivar interactively.
 
-        You may also use this template if all of the data in your data
-        set pertains to a single citation and you wish to specify that
-        citation interactively. In this case, you must delete the
-        `citation_doi` column.
+    **Heading for yield data with citation specified by DOI.**
 
-    -   [traits.csv](https://docs.google.com/spreadsheets/d/1TK-u-m4SG1KupYCVDUIye1C3zX8b1xgaYIG1fHNkYjs/export?format=csv&gid=0)
-        — Use this template if you are uploading trait data and you wish
-        to specify the citation in the file by author, year, and title.
+    ---------------------------------------------------------------------------------------------------------------------
+    <span id="yields_by_doi.csv">citation_doi,cultivar,species,site,treatment,date,yield,n,SE,notes,access_level</span>
+  
+    <button class="js-copy-btn" data="yields_by_doi.csv">Copy to clipboard</button>
+    ---------------------------------------------------------------------------------------------------------------------
+ 
+    Use this template if you are uploading yield data and you wish
+    to specify the citation in the file by doi.
 
-        **This template must be modified before it can be used.** In
-        particular, the column headings `[trait variable 1]`
-        …`[trait variable n]` must be replaced by actual variable names
-        that *exactly* match names of variables in the database that
-        have been marked to be recognized as trait variables. The number
-        of these trait variable columns may need to be increased or
-        decreased to accomodate the data set.
+    Again, if you do not have data for all of the columns listed in
+    the template, or if you plan to specify some of the data
+    interactively, you will have to delete one or more columns.
 
-        Some trait variables allow or even require corresponding
-        covariate information to be included. Again, the column headings
-        `[covariate 1]` …`[covariate n]` must be changed to actual
-        covariate variable names, and the number of these columns may
-        need to be increased or decreased to match the
-        available information. As with the yield data templates, some
-        columns may also need to be deleted. For a list of recognized
-        trait variable names and their corresponding required and
-        optional covariates, visit the trait variable/covariates list
-        at [https://www.betydb.org/trait_covariate_associations](https://www.betydb.org/trait_covariate_associations){target="_blank"}.
+    You may also use this template if all of the data in your data
+    set pertains to a single citation and you wish to specify that
+    citation interactively. In this case, you must delete the
+    `citation_doi` column.
 
-    -   [traits\_by\_doi.csv](https://docs.google.com/spreadsheets/d/1Bv4dAPKU6YDJ6yB0DC4bAmHoGxSLgKybMpTR7qBvCu0/export?format=csv&gid=0)
-        — As with the corresponding yield data template, use this
-        template if you are uploading trait data and you wish to specify
-        the citation in the file by doi or if you plan to specify the
-        citation interactively (in which case delete the
-        `citation_doi` column). **Again, this template must be modified
-        before it can be used.**
+    **Heading for trait data with citation specified by author, year, and title.**
+
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    <span id="traits.csv">citation_author,citation_year,citation_title,cultivar,species,site,treatment,date,[trait variable 1],[trait variable 2],[trait variable n],[covariate 1],[covariate 2],[covariate n],n,SE,notes,access_level</span>
+
+    <button class="js-copy-btn" data="traits.csv">Copy to clipboard</button>
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    Use this template if you are uploading trait data and you wish to specify
+    the citation in the file by author, year, and title.
+
+    **This template must be modified before it can be used.** In
+    particular, the column headings `[trait variable 1]`
+    …`[trait variable n]` must be replaced by actual variable names
+    that *exactly* match names of variables in the database that
+    have been marked to be recognized as trait variables. The number
+    of these trait variable columns may need to be increased or
+    decreased to accomodate the data set.
+
+    Some trait variables allow or even require corresponding
+    covariate information to be included. Again, the column headings
+    `[covariate 1]` …`[covariate n]` must be changed to actual
+    covariate variable names, and the number of these columns may
+    need to be increased or decreased to match the
+    available information. As with the yield data templates, some
+    columns may also need to be deleted. For a list of recognized
+    trait variable names and their corresponding required and
+    optional covariates, visit the trait variable/covariates list
+    at [https://www.betydb.org/trait_covariate_associations](https://www.betydb.org/trait_covariate_associations){target="_blank"}.
+
+    **Heading for trait data with citation specified DOI.**
+
+    ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    <span id="traits_by_doi.csv">citation_doi,cultivar,species,site,treatment,date,[trait variable 1],[trait variable 2],[trait variable n],[covariate 1],[covariate 2],[covariate n],n,SE,notes,access_level</span>
+
+    <button class="js-copy-btn" data="traits_by_doi.csv">Copy to clipboard</button>
+    ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    As with the corresponding yield data template, use this
+    template if you are uploading trait data and you wish to specify
+    the citation in the file by doi or if you plan to specify the
+    citation interactively (in which case delete the
+    `citation_doi` column). **Again, this template must be modified
+    before it can be used.**
         
         
 
@@ -339,3 +361,82 @@ value that pertains to the whole data set.*
     `yields` table will use the empty string as the value for the
     `notes` column.
 
+<script>
+
+// This code is an adapted version of code found in the section "Complex
+// Example: Copy to clipboard without displaying input" in an answer to a
+// StackOverflow post at
+// https://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript.
+
+
+function copyTextToClipboard(text) {
+  var textArea = document.createElement("textarea");
+
+  //
+  // *** This styling is an extra step which is likely not required. ***
+  //
+  // Why is it here? To ensure:
+  // 1. the element is able to have focus and selection.
+  // 2. if element was to flash render it has minimal visual impact.
+  // 3. less flakyness with selection and copying which **might** occur if
+  //    the textarea element is not visible.
+  //
+  // The likelihood is the element won't even render, not even a flash,
+  // so some of these are just precautions. However in IE the element
+  // is visible whilst the popup box asking the user for permission for
+  // the web page to copy to the clipboard.
+  //
+
+  // Place in top-left corner of screen regardless of scroll position.
+  textArea.style.position = 'fixed';
+  textArea.style.top = 0;
+  textArea.style.left = 0;
+
+  // Ensure it has a small width and height. Setting to 1px / 1em
+  // doesn't work as this gives a negative w/h on some browsers.
+  textArea.style.width = '2em';
+  textArea.style.height = '2em';
+
+  // We don't need padding, reducing the size if it does flash render.
+  textArea.style.padding = 0;
+
+  // Clean up any borders.
+  textArea.style.border = 'none';
+  textArea.style.outline = 'none';
+  textArea.style.boxShadow = 'none';
+
+  // Avoid flash of white box if rendered for any reason.
+  textArea.style.background = 'transparent';
+
+
+  textArea.value = text;
+
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+
+  try {
+    var successful = document.execCommand('copy');
+    var msg = successful ? 'successful' : 'unsuccessful';
+    console.log('Copying text command was ' + msg);
+  } catch (err) {
+    console.log('Oops, unable to copy');
+  }
+
+  document.body.removeChild(textArea);
+}
+
+
+var copyBtnArray = document.querySelectorAll('.js-copy-btn');
+
+copyBtnArray.forEach(function(button) {
+    button.addEventListener('click', function(event) {
+        var sourceId = event.target.getAttribute("data");
+        var text = document.getElementById(sourceId).textContent;
+        alert(text);
+        copyTextToClipboard(text);
+    });
+});
+
+
+</script>
