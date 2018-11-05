@@ -11,9 +11,9 @@ There are three phases for a basic bulk upload of data:
     You may use one of the following sample headings to get started.
 
 
+    --------------------------------------------------------------------------------------------------------------------------------------------
     **Heading for yield data with citation specified by author, year, and title.**
 
-    --------------------------------------------------------------------------------------------------------------------------------------------
     <span id="yields.csv">citation_author,citation_year,citation_title,cultivar,species,site,treatment,date,yield,n,SE,notes,access_level</span>
 
     <button class="js-copy-btn" data="yields.csv">Copy to clipboard</button>
@@ -39,9 +39,9 @@ There are three phases for a basic bulk upload of data:
         cultivar information or you are specifying both the species
         and the cultivar interactively.
 
+    ---------------------------------------------------------------------------------------------------------------------
     **Heading for yield data with citation specified by DOI.**
 
-    ---------------------------------------------------------------------------------------------------------------------
     <span id="yields_by_doi.csv">citation_doi,cultivar,species,site,treatment,date,yield,n,SE,notes,access_level</span>
   
     <button class="js-copy-btn" data="yields_by_doi.csv">Copy to clipboard</button>
@@ -59,9 +59,9 @@ There are three phases for a basic bulk upload of data:
     citation interactively. In this case, you must delete the
     `citation_doi` column.
 
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     **Heading for trait data with citation specified by author, year, and title.**
 
-    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     <span id="traits.csv">citation_author,citation_year,citation_title,cultivar,species,site,treatment,date,[trait variable 1],[trait variable 2],[trait variable n],[covariate 1],[covariate 2],[covariate n],n,SE,notes,access_level</span>
 
     <button class="js-copy-btn" data="traits.csv">Copy to clipboard</button>
@@ -73,25 +73,21 @@ There are three phases for a basic bulk upload of data:
     **This template must be modified before it can be used.** In
     particular, the column headings `[trait variable 1]`
     …`[trait variable n]` must be replaced by actual variable names
-    that *exactly* match names of variables in the database that
-    have been marked to be recognized as trait variables. The number
+    that *exactly* match names of variables in the database. The number
     of these trait variable columns may need to be increased or
     decreased to accomodate the data set.
 
-    Some trait variables allow or even require corresponding
-    covariate information to be included. Again, the column headings
-    `[covariate 1]` …`[covariate n]` must be changed to actual
-    covariate variable names, and the number of these columns may
-    need to be increased or decreased to match the
-    available information. As with the yield data templates, some
-    columns may also need to be deleted. For a list of recognized
-    trait variable names and their corresponding required and
-    optional covariates, visit the trait variable/covariates list
-    at [https://www.betydb.org/trait_covariate_associations](https://www.betydb.org/trait_covariate_associations){target="_blank"}.
-
-    **Heading for trait data with citation specified DOI.**
+    Some trait variables allow or even require corresponding covariate
+    information to be included. Again, the column headings `[covariate 1]`
+    …`[covariate n]` must be changed to actual covariate variable names, and the
+    number of these columns may need to be increased or decreased to match the
+    available information. For a list of recognized trait variable names that
+    are treated as covariates, visit the trait variable/covariates list at
+    [https://www.betydb.org/trait_covariate_associations](https://www.betydb.org/trait_covariate_associations){target="_blank"}.
 
     ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    **Heading for trait data with citation specified DOI.**
+
     <span id="traits_by_doi.csv">citation_doi,cultivar,species,site,treatment,date,[trait variable 1],[trait variable 2],[trait variable n],[covariate 1],[covariate 2],[covariate n],n,SE,notes,access_level</span>
 
     <button class="js-copy-btn" data="traits_by_doi.csv">Copy to clipboard</button>
@@ -106,8 +102,8 @@ There are three phases for a basic bulk upload of data:
         
         
 
-3.  Use the web interface to upload your data set and insert it into
-    the database.
+3.  Use the Bulk Upload Wizard in the web interface to upload your data set and
+    insert it into the database.
 
 *In what follows, the term “field” always refers either to a column name
 used in the heading of the uploaded CSV file or to an entry in that
@@ -120,28 +116,39 @@ yields table of the database.*
 
 ### Detailed CSV Data File Specifications
 
-
-[Example of a template for bulk upload of yield data:](https://docs.google.com/spreadsheets/d/1ExLosMvX05jHWO9UYVE4Dxcl2ZbUgPc0KYoUPruaOtM/export?format=csv&gid=0)
-
-![](figures/yieldtemplatebulk/yieldtemplatebulk.jpg)
-
 #### Required fields
 
 1.  For yields uploads, the only required field is a `yield` column.
 
-2.  For trait uploads, there must be at least one column whose label
-    exactly matches the variable name for the trait value
-    being specified. (Leading and trailing spaces are permitted, but
-    letter case must exactly match the name of the variable specified in
-    the database.) If this trait variable has any required covariates,
-    columns for these covariates must be included.
+2.  For trait uploads, there must be at least one column whose label exactly
+    matches the variable name for the trait value being specified. (Leading and
+    trailing spaces are permitted, but letter case must exactly match the name
+    of the variable specified in the database.) If this trait variable has any
+    required covariates, columns for these covariates must be included.  Again,
+    visit
+    [https://www.betydb.org/trait_covariate_associations](https://www.betydb.org/trait_covariate_associations){target="_blank"}
+    to see which traits require covariates.
 
 #### Information that is required but that *may* be specified interactively for the entire dataset.
 
-*Data values may be specified interactively only if there is a single
-value that pertains to the whole data set.*
+*Attributes of data items may be specified interactively only if there is a
+single uniform value that pertains to the whole data set contained in the upload
+file.*
 
-***Information that references existing database entries***
+##### Information that references existing database entries
+
+As mentioned, the first step in doing a bulk upload is to ensure that there are
+existing items already in the database for each attribute value of each item in
+the upload set.  There are defined rules as to how to refer to these existing
+attributes in your upload file.  For example, a species must be referred to by
+its scientific name even though there are other attributes of the species items
+stored in the species table that might uniquely identify a particular species
+(the `AcceptedSymbol` attribute, for example).
+
+In this sections, we specify, for each attribute, how to refer to the attribute
+value, whether or not the attribute can be specified interactively or must be
+specified in the data file, and what criteria are used to match values specified
+in the data file with existing table entries in the database.
 
 1.  Citation
 
@@ -212,7 +219,7 @@ value that pertains to the whole data set.*
         leading and trailing spaces, and extra internal spaces are
         ignored when searching for a match.)
 
-***Other information that may be specified interactively***
+##### Other information that may be specified interactively
 
 1.  Date
 
@@ -243,7 +250,7 @@ value that pertains to the whole data set.*
 
 #### Numerical Data (This is *never* specified interactively.)
 
-***Data for Yields***
+##### Data for Yields
 
 1.  Yield
 
@@ -264,7 +271,7 @@ value that pertains to the whole data set.*
     this datum will be inserted into the `stat` column of the `yields`
     table, and the `statname` column value will be set to “SE”.
 
-***Data for Traits***
+##### Data for Traits
 
 1.  Trait variable values
 
