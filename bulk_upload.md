@@ -33,11 +33,10 @@ There are three phases for a basic bulk upload of data:
         interface; in this case you should delete the
         corresponding column(s) from the template.
 
-    a.  Note that cultivar information can’t be specified
-        interactively unless species information is as well; delete
-        the `cultivar` column if and only if you either have no
-        cultivar information or you are specifying both the species
-        and the cultivar interactively.
+    a.  Note that cultivar information can’t be specified interactively unless
+        the species information is as well (and vice versa); delete the
+        `cultivar` column if and only if you either have no cultivar information
+        or you are specifying both the species and the cultivar interactively.
 
     ---------------------------------------------------------------------------------------------------------------------
     **Heading for yield data with citation specified by DOI.**
@@ -47,8 +46,8 @@ There are three phases for a basic bulk upload of data:
     <button class="js-copy-btn" data="yields_by_doi.csv">Copy to clipboard</button>
     ---------------------------------------------------------------------------------------------------------------------
  
-    Use this template if you are uploading yield data and you wish
-    to specify the citation in the file by doi.
+    Use this template if you are uploading yield data and you wish to specify
+    the citation in the file by its Digital Object Identifier (DOI).
 
     Again, if you do not have data for all of the columns listed in
     the template, or if you plan to specify some of the data
@@ -83,7 +82,8 @@ There are three phases for a basic bulk upload of data:
     number of these columns may need to be increased or decreased to match the
     available information. For a list of recognized trait variable names that
     are treated as covariates, visit the trait variable/covariates list at
-    [https://www.betydb.org/trait_covariate_associations](https://www.betydb.org/trait_covariate_associations){target="_blank"}.
+    [https://www.betydb.org/trait_covariate_associations](https://www.betydb.org/trait_covariate_associations){target="_blank"}
+    or the corresponding page of the site to which you are uploading your data.
 
     ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     **Heading for trait data with citation specified DOI.**
@@ -95,15 +95,19 @@ There are three phases for a basic bulk upload of data:
 
     As with the corresponding yield data template, use this
     template if you are uploading trait data and you wish to specify
-    the citation in the file by doi or if you plan to specify the
+    the citation in the file by DOI or if you plan to specify the
     citation interactively (in which case delete the
     `citation_doi` column). **Again, this template must be modified
     before it can be used.**
         
         
 
-3.  Use the Bulk Upload Wizard in the web interface to upload your data set and
-    insert it into the database.
+3.  Use the Bulk Upload Wizard in the BETYdb web interface to upload your data
+    set and insert it into the database.
+
+
+
+### Detailed CSV Data File Specifications
 
 *In what follows, the term “field” always refers either to a column name
 used in the heading of the uploaded CSV file or to an entry in that
@@ -111,10 +115,6 @@ column in some particular row of the file. On the other hand, and the
 term “column” may either refer to a column of data in the uploaded CSV
 file or to an attribute of a trait or yield datum in the traits or
 yields table of the database.*
-
-
-
-### Detailed CSV Data File Specifications
 
 #### Required fields
 
@@ -127,7 +127,8 @@ yields table of the database.*
     required covariates, columns for these covariates must be included.  Again,
     visit
     [https://www.betydb.org/trait_covariate_associations](https://www.betydb.org/trait_covariate_associations){target="_blank"}
-    to see which traits require covariates.
+    (or the corresponding page for the site you are uploading to) to see which
+    traits require covariates.
 
 #### Information that is required but that *may* be specified interactively for the entire dataset.
 
@@ -135,7 +136,7 @@ yields table of the database.*
 single uniform value that pertains to the whole data set contained in the upload
 file.*
 
-##### Information that references existing database entries
+##### Information that references existing database entries {-}
 
 As mentioned, the first step in doing a bulk upload is to ensure that there are
 existing items already in the database for each attribute value of each item in
@@ -145,18 +146,18 @@ its scientific name even though there are other attributes of the species items
 stored in the species table that might uniquely identify a particular species
 (the `AcceptedSymbol` attribute, for example).
 
-In this sections, we specify, for each attribute, how to refer to the attribute
+In these sections, we specify, for each attribute, how to refer to the attribute
 value, whether or not the attribute can be specified interactively or must be
 specified in the data file, and what criteria are used to match values specified
 in the data file with existing table entries in the database.
 
 1.  Citation
 
-    -   If only one citation for the entire dataset exists, it may be
+    -   If the entire dataset pertains to a single citation, that citation may be
         specified interactively by choosing a citation on the citations
         page instead of including citation information in the CSV file.
 
-    -   Otherwise, specify the citation in the CSV file, either by doi
+    -   Otherwise, specify the citations in the CSV file, either by DOI
         or by author, year, and title.
 
     -   If a DOI is available for all citations in the data set, the
@@ -168,7 +169,7 @@ in the data file with existing table entries in the database.
         purposes, the string `-ignore` may be appended to each of
         these headings. One might want to do this, for example, to keep
         a visual record of the author, year, and title even when it is
-        the citation doi that is being used to determine how the data
+        the citation DOI that is being used to determine how the data
         will associated with a citation in the database.) Each value in
         the `citation_doi` column must exactly match the `doi` attribute
         of some row in the `citations` table except that letter case and
@@ -219,7 +220,7 @@ in the data file with existing table entries in the database.
         leading and trailing spaces, and extra internal spaces are
         ignored when searching for a match.)
 
-##### Other information that may be specified interactively
+##### Other information that may be specified interactively {-}
 
 1.  Date
 
@@ -250,7 +251,7 @@ in the data file with existing table entries in the database.
 
 #### Numerical Data (This is *never* specified interactively.)
 
-##### Data for Yields
+##### Data for Yields {-}
 
 1.  Yield
 
@@ -271,7 +272,7 @@ in the data file with existing table entries in the database.
     this datum will be inserted into the `stat` column of the `yields`
     table, and the `statname` column value will be set to “SE”.
 
-##### Data for Traits
+##### Data for Traits {-}
 
 1.  Trait variable values
 

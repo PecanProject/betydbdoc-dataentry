@@ -1,4 +1,4 @@
-## Web Interface
+## The New Trait and New Yield Pages
 
 ### Adding a Trait
 
@@ -73,7 +73,7 @@ by more thorough explanations:
 
 #### Uncertainty in Date or Time
 
-##### DateLOC
+##### DateLOC {-}
 
 The date level of confidence (DateLOC, Table \ref{tab:dateloc}) provides an indication of how accurately the date associated with the trait or yield observation is known.
 It provides the values that should be entered in this field.
@@ -99,7 +99,7 @@ Table: (\#tab:dateloc) **Date level of confidence (DateLOC) field**: Numbering c
 
 
 
-##### TimeLOC
+##### TimeLOC {-}
 
 The time level of confidence (TimeLOC) provides an indication of how accurately the time associated with the trait or yield observation is known.
 It provides the values that should be entered in this field.

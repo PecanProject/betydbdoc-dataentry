@@ -20,4 +20,4 @@ Another type of statistic is a “test statistic”; most frequently there will 
 Many statistical transformations are implemented in the [`transformstats`](https://github.com/PecanProject/pecan/blob/master/base/utils/R/transformstats.R){target="_blank"} function within the PEcAn.utils package.
 However, these transformations make conservative (variance inflating) assumptions about study-specific experimental design (especially degrees of freedom) that is not captured in the BETYdb schema, for example HSD, LSD, P.
 
-More accuate estimates of SE can be obtained at time of data entry using the formulas in ["Transforming ANOVA and Regression statistics for Meta-analysis"](https://www.authorea.com/users/5574/articles/6811/){target="_blank"}.
+More accurate estimates of SE can be obtained at time of data entry using the formulas in ["Transforming ANOVA and Regression statistics for Meta-analysis"](https://www.authorea.com/users/5574/articles/6811/){target="_blank"}.
