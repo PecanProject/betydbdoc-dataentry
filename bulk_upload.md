@@ -164,43 +164,33 @@ in the data file with existing table entries in the database.
         citation corresponding to each row may be specified in a
         `citation_doi` column. In this case, the `citation_author`,
         `citation_year`, and `citation_title` columns must not be in the
-        column heading list. (If such information is already included in
-        the data set, to keep such columns for purely informational
-        purposes, the string `-ignore` may be appended to each of
-        these headings. One might want to do this, for example, to keep
-        a visual record of the author, year, and title even when it is
-        the citation DOI that is being used to determine how the data
-        will associated with a citation in the database.) Each value in
+        column heading list.[^ignoring_columns]  Each value in
         the `citation_doi` column must exactly match the `doi` attribute
         of some row in the `citations` table except that letter case and
         leading and trailing spaces are ignored.
 
-    -   Conversely, if a DOI is not available for all citations in the
-        data set, or if it is preferred to specify the citation by
-        author, year, and title, then the `citation_doi` column should
-        *not* be included and the columns `citation_author`,
-        `citation_year`, and `citation_title` must all be present.
-        (Again, if some DOI information is already included and you wish
-        to retain it for purely informational purposes, simply give the
-        column some descriptive name other than `citation_doi` and it
-        will be ignored by the upload code.)
+    -   Conversely, if a DOI is not available for all citations in the data set,
+        or if it is preferred to specify the citation by author, year, and
+        title, then the `citation_doi` column should *not* be included and the
+        columns `citation_author`, `citation_year`, and `citation_title` must
+        all be present.[^ignoring_doi_column]
 
 2.  Site
 
     -   If all of the data in the data set pertains to a single site,
         that site may be specified interactively.
 
-    -   Otherwise, a `site` column is required. The value must match an
-        existing `sitename` column value in the `sites` table of
-        the database. (Letter case, leading and trailing spaces, and
-        extra internal spaces are ignored when searching for a match.)
+    -   Otherwise, a `site` column is required. Each value in the column must
+        match an existing `sitename` column value in the `sites` table of the
+        database. (Letter case, leading and trailing spaces, and extra internal
+        spaces are ignored when searching for a match.)
 
 3.  Species
 
     -   If all of the data in the data set pertains to a single species,
         that species may be specified interactively.
 
-    -   Otherwise, the `species` column is required. The value must
+    -   Otherwise, the `species` column is required. Each value must
         match an existing `scientificname` column value in the `species`
         table of the database. (Again, letter case, leading and trailing
         spaces, and extra internal spaces are ignored when searching for
@@ -224,17 +214,31 @@ in the data file with existing table entries in the database.
 
 1.  Date
 
-    -   If a single date applies to all of the data in the data set, the
-        date may be specified interactively.
+    -   If a single date (with or without time of day) applies to all of the
+        data in the data set, the date may be specified interactively.
 
-    -   Otherwise, a `date` column is required.
+    -   Otherwise, if there are multiple dates (with or without times)
+        associated with the data, a `local_datetime` column is
+        required.[^deprecated_date_heading]
 
-    -   Date values without time of day must be in the form YYYY-MM-DD. For
-        example, July 25, 2003 must be entered as “2003-07-25”. (Eventually,
-        month and day may become optional, in which case any of the forms
-        “2003-07-25”, “2003-07”, and “2003” would represent dates of varying
-        degrees of specificity. Note that uploading dateloc, time, and timeloc
-        information is not supported.)
+    -   Values in the `local_datetime` column or in the `date` text box in the
+        Global Values page may be in one of two forms:
+
+        - Date values without time of day must be in the form `YYYY-MM-DD`. For
+          example, July 25, 2003 must be entered as “2003-07-25”.
+
+        - Values that include the time of day must be in the form `YYYY-MM-DD
+          HH:MM:SS` or `YYYY-MM-DDTHH:MM:SS`.  (Here, `T` is simply the literal
+          letter `T`.)  For example, 11 a.m. on November 11, 1918 could be
+          specified either as "1918-11-11 11:00:00" or as "1918-11-11T11:00:00".
+          **_Note that the yields table stores only the date and so any
+          time-of-day information given in a yields data file or specified
+          interactively will be ignored._**.
+
+        Note that the date and time should always be the date and time at the
+        site where the trait measurement was made.[^level-of-confidence] When
+        uploading trait data, each site associated with the data file must be
+        assigned a valid time zone!
 
 2.  Rounding
 
@@ -245,11 +249,18 @@ in the data file with existing table entries in the database.
         amount of rounding for yield and for trait variables and
         their covariates.
 
-    -   By default, all numerical data is rounded to three
+    -   By default, all numerical measurements are rounded to three
         significant digits. For example, with this default in place,
         999.1 will be rounded to 999 and 1001.1 will be rounded to 1000.
 
-#### Numerical Data (This is *never* specified interactively.)
+    -   Standard error values (if given) are by default rounded to two
+        significant digits.
+
+#### Numerical Data
+
+Numerical data is *never* specified interactively since typically each
+measurement will have a different numerical value so there will never be a
+uniform value for all data in the data set.
 
 ##### Data for Yields {-}
 
@@ -268,28 +279,29 @@ in the data file with existing table entries in the database.
 
 3.  Standard Error
 
-    An `SE` column is required if and only if an `n` column is included;
-    this datum will be inserted into the `stat` column of the `yields`
-    table, and the `statname` column value will be set to “SE”.
+    An `SE` column is required if and only if an `n` column is included; this
+    datum will be inserted into the `stat` column of the `yields` table, and the
+    `statname` column value will be set to “SE”.  As with the yield column, the
+    data in this column must never be blank, and values can't be in scientific
+    notation.[^se_note]
 
 ##### Data for Traits {-}
 
 1.  Trait variable values
 
-    -   Every trait data upload file must have at least one column whose
-        heading matches the name of some recognized trait variable. A
-        list of recognized trait variables is listed on the BetyDB
-        web site. If multiple trait variable columns are used, each row
-        in the CSV file will produce one row in the `traits` table for
-        each trait variable column. (These resulting rows will be
-        effectively *grouped* by assigning them a unique entity id. Said
-        another way, there is a one-to-one correspondence between rows
-        in the CSV file and resultant rows in the `entities` table, the
-        table that keeps track of this grouping.) As with yield numbers,
-        the data in this column must always be a parsable number and is
-        subject to rounding before being inserted into the database. In
-        addition, it must conform to any range restrictions on the value
-        of the variable.
+    -   Every trait data upload file must have at least one column whose heading
+        matches the name of some recognized trait variable. A list of recognized
+        trait variables is listed on the BETYdb web site. If multiple trait
+        variable columns are used, each row in the CSV file will produce one row
+        in the `traits` table for each trait variable column having a non-blank
+        entry.[^blank_entries] (These resulting rows will be effectively
+        *grouped* by assigning them a unique entity id. Said another way, there
+        is a one-to-one correspondence between rows in the CSV file and
+        resultant rows in the `entities` table, the table that keeps track of
+        this grouping.) As with yield numbers, the data in this column must
+        always be a parsable number and is subject to rounding before being
+        inserted into the database. In addition, it must conform to any range
+        restrictions on the value of the variable.
 
     -   The template for traits uploads provides dummy column headings
         `[trait variable 1]`, `[trait variable 2]`, etc., which must be
@@ -304,26 +316,28 @@ in the data file with existing table entries in the database.
         covariate, a column corresponding to that covariate *may*
         be included.
 
+    -   As with trait variable columns, entries in a covariate variable column
+        may be left blank.[^required_covariate_loophole]
+
     -   The template for traits uploads provides dummy column headings
         `[covariate 1]`, `[covariate 2]`, etc., which must be changed to
         actual variable names before data can be uploaded.
 
 3.  Sample Size and Standard Error
 
-    An `SE` column is required if and only if an `n` column is included;
-    this datum will be inserted into the `stat` column of the `traits`
-    table, and the `statname` column value will be set to “SE”. ***Note
-    that if you have more than one trait variable column, each trait
-    will get the same values of `n` and `SE`. There is currently no way
-    to use different sample size and standard error values for different
-    trait variables. Also, the `n` and `SE` values for any associated
-    covariates will be set to NULL.*** (Eventually, we may enable
-    associating differing values of `n` and `SE` to different trait
-    variables and covariates. In this case, we might add columns
-    `[trait variable 1] n` and `[trait variable 1] SE`, etc. or
-    `[covariate 1] n` and `[covariate 1] SE`, prefixing the usual column
-    heading with a variable name to indicate which variable the sample
-    size and standard error value is to be associated with.)
+    An `SE` column is required if and only if an `n` column is included; this
+    datum will be inserted into the `stat` column of the `traits` table, and the
+    `statname` column value will be set to “SE”. ***Note that if you have more
+    than one trait variable column, the `n` and `SE` columns are not allowed.**
+    This is because there is currently no way to use different standard error
+    values for different trait variables, and it is unlikely that different
+    variables would share the same value for the standard
+    error.[^future_se_enhancements]
+
+    Note that even if `n` and `SE` values _are_ specified, the `n` and `SE`
+    values for any associated covariates will be set to NULL: There is currently
+    no way to specify standard error values for covariates in a bulk upload
+    file.
 
     Again, values of `n` must be at least 2, and columns for `n` and
     `SE` must both be present or both be absent.
@@ -332,14 +346,12 @@ in the data file with existing table entries in the database.
 
 1.  Sample Size and Standard Error
 
-    As noted above, these are both optional, but if one of these is
-    included, the other must be included as well. In other words, the
-    column heading list must include both of `n` and `SE` (or, in the
-    case of traits, `[trait or covariate variable k] n` and
-    `[trait or covariate variable k] SE`) or neither. Note that if `n`
-    and `SE` are not given fields of the uploaded CSV file, the value of
-    the `n` column of the traits or yields table will default to 1 and
-    the `stat` and `statname` column values will default to NULL.
+    As noted above, these are both optional, but if one of these is included,
+    the other must be included as well. In other words, the column heading list
+    must include both of `n` and `SE` or neither. Note that if `n` and `SE` are
+    not included in the uploaded CSV file, the value of the `n` column of the
+    traits or yields table will default to 1 and the `stat` and `statname`
+    column values will default to NULL and the empty string, respectively.
 
 2.  Cultivar
 
@@ -348,16 +360,15 @@ in the data file with existing table entries in the database.
         way as well, provided that it also has a uniform value for the
         whole data set.
 
-    -   Otherwise, to include cultivar information in the upload file,
-        both a `species` and a `cultivar` column must be included. The
-        values in the `cultivar` column are allowed to be blank (in
-        which case a value of NULL is inserted into the `cultivar_id`
-        column for the given row); but if provided, the value must match
-        the value of the `name` column in some row of the `cultivars`
-        table, and moreover, this row must be a row associated with the
-        species corresponding to the value given in the
-        `species` column. Again, matching is case insensitive, and
-        leading, trailing, and excess internal whitespace is ignored.
+    -   Otherwise, to include cultivar information in the upload file, both a
+        `species` and a `cultivar` column must be included. The values in the
+        `cultivar` column are allowed to be blank (in which case a value of NULL
+        is inserted into the `cultivar_id` column for the given row); but if
+        provided, the value must match the value of the `name` column in some
+        row of the `cultivars` table; moreover, this row must be a row
+        associated with the species corresponding to the value given in the
+        `species` column. Again, matching is case insensitive, and leading,
+        trailing, and excess internal whitespace is ignored.
 
 3.  Notes
 
@@ -369,6 +380,54 @@ in the data file with existing table entries in the database.
     `yields` table will use the empty string as the value for the
     `notes` column.
 
+
+[^ignoring_columns]: If such information is already included in the data set and
+you want to keep such columns for purely informational purposes, the string
+`-ignore` may be appended to each of these headings. (In fact, renaming the
+columns to any non-recognized heading name will do.)
+
+    One might want to do this, for example, to keep a visual record of the
+author, year, and title even when it is the citation DOI that is being used to
+determine how the data will associated with a citation in the database.
+
+[^ignoring_doi_column]: Again, if some DOI information is already included and
+you wish to retain it for purely informational purposes, you could append
+`-ignore` to the `citation_doi` heading.
+
+[^deprecated_date_heading]: This column can also be called `date`, but using
+this as the column heading is deprecated: `local-datetime` more clearly
+emphasizes that the dates or dates-and-time specified in this column are
+interpreted as being the date/time in the time zone of the site where the trait
+measurement was made.
+
+[^level-of-confidence]: The `dateloc` (Date Level of Confidence) value is always
+set automatically to 5 ("day").  The `timeloc` (Time Level of Confidence) value
+is automatically set to 1 ("second") if the time of day is given and 9 ("no
+data") otherwise.
+
+[^se_note]: Values _should_ be non-negative, but this isn't currently enforced.
+
+    It is conceivable that one might have a data set in which some rows have SE
+    values and some do not.  The Bulk Upload Wizard doesn't currently handle
+    such a case, and such a data set would have to be separated into two files:
+    one with columns for `n` and `SE`, and one without.
+
+[^blank_entries]: Unlike yield data files, entries in trait or covariate variable
+columns of a trait data file are allowed to be blank.  In this case, no trait is
+inserted into the database for that variable of that row of the data file.
+
+[^required_covariate_loophole]: There is a small loophole in the way required
+covariates are enforced.  While it is true that if a column for a trait having a
+required covariate is included, there must also be a column for that covariate,
+it is not flagged as an error if certain rows leave that covariate column blank.
+
+[^future_se_enhancements]: Eventually, we may enable associating differing
+values of `n` and `SE` to different trait variables and covariates. In this
+case, we might add columns `[trait variable 1] n` and `[trait variable 1] SE`,
+etc. or `[covariate 1] n` and `[covariate 1] SE`, prefixing the usual column
+heading with a variable name to indicate which variable the sample size and
+standard error value is to be associated with.
+    
 <script>
 
 // This code is an adapted version of code found in the section "Complex
