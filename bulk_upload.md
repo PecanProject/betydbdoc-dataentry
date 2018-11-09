@@ -61,7 +61,7 @@ There are three phases for a basic bulk upload of data:
     -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     **Heading for trait data with citation specified by author, year, and title.**
 
-    <span id="traits.csv">citation_author,citation_year,citation_title,cultivar,species,site,treatment,date,[trait variable 1],[trait variable 2],[trait variable n],[covariate 1],[covariate 2],[covariate n],n,SE,notes,access_level</span>
+    <span id="traits.csv">citation_author,citation_year,citation_title,cultivar,species,site,treatment,date,entity,[trait variable 1],[trait variable 2],[trait variable n],[covariate 1],[covariate 2],[covariate n],n,SE,notes,access_level</span>
 
     <button class="js-copy-btn" data="traits.csv">Copy to clipboard</button>
     -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -85,10 +85,19 @@ There are three phases for a basic bulk upload of data:
     [https://www.betydb.org/trait_covariate_associations](https://www.betydb.org/trait_covariate_associations){target="_blank"}
     or the corresponding page of the site to which you are uploading your data.
 
+    As with the yield data templates, delete columns for attributes that have a
+    uniform value for the data set and that you plan to specify interactively.
+
+    Trait data files may also include an `entity` column if you wish to use
+    named entities to group associated traits.  Delete this column heading from
+    the template if you simply want to use anonymous automatically-created
+    entities.  For more detailed information about entities, see [Optional
+    data] below.
+
     ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     **Heading for trait data with citation specified DOI.**
 
-    <span id="traits_by_doi.csv">citation_doi,cultivar,species,site,treatment,date,[trait variable 1],[trait variable 2],[trait variable n],[covariate 1],[covariate 2],[covariate n],n,SE,notes,access_level</span>
+    <span id="traits_by_doi.csv">citation_doi,cultivar,species,site,treatment,date,entity,[trait variable 1],[trait variable 2],[trait variable n],[covariate 1],[covariate 2],[covariate n],n,SE,notes,access_level</span>
 
     <button class="js-copy-btn" data="traits_by_doi.csv">Copy to clipboard</button>
     ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -116,7 +125,7 @@ term “column” may either refer to a column of data in the uploaded CSV
 file or to an attribute of a trait or yield datum in the traits or
 yields table of the database.*
 
-#### Required fields
+#### Required data file fields
 
 1.  For yields uploads, the only required field is a `yield` column.
 
@@ -238,7 +247,7 @@ in the data file with existing table entries in the database.
         Note that the date and time should always be the date and time at the
         site where the trait measurement was made.[^level-of-confidence] When
         uploading trait data, each site associated with the data file must be
-        assigned a valid time zone!
+        associated with a valid time zone![^specifying_a_timezone][^null_timezone]
 
 2.  Rounding
 
@@ -380,6 +389,56 @@ uniform value for all data in the data set.
     `yields` table will use the empty string as the value for the
     `notes` column.
 
+4.  Entities
+
+    Entities are a way of grouping related traits.  For example, trait
+    measurements made at the same time on the same plant group, plant, or plant
+    part are intrinsically related.  To show this in the database, they may be
+    given a common value for the `entity_id` attribute.
+
+    The Bulk Upload Wizard handles entities as follows:
+
+    a. The data file is for yields.  In this case, no entities are created, and
+       all yield rows created will have NULL as their `entity_id` attribute.
+
+    a. The data file is for traits and has no "entity" column but has at least
+    two trait-variable columns.  In this case, what happens for a given row will
+    depend on whether that row has any non-blank trait-variable column values.
+
+        i. If the row has at least one non-empty trait-variable column value, a
+    new, anonymous entity will be created and each trait created for the row
+    will be assigned the new entity.
+
+        i. If all trait-variable column values in the row are blank, no entities
+        or traits are created for that row.
+
+    a. The data file is for traits, has no "entity" column, and has only one
+       trait-variable column.  In this case, no entities are created, and all
+       trait rows created will have NULL as their `entity_id` attribute.
+
+    a. The data file is for traits and _does_ have an "entity" column.  In this
+    case, what happens for a given row will depend on whether the "entity"
+    column and the trait-variable columns are blank.
+
+        i. If the "entity" column is not blank and the name given there matches
+        the name of an existing entity, the new traits created for the row will
+        be assigned to that entity.
+
+        i. If the "entity" column is not blank but does not match the name of
+        any existing entity, and if at least one trait-variable column value is
+        non-blank, a new entity will be created whose name is the value
+        specified in the "entity" column, and new traits created for the row
+        will be assigned to this new entity.
+
+        i. If the "entity" column is not blank but all trait-variable column
+        values _are_ blank, no new entity will be created whether or not the
+        value in the "entity" column matches the name of an existing entity.
+
+        i. Rows in which the "entity" column is blank are treated as in the case
+        that the entity column does not exist: that is, anonymous entities are
+        only created if there are at least two trait-variable columns and then
+        only for rows for which at least one trait-variable column value is
+        non-blank.
 
 [^ignoring_columns]: If such information is already included in the data set and
 you want to keep such columns for purely informational purposes, the string
@@ -404,6 +463,15 @@ measurement was made.
 set automatically to 5 ("day").  The `timeloc` (Time Level of Confidence) value
 is automatically set to 1 ("second") if the time of day is given and 9 ("no
 data") otherwise.
+
+[^specifying_a_timezone]: Currently, there is not way to specify a site timezone
+via the BETYdb web application.  One must manipulate the database directly.
+
+[^null_timezone]: The rule is slightly different for a site that is specified
+interactively: If a time zone has been specified for the site, it must still be
+a valid one.  But it isn't an error to specify a site whose time zone attribute
+is null.  In this case, the date or date-and-time values specified will be
+interpreted as being in UTC.
 
 [^se_note]: Values _should_ be non-negative, but this isn't currently enforced.
 
