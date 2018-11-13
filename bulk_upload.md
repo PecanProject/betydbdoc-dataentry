@@ -1,10 +1,10 @@
-## Bulk Upload 
+## Bulk Upload
 
 ### Overview
 
 There are three phases for a basic bulk upload of data:
 
-1. Enter metadata pertaining to your data set (new sites, species, cultivars, citations, or treatments).
+1. Enter meta-data pertaining to your data set (new sites, species, cultivars, citations, or treatments).
 
 1. Create a CSV file of the appropriate form that contains your data.
 
@@ -42,10 +42,10 @@ There are three phases for a basic bulk upload of data:
     **Heading for yield data with citation specified by DOI.**
 
     <span id="yields_by_doi.csv">citation_doi,cultivar,species,site,treatment,date,yield,n,SE,notes,access_level</span>
-  
+
     <button class="js-copy-btn" data="yields_by_doi.csv">Copy to clipboard</button>
     ---------------------------------------------------------------------------------------------------------------------
- 
+
     Use this template if you are uploading yield data and you wish to specify
     the citation in the file by its Digital Object Identifier (DOI).
 
@@ -74,7 +74,7 @@ There are three phases for a basic bulk upload of data:
     …`[trait variable n]` must be replaced by actual variable names
     that *exactly* match names of variables in the database. The number
     of these trait variable columns may need to be increased or
-    decreased to accomodate the data set.
+    decreased to accommodate the data set.
 
     Some trait variables allow or even require corresponding covariate
     information to be included. Again, the column headings `[covariate 1]`
@@ -108,8 +108,8 @@ There are three phases for a basic bulk upload of data:
     citation interactively (in which case delete the
     `citation_doi` column). **Again, this template must be modified
     before it can be used.**
-        
-        
+
+
 
 1.  Use the Bulk Upload Wizard in the BETYdb web interface to upload your data
     set and insert it into the database.
@@ -476,6 +476,9 @@ uniform value for all data in the data set.
 
 ### Using the Bulk Upload Wizard
 
+Once a CSV data file has been composed, you are ready to start an upload using
+the Bulk Upload Wizard.
+
 The Bulk Upload Wizard is a sequence of pages designed to guide the user through
 the process of uploading a data file and having its data added to the database.
 Here is a step-be-step guide to using the wizard.  This guide assumes you have
@@ -505,13 +508,77 @@ highlight any errors or possible errors.  For details on potential problems, see
 the [Troubleshooting] section.
 
 1. If there are no errors to be dealt with, click the link on the upper-right to
-go on to the "Specify Upload Options and Global Values page.
+go on to the "Specify Upload Options and Global Values" page.
 
+1. The "Specify Upload Options and Global Values" page allows for specifying
+global value that apply to the whole data set.
 
+    * At a minimum—if all meta-data which can be specified in the data file _is_
+      specified there—one will be presented with the option to specify the
+      amount of rounding of yield values.
+
+    * If the file contains standard error information, one will also be
+      presented with the option to specify the amount of rounding of standard
+      error values.
+
+    * If any of the attributes "site", "species", "treatment", "access_level",
+      or "date" was not specified in the data file, one is required to enter
+      values for them here.
+
+    * If the species is being specified interactively, one will be presented
+      with the option to specify the cultivar interactively as well.
+
+    * For trait uploads, one will be presented with the option to specify a
+      method for each trait variable in the file.
+
+1. Once you have specified all required values and any optional value you with
+to specify, click "Confirm Data".
+
+1. The "Verify Upload Specifications and Data-Set References" will present a
+summary both of information specified in the data file and information you
+specified interactively.
+
+    * If the upload file is a trait file, each trait variable will be listed
+      along with any associated covariates specified in the data file and any
+      methods specified on the previous page.
+
+    * If the data access level was specified interactively, the value chosen
+      will be displayed.
+
+    * The amount of rounding chosen for yield or trait values and (if
+      applicable) for standard error values will be displayed.
+
+    * All reference data (meta-data) for the data set will be listed:
+
+        * All citations referenced will be listed, with the author, title, year,
+          DOI, and journal (if specified).
+
+        * If any named entities were specified in the file, they will be listed
+          along with their parent entity (if any) and notes (if any).
+
+        * The names of all associated sites will be listed, along with their
+          city, state, country, latitude and longitude, and (if specified) the
+          soil type and soil notes.
+
+        * Each associated species will be listed, including (if specified) the
+          full scientific name, the genus, the common name, and the accepted
+          symbol.
+
+        * If cultivars were specified, their names will be listed along with
+          their ecotype and associated species.
+
+        * Names of all treatments specified will be listed, together with (if
+          specified) their definition, whether or not they are a control, and
+          the author of the associated citation.
+
+    * Once the summary has been checked over for any errors or omissions, click
+      the "Insert Data" button if all is OK.  If the upload was successful, you
+      will be returned to the start page of the wizard and a success message
+      will be displayed.
 
 ### Troubleshooting
 
-Once a CSV data file has been composed
+[to-do]
 
 [^missing_cells]: In some cases, it is allowable for data in some columns to be
 missing from some rows.  In this case, there will be two consecutive commas with
@@ -575,7 +642,7 @@ case, we might add columns `[trait variable 1] n` and `[trait variable 1] SE`,
 etc. or `[covariate 1] n` and `[covariate 1] SE`, prefixing the usual column
 heading with a variable name to indicate which variable the sample size and
 standard error value is to be associated with.
-    
+
 <script>
 
 // This code is an adapted version of code found in the section "Complex
