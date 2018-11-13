@@ -6,7 +6,7 @@ There are three phases for a basic bulk upload of data:
 
 1. Enter metadata pertaining to your data set (new sites, species, cultivars, citations, or treatments).
 
-2. Create a CSV file of the appropriate form that contains your data.
+1. Create a CSV file of the appropriate form that contains your data.
 
     You may use one of the following sample headings to get started.
 
@@ -111,7 +111,7 @@ There are three phases for a basic bulk upload of data:
         
         
 
-3.  Use the Bulk Upload Wizard in the BETYdb web interface to upload your data
+1.  Use the Bulk Upload Wizard in the BETYdb web interface to upload your data
     set and insert it into the database.
 
 
@@ -125,11 +125,36 @@ term “column” may either refer to a column of data in the uploaded CSV
 file or to an attribute of a trait or yield datum in the traits or
 yields table of the database.*
 
+#### General Considerations
+
+Although the comma-separated value (CSV) file format is not fully standardized,
+here are some general guidelines:
+
+1. The top line of the file should contain a comma-separated list of column
+headings.  Any column heading not recognized as being significant (see below) will
+be ignored, as will the data in subsequent rows falling under that heading.
+
+1. Lines (or _rows_) after the first contain data.  Data items are separated by
+commas, and in general there will be one data item for each column heading; the
+nth data item in a row "belongs" to the nth heading in the top line.[^missing_cells]
+
+1. There can be no extraneous blank lines, even at the end of the file.
+
+1. Extraneous space before or after a comma or at the beginning or end of a row
+is discarded.
+
+1. To include a comma as part of a data item, the data item must be quoted with
+double-quotes so that the comma is not interpreted as a data-value separator.
+There should be no extraneous space between a double-quoted item and the
+preceding and following commas or beginning or end of the line.
+
+1. To include a literal double quote as part of a quoted item, use two consecutive double quotes.
+
 #### Required data file fields
 
 1.  For yields uploads, the only required field is a `yield` column.
 
-2.  For trait uploads, there must be at least one column whose label exactly
+1.  For trait uploads, there must be at least one column whose label exactly
     matches the variable name for the trait value being specified. (Leading and
     trailing spaces are permitted, but letter case must exactly match the name
     of the variable specified in the database.) If this trait variable has any
@@ -184,7 +209,7 @@ in the data file with existing table entries in the database.
         columns `citation_author`, `citation_year`, and `citation_title` must
         all be present.[^ignoring_doi_column]
 
-2.  Site
+1.  Site
 
     -   If all of the data in the data set pertains to a single site,
         that site may be specified interactively.
@@ -194,7 +219,7 @@ in the data file with existing table entries in the database.
         database. (Letter case, leading and trailing spaces, and extra internal
         spaces are ignored when searching for a match.)
 
-3.  Species
+1.  Species
 
     -   If all of the data in the data set pertains to a single species,
         that species may be specified interactively.
@@ -205,7 +230,7 @@ in the data file with existing table entries in the database.
         spaces, and extra internal spaces are ignored when searching for
         a match.)
 
-4.  Treatment
+1.  Treatment
 
     -   If a single treatment and a single citation applies to all of
         the data in the data set, the treatment may be specified
@@ -249,7 +274,7 @@ in the data file with existing table entries in the database.
         uploading trait data, each site associated with the data file must be
         associated with a valid time zone![^specifying_a_timezone][^null_timezone]
 
-2.  Rounding
+1.  Rounding
 
     -   The amount of rounding for numerical data can only be
         specified interactively. Any value from 1 to 4 significant
@@ -281,12 +306,12 @@ uniform value for all data in the data set.
     noted above, the number given in the file is subject to rounding
     before being inserted into the database.
 
-2.  Sample Size
+1.  Sample Size
 
     An `n` column is required if and only if an `SE` column is included.
     The value must always be an integer greater than 1.
 
-3.  Standard Error
+1.  Standard Error
 
     An `SE` column is required if and only if an `n` column is included; this
     datum will be inserted into the `stat` column of the `yields` table, and the
@@ -316,7 +341,7 @@ uniform value for all data in the data set.
         `[trait variable 1]`, `[trait variable 2]`, etc., which must be
         changed to actual variable names before data can be uploaded.
 
-2.  Covariate values
+1.  Covariate values
 
     -   If any of the included trait variables has a required covariate,
         there must be a column corresponding to that covariate.
@@ -332,7 +357,7 @@ uniform value for all data in the data set.
         `[covariate 1]`, `[covariate 2]`, etc., which must be changed to
         actual variable names before data can be uploaded.
 
-3.  Sample Size and Standard Error
+1.  Sample Size and Standard Error
 
     An `SE` column is required if and only if an `n` column is included; this
     datum will be inserted into the `stat` column of the `traits` table, and the
@@ -362,7 +387,7 @@ uniform value for all data in the data set.
     traits or yields table will default to 1 and the `stat` and `statname`
     column values will default to NULL and the empty string, respectively.
 
-2.  Cultivar
+1.  Cultivar
 
     -   If a uniform value for the species is provided interactively
         when uploading the data set, the cultivar may be specified this
@@ -379,7 +404,7 @@ uniform value for all data in the data set.
         `species` column. Again, matching is case insensitive, and leading,
         trailing, and excess internal whitespace is ignored.
 
-3.  Notes
+1.  Notes
 
     To include notes, use a `notes` column. There is no restriction on
     what can be included in this column, but leading and trailing space
@@ -389,7 +414,7 @@ uniform value for all data in the data set.
     `yields` table will use the empty string as the value for the
     `notes` column.
 
-4.  Entities
+1.  Entities
 
     Entities are a way of grouping related traits.  For example, trait
     measurements made at the same time on the same plant group, plant, or plant
@@ -439,6 +464,61 @@ uniform value for all data in the data set.
         only created if there are at least two trait-variable columns and then
         only for rows for which at least one trait-variable column value is
         non-blank.
+
+1. Methods
+
+    A method _may_ be specified for each trait variable in the data file.
+    Methods must be specified interactively on the Upload Options and Global
+    Values page.  This means of course that for each file, each trait variable
+    must be assigned uniformly to the same method; trait values in different
+    rows can not be assigned different methods.
+
+
+### Using the Bulk Upload Wizard
+
+The Bulk Upload Wizard is a sequence of pages designed to guide the user through
+the process of uploading a data file and having its data added to the database.
+Here is a step-be-step guide to using the wizard.  This guide assumes you have
+already composed a data file, and that it is accessible in the file system of
+the computer you are using to access the wizard.
+
+1. Click the Bulk Upload menu item at the top of any BETYdb page.
+
+1. On the "New Bulk Upload" page, click the "Choose File" button.  In the file
+chooser that comes up, find the file you want to upload and double-click on it.
+
+1. Click the "Upload and validate file" button.
+
+1. If you do not have citation information in your file and you have not chosen
+a citation to use in your browser session, you will be taken to the "Choose a
+Citation" page.  Otherwise, skip the next steps.
+
+    Type into the auto-completion citation text box and choose from among the
+list of citations that come up.  Note that the list of citations will be
+filtered by trying to match the author, year, title, or DOI against the string
+of characters you type into the box.
+
+1. Once you have chosen a citation, click the "View Validation Results" button.
+
+1. View the validation results.  This page will display your data file and will
+highlight any errors or possible errors.  For details on potential problems, see
+the [Troubleshooting] section.
+
+1. If there are no errors to be dealt with, click the link on the upper-right to
+go on to the "Specify Upload Options and Global Values page.
+
+
+
+### Troubleshooting
+
+Once a CSV data file has been composed
+
+[^missing_cells]: In some cases, it is allowable for data in some columns to be
+missing from some rows.  In this case, there will be two consecutive commas with
+only zero or more white-space characters in between, or, in the case of the
+first or last columns, there may be only whitespace before the first or after
+the last comma of the row.  If items are omitted from the end of a line, the
+trailing commas may be omitted as well.
 
 [^ignoring_columns]: If such information is already included in the data set and
 you want to keep such columns for purely informational purposes, the string
