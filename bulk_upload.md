@@ -715,7 +715,7 @@ copyBtnArray.forEach(function(button) {
     button.addEventListener('click', function(event) {
         var sourceId = event.target.getAttribute("data");
         var text = document.getElementById(sourceId).textContent;
-        alert(text);
+        # alert(text);
         copyTextToClipboard(text);
     });
 });
