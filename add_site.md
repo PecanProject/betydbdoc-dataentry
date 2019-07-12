@@ -1,4 +1,4 @@
-# [Adding a Site](https://www.betydb.org/sites/new)
+## Adding a Site
 
 Each experiment is conducted at a unique site. In the context of BETY,
 the term 'site' refers to a specific location and it is common for many
@@ -26,7 +26,7 @@ among independent studies.
         -   Create a new site if one study was conducted in a greenhouse
             and another was conducted in a field.
         -   Do not use distinct sites for seed source in a common garden
-            experiment (see ’When not to enter a new site’ below)
+            experiment (see [When not to enter a new site] below)
 3.  To use an existing site, click `Edit` for the site, and then select
     current citation under `Add Citation Relationships`
 4.  If site does not exist, add a new site.  
@@ -59,28 +59,30 @@ Interface for adding a new site:
 | Rooting Zone Depth | Measured in Meters (m) |
 |Depth of Water Table| Measured in Meters (m) |
 
-5. Do **not** enter a new site When plants (or seeds) are collected from multiple locations   and then grown in the same location, this is called 'common garden experiment'. In this case, the location of the study is included as site information. Information about the seed source can be entered as a distinct cultivar.
+### When not to enter a new site
+
+Do **not** enter a new site when plants (or seeds) are collected from multiple locations and then grown in the same location; this is called "common garden experiment".  In this case, the location of the study is included as site information.  Information about the seed source can be entered as a distinct cultivar.
  
-## Site Location 
+### Site Location 
 
 Points can be added via the web interface; spatial geometries, e.g. a plot, site, or country boundary, must be entered via the PostgreSQL command line. 
 
-### Point Locations
+#### Point Locations
 
 If latitude and longitude coordinates are not available, it is often
 possible to determine the site location based on the site name, city,
 and other information. One way to do this would be to look up a location
-name in [Google Maps](http://maps.google.com) and then locate it on the
+name in [Google Maps](http://maps.google.com){target="_blank"} and then locate it on the
 embedded map. Google Maps can provide decimal degrees if the LatLng
 feature is enabled, which can be done
-[here](http://maps.google.com/maps?showlabs=1). Google Earth can be
+[here](http://maps.google.com/maps?showlabs=1){target="_blank"}. Google Earth can be
 particularly useful in locating sites, along with their coordinates and
 elevation. Alternatively, the site website or address might be found
 through an internet search (e.g. Google).
 
-Use Table \ref{tab:location_accuracy} to determine the number of significant digits to indicate the level of precision with which a study location is known.  
+Use the table below to determine the number of significant digits to indicate the level of precision with which a study location is known.  
 
-**Table \ref{tab:location_accuracy}** \label{tab:location_accuracy} Level of accuracy to record in lat and lon fields. 
+Table: Level of accuracy to record in lat and lon fields. 
                  
 | **Location Detail** |         **Degree Accuracy**  |
 |-----------------------------|-------------------------|
@@ -89,12 +91,12 @@ Use Table \ref{tab:location_accuracy} to determine the number of significant dig
 | Acre            |                    0.001 |
 | 10 Meters       |                   0.0001 |
  
-### Boundaries
+#### Boundaries
 
 A vector boundary must be obtained. Here is one way to obtain a site boundary using R:
 
 
-#### A rectangular plot (with bounding box)
+##### A rectangular plot (with bounding box) {-}
 
 Here I set the bounding box for a plot by specifying the plot corners and elevation. Notice that it is necessary to specify the first point twice, once at the beginning and once at the end. 
 
@@ -108,7 +110,7 @@ Here I set the bounding box for a plot by specifying the plot corners and elevat
         ID = 1123;
     
 
-#### A country boundary:
+##### A country boundary: {-}
 
 
     library(prevR)# for `create.boundary` function
@@ -125,11 +127,11 @@ Then import at the command line (can also copy / paste to terminal, but this bou
 
     psql -U bety -d bety < uk.sql
 
-#### References 
+#### References
 
-* PostGIS `ST_GeomFromText` documentation: http://www.postgis.org/docs/ST_GeomFromText.html
-* gis.stackexchange: http://gis.stackexchange.com/q/111212/1239
-* Github issues: https://github.com/PecanProject/pecan/issues/570
+* PostGIS `ST_GeomFromText` documentation: [http://www.postgis.org/docs/ST_GeomFromText.html](http://www.postgis.org/docs/ST_GeomFromText.html){target="_blank"}
+* gis.stackexchange: [http://gis.stackexchange.com/q/111212/1239](http://gis.stackexchange.com/q/111212/1239){target="_blank"}
+* Github issues: [https://github.com/PecanProject/pecan/issues/570](https://github.com/PecanProject/pecan/issues/570){target="_blank"}
 
 
 

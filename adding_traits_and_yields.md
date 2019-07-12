@@ -1,22 +1,23 @@
-# [Adding a Trait](https://www.betydb.org/traits/new) 
+## The New Trait and New Yield Pages
+
+### Adding a Trait
 
 ![](figures/Addnewtrait1/Addnewtrait1.jpg)
 
 
 
 In general, a 'trait' is a phenotype (a characteristic that the plant
-exhibits). The traits that we are primarily interested in collecting
-data for are listed in Table \ref{tab:traits}. Before adding trait data, it is necessary to have the citation, treatments, and site information already entered. If the correct
-citation is not identified at the top of the page [Figure 8](#Figure 8). To add a new Trait,
-go to the [new trait](http://www.betydb.org/traits/new)
-page: `Trait` → `new`.
+exhibits). The traits that we are primarily interested in collecting data for
+are listed in Table \@ref(tab:traits).  Before adding trait data, it is necessary to
+have the citation, treatments, and site information already entered. To add a
+new Trait, go to the [new
+trait](https://www.betydb.org/traits/new){target="_blank"} page.
 
+Table: (\#tab:traits) Key Traits Stored in BETYdb
 
-**Key Traits Stored in BETYdb**
-
-| Variable | Units | Median (90%CI) or Range | Definition |
-|:---------|:------|:------------------------|:-----------|
-| Vcmax | \(\mu\) mol CO\(_2\) m\(^{2}\) s\(^{-1}\) | \(44 (12, 125)\) | maximum rubisco carboxylation capacity |
+| Variable | Units     | Median (90%CI) or Range | Definition |
+|:---------|:----------|:------------------------|:-----------|
+| Vcmax | \(\mu\)mol CO\(_2\) m\(^{-2}\) s\(^{-1}\) | \(44 (12, 125)\) | maximum rubisco carboxylation capacity |
 | SLA | m\(^2\) kg\(^{-1}\) | \(15(4,27)\) | Specific Leaf Area area of leaf per unit mass of leaf |
 | LMA | kg m\(^{-2}\) | \(0.09 (0.03, 0.33)\) | Leaf Mass Area (LMA = SLM = 1/SLA) mass of leaf per unit area of leaf |
 | leafN | % | \(2.2(0.8, 17)\) | leaf percent nitrogen |
@@ -24,7 +25,7 @@ page: `Trait` → `new`.
 | leaf turnover rate | 1/year | \(0.28(0.03,1.0) \) | |
 | Jmax | \(\mu\) mol photons m\(^{-2}\) s\(^{-1}\) | \(121(30, 262)\) | maximum rate of electron transport |
 | stomatal slope | | \(9(1, 20)\) | |
-| GS | | | stomatal conductance (= gs\(_{\textrm{max}}\) |
+| GS | | | stomatal conductance (= gs\(_{\textrm{max}}\)) |
 | q* | | 0.2--5 | ratio of fine root to leaf biomass |
 | **grasses* | ratio of root:leaf = below:above ground biomass | | |
 | aboveground biomass | g m\(^{-2}\) *or* g plant\(^{-1}\) | | |
@@ -38,7 +39,7 @@ page: `Trait` → `new`.
 | R\(_{\textrm{dark}}\) | | \(\mu\) mol CO\(_2\) m\(^{-2}\) s\(^{-1}\) | dark respiration |
 | quantum efficiency | % | 0--1 | efficiency of light conversion to carbon fixation, see Farqhuar model |
 | dark respiration factor | % | 0--1 | converts Vm to leaf respiration |
-| seedling mortality | % | 0--1 | proportion of seedlings that die | 
+| seedling mortality | % | 0--1 | proportion of seedlings that die |
 | r fraction | % |0--1 | fraction of storage to seed reproduction |
 | root respiration rate* | CO\(_2\) kg\(^{-1}\) fine roots s\(^{-1}\) | 1--100 | rate of fine root respiration at reference soil temperature |
 | f labile | % | 0--1 | fraction of litter that goes into the labile carbon pool
@@ -53,15 +54,14 @@ by more thorough explanations:
 
 
 * **Species**: Search for species in the database using the search box; if species
-    is not found, then the new species should be added to the database. 
-* **Cultivar**:   primarily used for crops; If the cultivar being used is not found in
-    drop-down box  
-* **DateLOC**:   Date Level of confidence. See for values.  
-* **TimeLOC**:   Time Level of confidence. See for values.
-* **Mean**:  For yield, mean is in units of tons per hectare per year (t/ha)  
-* **Stat name**:   is the name of the statistical method used (usually one of SE, SD, MSE,
-    CI, LSD, HSD, MSD). See for more details.  
-* **Statistic**:   is the value of the statistic associated with Stat name.  
+    is not found, then the new species should be added to the database.
+* **Cultivar**:   Primarily used for crops.
+* **DateLOC**:   Date Level of confidence. See table \@ref(tab:dateloc) for values.
+* **TimeLOC**:   Time Level of confidence. See table \@ref(tab:timeloc) below for values.
+* **Mean**:  For yield, `mean` is in units of tons per hectare per year (t/ha)
+* **Stat name**:   The name of the statistical method used (usually one of SE, SD, MSE,
+    CI, LSD, HSD, MSD). See [Statistics] for more details.
+* **Statistic**:  The value of the statistic associated with Stat name.
 * **N**:   Always record N if provided. N is the number of experimental
     replicates, often referred to as the sample size; N represents the
     number of independent units within each treatment: in a field
@@ -69,21 +69,21 @@ by more thorough explanations:
     a greenhouse, growth chamber, or pot-study this may be the number of
     chambers, pots, or individual plants. Sometimes this value is not
     clearly stated.
-  
 
-## Uncertainty in Date or Time
 
-### DateLOC
+#### Uncertainty in Date or Time
 
-The date level of confidence (DateLOC, Table \ref{tab:dateloc}) provides an indication of how accurately the date associated with the trait or yield observation is known. 
-It provides the values that should be entered in this field. 
-If the event occurred at a level of precision not defined by an integer in this table, then use fractions. For example, we commonly use 5.5 to indicate a one week level of precision. 
+##### DateLOC {-}
+
+The date level of confidence (DateLOC, Table \ref{tab:dateloc}) provides an indication of how accurately the date associated with the trait or yield observation is known.
+It provides the values that should be entered in this field.
+If the event occurred at a level of precision not defined by an integer in this table, then use fractions. For example, we commonly use 5.5 to indicate a one week level of precision.
 If the exact year is not known, but the time of year is, then use 91 to 97, with the second digit to indicate the information known within the year.
 
 
 
 
-**Table Date level of confidence (DateLOC) field** Numbering convention for the DateLOC (Date level of confidence) and TimeLOC (Time level of confidence) field, used in managements, traits, and yields table. 
+Table: (\#tab:dateloc) **Date level of confidence (DateLOC) field**: Numbering convention for the DateLOC (Date level of confidence) and TimeLOC (Time level of confidence) field, used in managements, traits, and yields table.
 
 | Dateloc | Definition |
 |:--------|:-----------|
@@ -94,15 +94,17 @@ If the exact year is not known, but the time of year is, then use 91 to 97, with
 | 5 | day |
 | 95 | unknown year, known day |
 | 96 | unknown year, known month |
-| ...etc | | 
+| ...etc | |
 
 
 
 
-### TimeLOC
+##### TimeLOC {-}
 
-The time level of confidence (TimeLOC) provides an indication of how accurately the time associated with the trait or yield observation is known. 
-It provides the values that should be entered in this field. 
+The time level of confidence (TimeLOC) provides an indication of how accurately the time associated with the trait or yield observation is known.
+It provides the values that should be entered in this field.
+
+Table: (\#tab:timeloc) TimeLOC Values
 
 | Timeloc | Definition |
 |:--------|:-----------|
@@ -113,17 +115,17 @@ It provides the values that should be entered in this field.
 | 1 | second |
 
 
-## Statistics
+#### Statistics
 
 Our goal is to record statistics that can be used to estimate standard
-deviation or standard error (https://www.authorea.com/users/5574/articles/6811/). 
-Many different methods can be used to summarize data, and this is reflected in the diversity of statistics that are reported. 
+deviation or standard error ([https://www.authorea.com/users/5574/articles/6811/](https://www.authorea.com/users/5574/articles/6811/){target="_blank"}).
+Many different methods can be used to summarize data, and this is reflected in the diversity of statistics that are reported.
 An overview of these methods is given in a
 description below.
 
 Where available, direct estimates of variance are preferred, including
 Standard Error (SE), sample Standard Deviation (SD), or Mean Squared
-Error (MSE). SE is usually presented in the format of mean 
+Error (MSE). SE is usually presented in the format of mean
 (±SE). MSE is usually presented in a table. When
 extracting SE or SD from a figure, measure from the mean to the upper or
 lower bound. This is different than confidence intervals and range
@@ -145,7 +147,7 @@ if MSE is available. Only if there is no other information available should you
 record the P-value.
 
 
-# [Adding a Yield](http://www.betydb.org/yields/new)
+### Adding a Yield
 
 The protocol for entering yield data is identical to entering data for a
 trait, with a few exceptions:
@@ -156,36 +158,49 @@ trait, with a few exceptions:
     moisture content can be added as a trait
 
 Yield is equivalent to aboveground biomass on a per-area
-basis, and has units of Mg ha^-1 y^-1  
+basis, and has units of Mg ha$^{-1}$ y$^{-1}$.
 
 
-# [Adding a Covariate](http:www.betydb.org/covariates/new)
+### Adding a Covariate
 
 Covariates are required for many of the traits. Covariates generally
 indicate the environmental conditions under which a measurement was
 made. Without covariate information, the trait data will have limited
 value.
 
-A complete list of required covariates can be found in Table \ref{tab:covariates}. For all
+A complete list of required covariates can be found in Table \@ref(tab:covariates). For all
 respiration rates and photosynthetic parameters, temperature is recorded
 as a covariate. Soil moisture, humidity, and other such variables that
 were measured at the time of the measurement may be required in
 order to standardize across studies.
 
 When root data is recorded, the root size class needs to be entered as a
-covariate. The term ’fine root’ often refers to the \(<\)2mm size class,
-and in this case, the covariate `root_maximum_diameter` would be set to 2. 
+covariate. The term ’fine root’ often refers to the <2mm size class,
+and in this case, the covariate `root_maximum_diameter` would be set to 2.
 If the size class is a range, then the `root_minimum_diameter` can also be used.
 
 
 
 
-**Table \ref{tab:covariates}: Traits with required covariates** \label{tab:covariates} 
-A list of traits and the covariates that must be recorded along with the trait value in order to be converted to a constant scale from across studies.*notes:* stomatal conductance (`gs`) is only useful when reported in conjunction with other photosynthetic data, such as `Amax`. 
-Specifically, if we have `Amax` and `gs`, then estimation of `Vcmax` only covaries with `dark_respiration_factor` and atmospheric CO2 concentration.  
-We also now have information to help constrain `stomatal_slope`. If we have `Amax` but not `gs`, then our estimate of `Vcmax` will covary with: `dark_respiration_factor`, `CO2`, `stomatal_slope`, `cuticular_conductance`, and vapor-pressure deficit `VPD` (which is more difficult to estimate than CO2, but still possible given lat, lon, and date). 
-Most important, there will be a strong covariance between `Vcmax` and `stomatal_slope`.
+**Table \@ref(tab:covariates): Traits with required covariates**
 
+A list of traits and the covariates that must be recorded along with the trait value in order to be converted to a constant scale from across studies.
+
+**notes\:**
+
+Stomatal conductance (`gs`) is only useful when reported in
+conjunction with other photosynthetic data, such as `Amax`.  Specifically, if we
+have `Amax` and `gs`, then estimation of `Vcmax` only covaries with
+`dark_respiration_factor` and atmospheric CO~2~ concentration.
+
+We also now have information to help constrain `stomatal_slope`. If we have
+`Amax` but not `gs`, then our estimate of `Vcmax` will covary with:
+`dark_respiration_factor`, `CO2`, `stomatal_slope`, `cuticular_conductance`, and
+vapor-pressure deficit `VPD` (which is more difficult to estimate than CO~2~, but
+still possible given lat, lon, and date).  Most important, there will be a
+strong covariance between `Vcmax` and `stomatal_slope`.
+
+Table: (\#tab:covariates) Required Covariates
 
 | Variable | Required Covariates | Optional Covariates |
 |:---------|:--------------------|:--------------------|
@@ -196,7 +211,6 @@ Most important, there will be a strong covariance between `Vcmax` and `stomatal_
 | any respiration | temperature | |
 | root biomass | | min. size cutoff, max. size cutoff |
 | root, soil | depth (cm) | used for max and min depths of soil, if only one value, assume min depth = 0; negative values indicate above ground |
-| gs (stomatal conductance) | \(A_{max}\) | see notes in caption |
-| stomatal\_slope (m) | humidity, temperature | specific humidity, assume leaf T =  air T | 
+| gs (stomatal conductance) | A~max~ | see notes in caption |
+| stomatal\_slope (m) | humidity, temperature | specific humidity, assume leaf T =  air T |
 |SLA| | canopy_level|
- 

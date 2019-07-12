@@ -1,4 +1,4 @@
-# QA/QC with the Web Interface \label{sec:qaqc}
+# Quality Assurance
 
 Quality assurance and quality control (QA/QC) is a critical step that is
 used to ensure the validity of data in the database and of the analyses
@@ -23,7 +23,7 @@ to be elevated to “manager”.
         information that is present
     -   Enter any additional site level information that is found
 4.  Select
-    [treatments](http://www.betydb.org/treatments/) from
+    [treatments](https://www.betydb.org/treatments/){target="_blank"} from
     menu bar
     -   Check that there is a control treatment
     -   Ensure that treatment name and definition are consistent with
@@ -34,14 +34,14 @@ to be elevated to “manager”.
         separately)
     -   If managements are listed, make sure that managment-treatment
         associations are correct
-5.  Check [managements](http://www.betydb.org/managements/) if
+5.  Check [managements](https://www.betydb.org/managements/){target="_blank"} if
     there are any listed on the treatments page.
     -   If yield data has been collected, ensure that required
         managements have been entered
     -   If managements have been entered, ensure that they are
         associated with the correct treatments
-6.  Click [Yields](http://www.betydb.org/yields/) or
-    [Traits](http://www.betydb.org/traits/) to check
+6.  Click [Yields](https://www.betydb.org/yields/){target="_blank"} or
+    [Traits](https://www.betydb.org/traits/){target="_blank"} to check
     data.
     -   Check that means, sample size, and statistics have been entered
         correctly

@@ -1,6 +1,6 @@
-# Adding Treatments and Managements
+## Adding Treatments and Managements
 
-## [Treatments](https://www.betydb.org/treatments/new)
+### Adding a Treatment
 
 Treatments provide a description of a study’s
 treatments. Any specific information such as rate of fertilizer

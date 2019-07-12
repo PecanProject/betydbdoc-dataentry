@@ -1,7 +1,6 @@
+## Preparing Publications for Data Entry \label{sec:preparing_publications}
 
-# Preparing Publications for Data Entry \label{sec:preparing_publications}
-
-## Mendeley
+### Mendeley
 
 Mendeley provides a central location for the collection, annotation, and tracking of the journal articles that we use. Features of Mendeley that are useful to us include: 
 
@@ -28,19 +27,19 @@ Each project manager may have one or more projects and each project should have 
    7. Click `Edit Settings`
    8. Under `File Synchronization`, check `Download attached files to group`
 
-### <a id="Section_2.2"></a>  Adding and Annotating Papers  
+#### Adding and Annotating Papers  
 
 When naming a group, tag folders so that instructions for a technician would include the folder
 and the tag to look for, e.g. "please enter data from projectx" or
 "please enter data from papers tagged y from project x".
 To access the full text and PDF of papers from off campus, use the [UIUC
-VPN](http://www.cites.illinois.edu/vpn/download-install.html) service.
+VPN](https://techservices.illinois.edu/services/virtual-private-networking-vpn){target="_blank"} service.
 If you are managing a Mendeley folder that undergraduates are actively
 entering data from, please plan to spend between 15 min and 1 hour per
-week maintaining it - enough to keep up with the work that the
+week maintaining it—enough to keep up with the work that the
 undergraduates are doing.
 
-###  Adding a reference
+####  Adding a reference
 
 -   If the DOI number is available (most articles since 2000)
     1.  Select project folder
@@ -57,7 +56,7 @@ undergraduates are doing.
         from, for, to, etc...), and the conjunctions (for, and, nor,
         but, or, yet, so) with less than three letters.
 
-###  Annotating a Reference
+####  Annotating a Reference
 
 Each week, please identify and prepare papers that you would like to be
 entered next by completing the following steps:  
@@ -97,22 +96,21 @@ entered next by completing the following steps:
 * Other information entered into the database, e.g. experimental
     details
 
-###  Finding a citation in Mendeley
+####  Finding a citation in Mendeley
 
 To find a citation in Mendeley, go to the project folder. 
 By default, data entry technicians should enter data from papers which have been indicated by a yellow star and in the order that they were added to the list.
 Information and data to be collected from a paper can be found under the 'Notes' tab and in
 highlighted sections of the paper.
 
-<a id="Section 3"></a> 
-## Recording extracted data and transformations
+### Recording extracted data and transformations
 
 Google Spreadsheets are used to keep a record of any data that is not
 entered directly from the original publication. Please share all spreadsheets with the user betydb@gmail.com in addition to any collaborators.
 
 * Any raw data that is not directly entered into the database but that
-    is used to derive data or stats using equations in Tables \ref{tab:conversions} or \ref{tab:stats}.
-* Any data extracted from figures, along with the figure number
+    is used to derive data or stats using equations in the table in the section on [unit conversions][Converting Units and Adjustment to Temperature].
+* Any data extracted from figures, along with the figure number.
 * Any calculations that were made. These calculations should be
     included in the cells.
 
