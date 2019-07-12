@@ -1,4 +1,5 @@
-rmd_files: ["README.md",
+rmd_files: ["index.Rmd",
+            "README.md",
             "introduction.md",
             "finding_data.md",
                "preparing_published_data.md",
