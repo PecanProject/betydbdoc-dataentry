@@ -1,0 +1,10 @@
+language: r
+pandoc_version: 1.19.2.1
+
+env:
+  global:
+    - secure: "EwFnZ2ZmlQIINU8tJIe7MvamUC2NwhLMFDfTsVflTYFvWsgn4yJLLCHGNEhsAwHjxUzywikQDGXWxAglF95aVPbynpN3qGrC+6quYv1daWyzamamWOshyep2haEpeKi71ut/2ZoalXA1JFim4ELOdEmzIwogjP7YQbX46g0XdEokQp36LTftk+OLNeUXgaOyXAF+Dx5yfEJ1pYtYGKSymqM+YqrY8aTYr/wAgagDrK/DUwzJa3/psMAjcyq/7iQ2aJ88JUgYXZXRddUjhdDLIos1IYz1rKm5AhZxmXX8DL6JlVJ6oOdvjzTOP466Tcy8qmIxWyGEryb0wN6bYILMpeLjyjJcgbgCjTSpeUV9Oj18w0TsL3jYx+NrP+eZi2xMIRZad53z0pYYcNhtd29F+srIgN8pdekwKL5n++9CLQheojxt4I9yDNpUASy3VlCUCzZr0EJPhSbo6qwJ82+2M9AIJJI9ofhxP0vzKCHh2Wh6ov+ZmSHnuQlvfsWBv0fkhSs8sPC+xqLUwzd1dpBaCPJRXKcRqs1BNSQ2NJQQPeYWd5Gaa/SY8GGUo3IYWNQWdbYTx0x/QffI9iwLwJDZ/Gc6q60Nr8HqB4zvyB2stiKYRIBnwoNbmbsw3rxMvV/dy3xvosNzldPp1LQn73rIaUd/BFGy8aphSJTa90t5LJU="
+
+script:
+  - ./_build.sh
+  - ./_deploy.sh
