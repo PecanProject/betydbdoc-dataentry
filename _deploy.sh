@@ -16,5 +16,5 @@ cd book-output
 
 rsync -av --delete ../_book/ ./dataentry/
 git add --all *
-git commit -m "Update the book" || true
+git commit -m "Update the book -- dataentry" || true
 git push -q origin master
