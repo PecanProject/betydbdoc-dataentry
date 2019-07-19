@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 Adding Trait and Yield Data | Biofuel Ecophysiological Traits and Yields Database</title>
+  <meta name="description" content="5 Adding Trait and Yield Data | Biofuel Ecophysiological Traits and Yields Database" />
+  <meta name="generator" content="bookdown 0.12.1 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 Adding Trait and Yield Data | Biofuel Ecophysiological Traits and Yields Database" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 Adding Trait and Yield Data | Biofuel Ecophysiological Traits and Yields Database" />
+  
+  
+  
+
+<meta name="author" content="By: BETYdb Team" />
+
+
+<meta name="date" content="2019-07-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="entering-meta-data.html">
+<link rel="next" href="inserting-new-traits-via-the-api.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Volume 2 : Data Entry</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#authors"><i class="fa fa-check"></i><b>1.1</b> Authors</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>2</b> Getting Started</a><ul>
+<li class="chapter" data-level="2.1" data-path="getting-started.html"><a href="getting-started.html#overview"><i class="fa fa-check"></i><b>2.1</b> Overview</a></li>
+<li class="chapter" data-level="2.2" data-path="getting-started.html"><a href="getting-started.html#getting-started-1"><i class="fa fa-check"></i><b>2.2</b> Getting Started</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="getting-started.html"><a href="getting-started.html#sign-up-for-betydb"><i class="fa fa-check"></i><b>2.2.1</b> Sign up for BETYdb</a></li>
+<li class="chapter" data-level="2.2.2" data-path="getting-started.html"><a href="getting-started.html#other-accounts"><i class="fa fa-check"></i><b>2.2.2</b> Other Accounts</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="finding-and-preparing-published-data.html"><a href="finding-and-preparing-published-data.html"><i class="fa fa-check"></i><b>3</b> Finding and Preparing Published Data</a><ul>
+<li class="chapter" data-level="3.1" data-path="finding-and-preparing-published-data.html"><a href="finding-and-preparing-published-data.html#meta-analyses"><i class="fa fa-check"></i><b>3.1</b> Meta-analyses</a></li>
+<li class="chapter" data-level="3.2" data-path="finding-and-preparing-published-data.html"><a href="finding-and-preparing-published-data.html#preparing-publications-for-data-entry"><i class="fa fa-check"></i><b>3.2</b> Preparing Publications for Data Entry </a><ul>
+<li class="chapter" data-level="3.2.1" data-path="finding-and-preparing-published-data.html"><a href="finding-and-preparing-published-data.html#mendeley"><i class="fa fa-check"></i><b>3.2.1</b> Mendeley</a></li>
+<li class="chapter" data-level="3.2.2" data-path="finding-and-preparing-published-data.html"><a href="finding-and-preparing-published-data.html#recording-extracted-data-and-transformations"><i class="fa fa-check"></i><b>3.2.2</b> Recording extracted data and transformations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="entering-meta-data.html"><a href="entering-meta-data.html"><i class="fa fa-check"></i><b>4</b> Entering Meta-Data</a><ul>
+<li class="chapter" data-level="4.1" data-path="entering-meta-data.html"><a href="entering-meta-data.html#adding-a-citation"><i class="fa fa-check"></i><b>4.1</b> Adding a Citation</a></li>
+<li class="chapter" data-level="4.2" data-path="entering-meta-data.html"><a href="entering-meta-data.html#adding-a-site"><i class="fa fa-check"></i><b>4.2</b> Adding a Site</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="entering-meta-data.html"><a href="entering-meta-data.html#when-not-to-enter-a-new-site"><i class="fa fa-check"></i><b>4.2.1</b> When not to enter a new site</a></li>
+<li class="chapter" data-level="4.2.2" data-path="entering-meta-data.html"><a href="entering-meta-data.html#site-location"><i class="fa fa-check"></i><b>4.2.2</b> Site Location</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="entering-meta-data.html"><a href="entering-meta-data.html#adding-treatments-and-managements"><i class="fa fa-check"></i><b>4.3</b> Adding Treatments and Managements</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="entering-meta-data.html"><a href="entering-meta-data.html#adding-a-treatment"><i class="fa fa-check"></i><b>4.3.1</b> Adding a Treatment</a></li>
+<li class="chapter" data-level="4.3.2" data-path="entering-meta-data.html"><a href="entering-meta-data.html#adding-managements"><i class="fa fa-check"></i><b>4.3.2</b> Adding Managements</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="entering-meta-data.html"><a href="entering-meta-data.html#adding-a-pft-species-or-cultivar"><i class="fa fa-check"></i><b>4.4</b> Adding a PFT, Species, or Cultivar</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="adding-trait-and-yield-data.html"><a href="adding-trait-and-yield-data.html"><i class="fa fa-check"></i><b>5</b> Adding Trait and Yield Data</a><ul>
+<li class="chapter" data-level="5.1" data-path="adding-trait-and-yield-data.html"><a href="adding-trait-and-yield-data.html#the-new-trait-and-new-yield-pages"><i class="fa fa-check"></i><b>5.1</b> The New Trait and New Yield Pages</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="adding-trait-and-yield-data.html"><a href="adding-trait-and-yield-data.html#adding-a-trait"><i class="fa fa-check"></i><b>5.1.1</b> Adding a Trait</a></li>
+<li class="chapter" data-level="5.1.2" data-path="adding-trait-and-yield-data.html"><a href="adding-trait-and-yield-data.html#adding-a-yield"><i class="fa fa-check"></i><b>5.1.2</b> Adding a Yield</a></li>
+<li class="chapter" data-level="5.1.3" data-path="adding-trait-and-yield-data.html"><a href="adding-trait-and-yield-data.html#adding-a-covariate"><i class="fa fa-check"></i><b>5.1.3</b> Adding a Covariate</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="adding-trait-and-yield-data.html"><a href="adding-trait-and-yield-data.html#bulk-upload"><i class="fa fa-check"></i><b>5.2</b> Bulk Upload</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="adding-trait-and-yield-data.html"><a href="adding-trait-and-yield-data.html#overview-1"><i class="fa fa-check"></i><b>5.2.1</b> Overview</a></li>
+<li class="chapter" data-level="5.2.2" data-path="adding-trait-and-yield-data.html"><a href="adding-trait-and-yield-data.html#detailed-csv-data-file-specifications"><i class="fa fa-check"></i><b>5.2.2</b> Detailed CSV Data File Specifications</a></li>
+<li class="chapter" data-level="5.2.3" data-path="adding-trait-and-yield-data.html"><a href="adding-trait-and-yield-data.html#using-the-bulk-upload-wizard"><i class="fa fa-check"></i><b>5.2.3</b> Using the Bulk Upload Wizard</a></li>
+<li class="chapter" data-level="5.2.4" data-path="adding-trait-and-yield-data.html"><a href="adding-trait-and-yield-data.html#troubleshooting"><i class="fa fa-check"></i><b>5.2.4</b> Troubleshooting</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="inserting-new-traits-via-the-api.html"><a href="inserting-new-traits-via-the-api.html"><i class="fa fa-check"></i><b>6</b> Inserting New Traits Via the API</a><ul>
+<li class="chapter" data-level="6.1" data-path="inserting-new-traits-via-the-api.html"><a href="inserting-new-traits-via-the-api.html#trait-insertion-endpoint."><i class="fa fa-check"></i><b>6.1</b> Trait Insertion Endpoint.</a></li>
+<li class="chapter" data-level="6.2" data-path="inserting-new-traits-via-the-api.html"><a href="inserting-new-traits-via-the-api.html#format-of-data-files"><i class="fa fa-check"></i><b>6.2</b> Format of Data Files</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="inserting-new-traits-via-the-api.html"><a href="inserting-new-traits-via-the-api.html#schema-for-xml-data-files"><i class="fa fa-check"></i><b>6.2.1</b> Schema for XML Data Files</a></li>
+<li class="chapter" data-level="6.2.2" data-path="inserting-new-traits-via-the-api.html"><a href="inserting-new-traits-via-the-api.html#schema-for-json-data-files"><i class="fa fa-check"></i><b>6.2.2</b> Schema for JSON Data Files</a></li>
+<li class="chapter" data-level="6.2.3" data-path="inserting-new-traits-via-the-api.html"><a href="inserting-new-traits-via-the-api.html#schema-for-csv-data-files"><i class="fa fa-check"></i><b>6.2.3</b> Schema for CSV Data Files</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="inserting-new-traits-via-the-api.html"><a href="inserting-new-traits-via-the-api.html#error-feedback"><i class="fa fa-check"></i><b>6.3</b> Error Feedback</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="inserting-new-traits-via-the-api.html"><a href="inserting-new-traits-via-the-api.html#authorization-errors"><i class="fa fa-check"></i><b>6.3.1</b> Authorization Errors</a></li>
+<li class="chapter" data-level="6.3.2" data-path="inserting-new-traits-via-the-api.html"><a href="inserting-new-traits-via-the-api.html#lookup-errors"><i class="fa fa-check"></i><b>6.3.2</b> Lookup Errors</a></li>
+<li class="chapter" data-level="6.3.3" data-path="inserting-new-traits-via-the-api.html"><a href="inserting-new-traits-via-the-api.html#schema-validation-errors"><i class="fa fa-check"></i><b>6.3.3</b> Schema Validation Errors</a></li>
+<li class="chapter" data-level="6.3.4" data-path="inserting-new-traits-via-the-api.html"><a href="inserting-new-traits-via-the-api.html#model-validation-errors"><i class="fa fa-check"></i><b>6.3.4</b> Model Validation Errors</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="inserting-new-traits-via-the-api.html"><a href="inserting-new-traits-via-the-api.html#running-the-examples"><i class="fa fa-check"></i><b>6.4</b> Running the Examples</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="inserting-new-traits-via-the-api.html"><a href="inserting-new-traits-via-the-api.html#using-curl-to-upload-the-data-samples"><i class="fa fa-check"></i><b>6.4.1</b> Using curl to Upload the Data Samples</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="inserting-new-traits-via-the-api.html"><a href="inserting-new-traits-via-the-api.html#known-bugs"><i class="fa fa-check"></i><b>6.5</b> Known Bugs</a></li>
+</ul></li>
+<li class="appendix"><span><b>Appendices</b></span></li>
+<li class="chapter" data-level="A" data-path="quality-assurance.html"><a href="quality-assurance.html"><i class="fa fa-check"></i><b>A</b> Quality Assurance</a></li>
+<li class="chapter" data-level="B" data-path="extracting-information-from-figures.html"><a href="extracting-information-from-figures.html"><i class="fa fa-check"></i><b>B</b> Extracting information from figures </a><ul>
+<li class="chapter" data-level="" data-path="extracting-information-from-figures.html"><a href="extracting-information-from-figures.html#for-more-information"><i class="fa fa-check"></i>For more information:</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="estimating-standard-error-from-other-summary-statistics-p-lsd-msd.html"><a href="estimating-standard-error-from-other-summary-statistics-p-lsd-msd.html"><i class="fa fa-check"></i><b>C</b> Estimating Standard Error from other summary statistics (<em>P</em>, <em>LSD</em>, <em>MSD</em>)</a><ul>
+<li class="chapter" data-level="" data-path="estimating-standard-error-from-other-summary-statistics-p-lsd-msd.html"><a href="estimating-standard-error-from-other-summary-statistics-p-lsd-msd.html#further-reading"><i class="fa fa-check"></i>Further Reading</a></li>
+</ul></li>
+<li class="chapter" data-level="D" data-path="common-unit-conversions.html"><a href="common-unit-conversions.html"><i class="fa fa-check"></i><b>D</b> Common Unit Conversions</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a><ul>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html#developers"><i class="fa fa-check"></i>Developers</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html#contributors"><i class="fa fa-check"></i>Contributors</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html#funding-sources"><i class="fa fa-check"></i>Funding Sources</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Biofuel Ecophysiological Traits and Yields Database</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="adding-trait-and-yield-data" class="section level1">
+<h1><span class="header-section-number">5</span> Adding Trait and Yield Data</h1>
+
+<div id="the-new-trait-and-new-yield-pages" class="section level2">
+<h2><span class="header-section-number">5.1</span> The New Trait and New Yield Pages</h2>
+<div id="adding-a-trait" class="section level3">
+<h3><span class="header-section-number">5.1.1</span> Adding a Trait</h3>
+<div class="figure">
+<img src="figures/Addnewtrait1/Addnewtrait1.jpg" />
+
+</div>
+<p>In general, a ‘trait’ is a phenotype (a characteristic that the plant exhibits). The traits that we are primarily interested in collecting data for are listed in Table <a href="adding-trait-and-yield-data.html#tab:traits">5.1</a>. Before adding trait data, it is necessary to have the citation, treatments, and site information already entered. To add a new Trait, go to the <a href="https://www.betydb.org/traits/new" target="_blank">new trait</a> page.</p>
+<table style="width:86%;">
+<caption><span id="tab:traits">Table 5.1: </span> Key Traits Stored in BETYdb</caption>
+<colgroup>
+<col width="15%" />
+<col width="16%" />
+<col width="36%" />
+<col width="18%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Variable</th>
+<th align="left">Units</th>
+<th align="left">Median (90%CI) or Range</th>
+<th align="left">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Vcmax</td>
+<td align="left"><span class="math inline">\(\mu\)</span>mol CO<span class="math inline">\(_2\)</span> m<span class="math inline">\(^{-2}\)</span> s<span class="math inline">\(^{-1}\)</span></td>
+<td align="left"><span class="math inline">\(44 (12, 125)\)</span></td>
+<td align="left">maximum rubisco carboxylation capacity</td>
+</tr>
+<tr class="even">
+<td align="left">SLA</td>
+<td align="left">m<span class="math inline">\(^2\)</span> kg<span class="math inline">\(^{-1}\)</span></td>
+<td align="left"><span class="math inline">\(15(4,27)\)</span></td>
+<td align="left">Specific Leaf Area area of leaf per unit mass of leaf</td>
+</tr>
+<tr class="odd">
+<td align="left">LMA</td>
+<td align="left">kg m<span class="math inline">\(^{-2}\)</span></td>
+<td align="left"><span class="math inline">\(0.09 (0.03, 0.33)\)</span></td>
+<td align="left">Leaf Mass Area (LMA = SLM = 1/SLA) mass of leaf per unit area of leaf</td>
+</tr>
+<tr class="even">
+<td align="left">leafN</td>
+<td align="left">%</td>
+<td align="left"><span class="math inline">\(2.2(0.8, 17)\)</span></td>
+<td align="left">leaf percent nitrogen</td>
+</tr>
+<tr class="odd">
+<td align="left">c2n leaf</td>
+<td align="left">leaf C:N ratio</td>
+<td align="left"><span class="math inline">\(39(21,79)\)</span></td>
+<td align="left">use only if leafN not provided</td>
+</tr>
+<tr class="even">
+<td align="left">leaf turnover rate</td>
+<td align="left">1/year</td>
+<td align="left"><span class="math inline">\(0.28(0.03,1.0) \)</span></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Jmax</td>
+<td align="left"><span class="math inline">\(\mu\)</span> mol photons m<span class="math inline">\(^{-2}\)</span> s<span class="math inline">\(^{-1}\)</span></td>
+<td align="left"><span class="math inline">\(121(30, 262)\)</span></td>
+<td align="left">maximum rate of electron transport</td>
+</tr>
+<tr class="even">
+<td align="left">stomatal slope</td>
+<td align="left"></td>
+<td align="left"><span class="math inline">\(9(1, 20)\)</span></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">GS</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">stomatal conductance (= gs<span class="math inline">\(_{\textrm{max}}\)</span>)</td>
+</tr>
+<tr class="even">
+<td align="left">q*</td>
+<td align="left"></td>
+<td align="left">0.2–5</td>
+<td align="left">ratio of fine root to leaf biomass</td>
+</tr>
+<tr class="odd">
+<td align="left">**grasses*</td>
+<td align="left">ratio of root:leaf = below:above ground biomass</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">aboveground biomass</td>
+<td align="left">g m<span class="math inline">\(^{-2}\)</span> <em>or</em> g plant<span class="math inline">\(^{-1}\)</span></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">root biomass</td>
+<td align="left">g m<span class="math inline">\(^{-2}\)</span> <em>or</em> g plant<span class="math inline">\(^{-1}\)</span></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">**trees*</td>
+<td align="left">ratio of fine root:leaf biomass</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">leaf biomass</td>
+<td align="left">g m<span class="math inline">\(^{-2}\)</span> <em>or</em> g plant<span class="math inline">\(^{-1}\)</span></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">fine root biomass (&lt;2mm)</td>
+<td align="left">g m<span class="math inline">\(^{-2}\)</span> <em>or</em> g plant<span class="math inline">\(^{-1}\)</span></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">root turnover rate</td>
+<td align="left">1/year</td>
+<td align="left">0.1–10</td>
+<td align="left">rate of fine root loss (temperature dependent) year<span class="math inline">\(^{-1}\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">leaf width</td>
+<td align="left">mm</td>
+<td align="left">22(5,102)</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">growth respiration factor</td>
+<td align="left">%</td>
+<td align="left">0–1</td>
+<td align="left">proportion of daily carbon gain lost to growth respiration</td>
+</tr>
+<tr class="even">
+<td align="left">R<span class="math inline">\(_{\textrm{dark}}\)</span></td>
+<td align="left"></td>
+<td align="left"><span class="math inline">\(\mu\)</span> mol CO<span class="math inline">\(_2\)</span> m<span class="math inline">\(^{-2}\)</span> s<span class="math inline">\(^{-1}\)</span></td>
+<td align="left">dark respiration</td>
+</tr>
+<tr class="odd">
+<td align="left">quantum efficiency</td>
+<td align="left">%</td>
+<td align="left">0–1</td>
+<td align="left">efficiency of light conversion to carbon fixation, see Farqhuar model</td>
+</tr>
+<tr class="even">
+<td align="left">dark respiration factor</td>
+<td align="left">%</td>
+<td align="left">0–1</td>
+<td align="left">converts Vm to leaf respiration</td>
+</tr>
+<tr class="odd">
+<td align="left">seedling mortality</td>
+<td align="left">%</td>
+<td align="left">0–1</td>
+<td align="left">proportion of seedlings that die</td>
+</tr>
+<tr class="even">
+<td align="left">r fraction</td>
+<td align="left">%</td>
+<td align="left">0–1</td>
+<td align="left">fraction of storage to seed reproduction</td>
+</tr>
+<tr class="odd">
+<td align="left">root respiration rate*</td>
+<td align="left">CO<span class="math inline">\(_2\)</span> kg<span class="math inline">\(^{-1}\)</span> fine roots s<span class="math inline">\(^{-1}\)</span></td>
+<td align="left">1–100</td>
+<td align="left">rate of fine root respiration at reference soil temperature</td>
+</tr>
+<tr class="even">
+<td align="left">f labile</td>
+<td align="left">%</td>
+<td align="left">0–1</td>
+<td align="left">fraction of litter that goes into the labile carbon pool</td>
+</tr>
+<tr class="odd">
+<td align="left">water conductance</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p>Presently, we are also using the Trait table to record ecosystem level measurements other than Yield. Such ecosystem level measurements can include leaf area index or net primary productivity, but are only collected when required for a particular project. Most of the fields in the Traits table are also used in the Yields table. Here is a list of the fields with a brief description, followed by more thorough explanations:</p>
+<ul>
+<li><strong>Species</strong>: Search for species in the database using the search box; if species is not found, then the new species should be added to the database.</li>
+<li><strong>Cultivar</strong>: Primarily used for crops.</li>
+<li><strong>DateLOC</strong>: Date Level of confidence. See table <a href="adding-trait-and-yield-data.html#tab:dateloc">5.2</a> for values.</li>
+<li><strong>TimeLOC</strong>: Time Level of confidence. See table <a href="adding-trait-and-yield-data.html#tab:timeloc">5.3</a> below for values.</li>
+<li><strong>Mean</strong>: For yield, <code>mean</code> is in units of tons per hectare per year (t/ha)</li>
+<li><strong>Stat name</strong>: The name of the statistical method used (usually one of SE, SD, MSE, CI, LSD, HSD, MSD). See <a href="adding-trait-and-yield-data.html#statistics">Statistics</a> for more details.</li>
+<li><strong>Statistic</strong>: The value of the statistic associated with Stat name.</li>
+<li><strong>N</strong>: Always record N if provided. N is the number of experimental replicates, often referred to as the sample size; N represents the number of independent units within each treatment: in a field setting, this is often the number of plots in each treatment, but in a greenhouse, growth chamber, or pot-study this may be the number of chambers, pots, or individual plants. Sometimes this value is not clearly stated.</li>
+</ul>
+<div id="uncertainty-in-date-or-time" class="section level4">
+<h4><span class="header-section-number">5.1.1.1</span> Uncertainty in Date or Time</h4>
+<div id="dateloc" class="section level5 unnumbered">
+<h5>DateLOC</h5>
+<p>The date level of confidence (DateLOC, Table ) provides an indication of how accurately the date associated with the trait or yield observation is known. It provides the values that should be entered in this field. If the event occurred at a level of precision not defined by an integer in this table, then use fractions. For example, we commonly use 5.5 to indicate a one week level of precision. If the exact year is not known, but the time of year is, then use 91 to 97, with the second digit to indicate the information known within the year.</p>
+<table>
+<caption><span id="tab:dateloc">Table 5.2: </span> <strong>Date level of confidence (DateLOC) field</strong>: Numbering convention for the DateLOC (Date level of confidence) and TimeLOC (Time level of confidence) field, used in managements, traits, and yields table.</caption>
+<thead>
+<tr class="header">
+<th align="left">Dateloc</th>
+<th align="left">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">9</td>
+<td align="left">no data</td>
+</tr>
+<tr class="even">
+<td align="left">8</td>
+<td align="left">year</td>
+</tr>
+<tr class="odd">
+<td align="left">7</td>
+<td align="left">season</td>
+</tr>
+<tr class="even">
+<td align="left">6</td>
+<td align="left">month</td>
+</tr>
+<tr class="odd">
+<td align="left">5</td>
+<td align="left">day</td>
+</tr>
+<tr class="even">
+<td align="left">95</td>
+<td align="left">unknown year, known day</td>
+</tr>
+<tr class="odd">
+<td align="left">96</td>
+<td align="left">unknown year, known month</td>
+</tr>
+<tr class="even">
+<td align="left">…etc</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="timeloc" class="section level5 unnumbered">
+<h5>TimeLOC</h5>
+<p>The time level of confidence (TimeLOC) provides an indication of how accurately the time associated with the trait or yield observation is known. It provides the values that should be entered in this field.</p>
+<table>
+<caption><span id="tab:timeloc">Table 5.3: </span> TimeLOC Values</caption>
+<thead>
+<tr class="header">
+<th align="left">Timeloc</th>
+<th align="left">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">9</td>
+<td align="left">no data</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left">time of day i.e. morning, afternoon</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">hour</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left">minute</td>
+</tr>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">second</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="statistics" class="section level4">
+<h4><span class="header-section-number">5.1.1.2</span> Statistics</h4>
+<p>Our goal is to record statistics that can be used to estimate standard deviation or standard error (<a href="https://www.authorea.com/users/5574/articles/6811/" class="uri" target="_blank">https://www.authorea.com/users/5574/articles/6811/</a>). Many different methods can be used to summarize data, and this is reflected in the diversity of statistics that are reported. An overview of these methods is given in a description below.</p>
+<p>Where available, direct estimates of variance are preferred, including Standard Error (SE), sample Standard Deviation (SD), or Mean Squared Error (MSE). SE is usually presented in the format of mean (±SE). MSE is usually presented in a table. When extracting SE or SD from a figure, measure from the mean to the upper or lower bound. This is different than confidence intervals and range statistics (described below), for which the entire range is collected.</p>
+<p>If MSE, SD, or SE are not provided, it is possible that LSD, MSD, HSD, or CI will be provided. These are range statistics and the most frequently found range statistics include a Confidence Interval (95%CI), Fisher’s Least Significant Difference (LSD), Tukey’s Honestly Significant Difference (HSD), and Minimum Significant Difference (MSD). Fundamentally, these methods calculate a range that indicates whether two means are different or not, and this range uses different approaches to penalize multiple comparisons. The important point is that these are ranges and that we record the entire range.</p>
+<p>Another type of statistic is a “test statistic”; most frequently there will be an F-value that can be useful, but this should not be recorded if MSE is available. Only if there is no other information available should you record the P-value.</p>
+</div>
+</div>
+<div id="adding-a-yield" class="section level3">
+<h3><span class="header-section-number">5.1.2</span> Adding a Yield</h3>
+<p>The protocol for entering yield data is identical to entering data for a trait, with a few exceptions:</p>
+<ol style="list-style-type: decimal">
+<li><p>There are no covariates associated with yield data</p></li>
+<li><p>Yield data is always the dry harvestable biomass; if necessary, moisture content can be added as a trait</p></li>
+</ol>
+<p>Yield is equivalent to aboveground biomass on a per-area basis, and has units of Mg ha<span class="math inline">\(^{-1}\)</span> y<span class="math inline">\(^{-1}\)</span>.</p>
+</div>
+<div id="adding-a-covariate" class="section level3">
+<h3><span class="header-section-number">5.1.3</span> Adding a Covariate</h3>
+<p>Covariates are required for many of the traits. Covariates generally indicate the environmental conditions under which a measurement was made. Without covariate information, the trait data will have limited value.</p>
+<p>A complete list of required covariates can be found in Table <a href="adding-trait-and-yield-data.html#tab:covariates">5.4</a>. For all respiration rates and photosynthetic parameters, temperature is recorded as a covariate. Soil moisture, humidity, and other such variables that were measured at the time of the measurement may be required in order to standardize across studies.</p>
+<p>When root data is recorded, the root size class needs to be entered as a covariate. The term ’fine root’ often refers to the &lt;2mm size class, and in this case, the covariate <code>root_maximum_diameter</code> would be set to 2. If the size class is a range, then the <code>root_minimum_diameter</code> can also be used.</p>
+<p><strong>Table <a href="adding-trait-and-yield-data.html#tab:covariates">5.4</a>: Traits with required covariates</strong></p>
+<p>A list of traits and the covariates that must be recorded along with the trait value in order to be converted to a constant scale from across studies.</p>
+<p><strong>notes:</strong></p>
+<p>Stomatal conductance (<code>gs</code>) is only useful when reported in conjunction with other photosynthetic data, such as <code>Amax</code>. Specifically, if we have <code>Amax</code> and <code>gs</code>, then estimation of <code>Vcmax</code> only covaries with <code>dark_respiration_factor</code> and atmospheric CO<sub>2</sub> concentration.</p>
+<p>We also now have information to help constrain <code>stomatal_slope</code>. If we have <code>Amax</code> but not <code>gs</code>, then our estimate of <code>Vcmax</code> will covary with: <code>dark_respiration_factor</code>, <code>CO2</code>, <code>stomatal_slope</code>, <code>cuticular_conductance</code>, and vapor-pressure deficit <code>VPD</code> (which is more difficult to estimate than CO<sub>2</sub>, but still possible given lat, lon, and date). Most important, there will be a strong covariance between <code>Vcmax</code> and <code>stomatal_slope</code>.</p>
+<table style="width:76%;">
+<caption><span id="tab:covariates">Table 5.4: </span> Required Covariates</caption>
+<colgroup>
+<col width="15%" />
+<col width="30%" />
+<col width="30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Variable</th>
+<th align="left">Required Covariates</th>
+<th align="left">Optional Covariates</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">vcmax</td>
+<td align="left">temperature (leafT or airT)</td>
+<td align="left">irradiance</td>
+</tr>
+<tr class="even">
+<td align="left">any leaf measurement</td>
+<td align="left"></td>
+<td align="left">canopy_height or canopy_layer</td>
+</tr>
+<tr class="odd">
+<td align="left">root_respiration_rate</td>
+<td align="left">temperature (rootT or soilT)</td>
+<td align="left">soil moisture</td>
+</tr>
+<tr class="even">
+<td align="left">root_diameter_max</td>
+<td align="left"></td>
+<td align="left">root size class (usually 2mm)</td>
+</tr>
+<tr class="odd">
+<td align="left">any respiration</td>
+<td align="left">temperature</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">root biomass</td>
+<td align="left"></td>
+<td align="left">min. size cutoff, max. size cutoff</td>
+</tr>
+<tr class="odd">
+<td align="left">root, soil</td>
+<td align="left">depth (cm)</td>
+<td align="left">used for max and min depths of soil, if only one value, assume min depth = 0; negative values indicate above ground</td>
+</tr>
+<tr class="even">
+<td align="left">gs (stomatal conductance)</td>
+<td align="left">A<sub>max</sub></td>
+<td align="left">see notes in caption</td>
+</tr>
+<tr class="odd">
+<td align="left">stomatal_slope (m)</td>
+<td align="left">humidity, temperature</td>
+<td align="left">specific humidity, assume leaf T = air T</td>
+</tr>
+<tr class="even">
+<td align="left">SLA</td>
+<td align="left"></td>
+<td align="left">canopy_level</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div id="bulk-upload" class="section level2">
+<h2><span class="header-section-number">5.2</span> Bulk Upload</h2>
+<div id="overview-1" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> Overview</h3>
+<p>There are three phases for a basic bulk upload of data:</p>
+<ol style="list-style-type: decimal">
+<li><p>Enter meta-data pertaining to your data set (new sites, species, cultivars, citations, or treatments).</p></li>
+<li><p>Create a CSV file of the appropriate form that contains your data.</p>
+<p>You may use one of the following sample headings to get started.</p>
+<hr />
+<p><strong>Heading for yield data with citation specified by author, year, and title.</strong></p>
+<p><span id="yields.csv">citation_author,citation_year,citation_title,cultivar,species,site,treatment,date,yield,n,SE,notes,access_level</span></p>
+<button class="js-copy-btn" data="yields.csv">
+Copy to clipboard
+</button>
+<hr />
+<p>If your data includes standard error and cultivar information and you do not plan to specify any of the required information interactively, you will be able to use this template “as-is”. Otherwise, you will need to delete one or more columns:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>If your data has no standard error information, delete both the <code>SE</code> and the <code>n</code> column.</p></li>
+<li><p>If your data set has a single uniform value for the site, species, cultivar, treatment, access_level, or date, then these values may be entered interactively through the web interface; in this case you should delete the corresponding column(s) from the template.</p></li>
+<li><p>Note that cultivar information can’t be specified interactively unless the species information is as well (and vice versa); delete the <code>cultivar</code> column if and only if you either have no cultivar information or you are specifying both the species and the cultivar interactively.</p></li>
+</ol>
+<hr />
+<p><strong>Heading for yield data with citation specified by DOI.</strong></p>
+<p><span id="yields_by_doi.csv">citation_doi,cultivar,species,site,treatment,date,yield,n,SE,notes,access_level</span></p>
+<button class="js-copy-btn" data="yields_by_doi.csv">
+Copy to clipboard
+</button>
+<hr />
+<p>Use this template if you are uploading yield data and you wish to specify the citation in the file by its Digital Object Identifier (DOI).</p>
+<p>Again, if you do not have data for all of the columns listed in the template, or if you plan to specify some of the data interactively, you will have to delete one or more columns.</p>
+<p>You may also use this template if all of the data in your data set pertains to a single citation and you wish to specify that citation interactively. In this case, you must delete the <code>citation_doi</code> column.</p>
+<hr />
+<p><strong>Heading for trait data with citation specified by author, year, and title.</strong></p>
+<p><span id="traits.csv">citation_author,citation_year,citation_title,cultivar,species,site,treatment,date,entity,[trait variable 1],[trait variable 2],[trait variable n],[covariate 1],[covariate 2],[covariate n],n,SE,notes,access_level</span></p>
+<button class="js-copy-btn" data="traits.csv">
+Copy to clipboard
+</button>
+<hr />
+<p>Use this template if you are uploading trait data and you wish to specify the citation in the file by author, year, and title.</p>
+<p><strong>This template must be modified before it can be used.</strong> In particular, the column headings <code>[trait variable 1]</code> …<code>[trait variable n]</code> must be replaced by actual variable names that <em>exactly</em> match names of variables in the database. The number of these trait variable columns may need to be increased or decreased to accommodate the data set.</p>
+<p>Some trait variables allow or even require corresponding covariate information to be included. Again, the column headings <code>[covariate 1]</code> …<code>[covariate n]</code> must be changed to actual covariate variable names, and the number of these columns may need to be increased or decreased to match the available information. For a list of recognized trait variable names that are treated as covariates, visit the trait variable/covariates list at <a href="https://www.betydb.org/trait_covariate_associations" class="uri" target="_blank">https://www.betydb.org/trait_covariate_associations</a> or the corresponding page of the site to which you are uploading your data.</p>
+<p>As with the yield data templates, delete columns for attributes that have a uniform value for the data set and that you plan to specify interactively.</p>
+<p>Trait data files may also include an <code>entity</code> column if you wish to use named entities to group associated traits. Delete this column heading from the template if you simply want to use anonymous automatically-created entities. For more detailed information about entities, see <a href="adding-trait-and-yield-data.html#optional-data">Optional data</a> below.</p>
+<hr />
+<p><strong>Heading for trait data with citation specified DOI.</strong></p>
+<p><span id="traits_by_doi.csv">citation_doi,cultivar,species,site,treatment,date,entity,[trait variable 1],[trait variable 2],[trait variable n],[covariate 1],[covariate 2],[covariate n],n,SE,notes,access_level</span></p>
+<button class="js-copy-btn" data="traits_by_doi.csv">
+Copy to clipboard
+</button>
+<hr />
+<p>As with the corresponding yield data template, use this template if you are uploading trait data and you wish to specify the citation in the file by DOI or if you plan to specify the citation interactively (in which case delete the <code>citation_doi</code> column). <strong>Again, this template must be modified before it can be used.</strong></p></li>
+<li><p>Use the Bulk Upload Wizard in the BETYdb web interface to upload your data set and insert it into the database.</p></li>
+</ol>
+</div>
+<div id="detailed-csv-data-file-specifications" class="section level3">
+<h3><span class="header-section-number">5.2.2</span> Detailed CSV Data File Specifications</h3>
+<p><em>In what follows, the term “field” always refers either to a column name used in the heading of the uploaded CSV file or to an entry in that column in some particular row of the file. On the other hand, and the term “column” may either refer to a column of data in the uploaded CSV file or to an attribute of a trait or yield datum in the traits or yields table of the database.</em></p>
+<div id="general-considerations" class="section level4">
+<h4><span class="header-section-number">5.2.2.1</span> General Considerations</h4>
+<p>Although the comma-separated value (CSV) file format is not fully standardized, here are some general guidelines:</p>
+<ol style="list-style-type: decimal">
+<li><p>The top line of the file should contain a comma-separated list of column headings. Any column heading not recognized as being significant (see below) will be ignored, as will the data in subsequent rows falling under that heading.</p></li>
+<li><p>Lines (or <em>rows</em>) after the first contain data. Data items are separated by commas, and in general there will be one data item for each column heading; the nth data item in a row “belongs” to the nth heading in the top line.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></p></li>
+<li><p>There can be no extraneous blank lines, even at the end of the file.</p></li>
+<li><p>Extraneous space before or after a comma or at the beginning or end of a row is discarded.</p></li>
+<li><p>To include a comma as part of a data item, the data item must be quoted with double-quotes so that the comma is not interpreted as a data-value separator. There should be no extraneous space between a double-quoted item and the preceding and following commas or beginning or end of the line.</p></li>
+<li><p>To include a literal double quote as part of a quoted item, use two consecutive double quotes.</p></li>
+</ol>
+</div>
+<div id="required-data-file-fields" class="section level4">
+<h4><span class="header-section-number">5.2.2.2</span> Required data file fields</h4>
+<ol style="list-style-type: decimal">
+<li><p>For yields uploads, the only required field is a <code>yield</code> column.</p></li>
+<li><p>For trait uploads, there must be at least one column whose label exactly matches the variable name for the trait value being specified. (Leading and trailing spaces are permitted, but letter case must exactly match the name of the variable specified in the database.) If this trait variable has any required covariates, columns for these covariates must be included. Again, visit <a href="https://www.betydb.org/trait_covariate_associations" class="uri" target="_blank">https://www.betydb.org/trait_covariate_associations</a> (or the corresponding page for the site you are uploading to) to see which traits require covariates.</p></li>
+</ol>
+</div>
+<div id="information-that-is-required-but-that-may-be-specified-interactively-for-the-entire-dataset." class="section level4">
+<h4><span class="header-section-number">5.2.2.3</span> Information that is required but that <em>may</em> be specified interactively for the entire dataset.</h4>
+<p><em>Attributes of data items may be specified interactively only if there is a single uniform value that pertains to the whole data set contained in the upload file.</em></p>
+<div id="information-that-references-existing-database-entries" class="section level5 unnumbered">
+<h5>Information that references existing database entries</h5>
+<p>As mentioned, the first step in doing a bulk upload is to ensure that there are existing items already in the database for each attribute value of each item in the upload set. There are defined rules as to how to refer to these existing attributes in your upload file. For example, a species must be referred to by its scientific name even though there are other attributes of the species items stored in the species table that might uniquely identify a particular species (the <code>AcceptedSymbol</code> attribute, for example).</p>
+<p>In these sections, we specify, for each attribute, how to refer to the attribute value, whether or not the attribute can be specified interactively or must be specified in the data file, and what criteria are used to match values specified in the data file with existing table entries in the database.</p>
+<ol style="list-style-type: decimal">
+<li><p>Citation</p>
+<ul>
+<li><p>If the entire dataset pertains to a single citation, that citation may be specified interactively by choosing a citation on the citations page instead of including citation information in the CSV file.</p></li>
+<li><p>Otherwise, specify the citations in the CSV file, either by DOI or by author, year, and title.</p></li>
+<li><p>If a DOI is available for all citations in the data set, the citation corresponding to each row may be specified in a <code>citation_doi</code> column. In this case, the <code>citation_author</code>, <code>citation_year</code>, and <code>citation_title</code> columns must not be in the column heading list.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> Each value in the <code>citation_doi</code> column must exactly match the <code>doi</code> attribute of some row in the <code>citations</code> table except that letter case and leading and trailing spaces are ignored.</p></li>
+<li><p>Conversely, if a DOI is not available for all citations in the data set, or if it is preferred to specify the citation by author, year, and title, then the <code>citation_doi</code> column should <em>not</em> be included and the columns <code>citation_author</code>, <code>citation_year</code>, and <code>citation_title</code> must all be present.<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a></p></li>
+</ul></li>
+<li><p>Site</p>
+<ul>
+<li><p>If all of the data in the data set pertains to a single site, that site may be specified interactively.</p></li>
+<li><p>Otherwise, a <code>site</code> column is required. Each value in the column must match an existing <code>sitename</code> column value in the <code>sites</code> table of the database. (Letter case, leading and trailing spaces, and extra internal spaces are ignored when searching for a match.)</p></li>
+</ul></li>
+<li><p>Species</p>
+<ul>
+<li><p>If all of the data in the data set pertains to a single species, that species may be specified interactively.</p></li>
+<li><p>Otherwise, the <code>species</code> column is required. Each value must match an existing <code>scientificname</code> column value in the <code>species</code> table of the database. (Again, letter case, leading and trailing spaces, and extra internal spaces are ignored when searching for a match.)</p></li>
+</ul></li>
+<li><p>Treatment</p>
+<ul>
+<li><p>If a single treatment and a single citation applies to all of the data in the data set, the treatment may be specified interactively provided that the citation is specified interactively as well.</p></li>
+<li><p>Otherwise, a <code>treatment</code> column is required. The value must match an existing <code>name</code> column value in the <code>treatments</code> table of the database; moreover, this matching treatment must be consistent with the specified citation. (Again, letter case, leading and trailing spaces, and extra internal spaces are ignored when searching for a match.)</p></li>
+</ul></li>
+</ol>
+</div>
+<div id="other-information-that-may-be-specified-interactively" class="section level5 unnumbered">
+<h5>Other information that may be specified interactively</h5>
+<ol style="list-style-type: decimal">
+<li><p>Date</p>
+<ul>
+<li><p>If a single date (with or without time of day) applies to all of the data in the data set, the date may be specified interactively.</p></li>
+<li><p>Otherwise, if there are multiple dates (with or without times) associated with the data, a <code>local_datetime</code> column is required.<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a></p></li>
+<li><p>Values in the <code>local_datetime</code> column or in the <code>date</code> text box in the Global Values page may be in one of two forms:</p>
+<ul>
+<li><p>Date values without time of day must be in the form <code>YYYY-MM-DD</code>. For example, July 25, 2003 must be entered as “2003-07-25”.</p></li>
+<li><p>Values that include the time of day must be in the form <code>YYYY-MM-DD   HH:MM:SS</code> or <code>YYYY-MM-DDTHH:MM:SS</code>. (Here, <code>T</code> is simply the literal letter <code>T</code>.) For example, 11 a.m. on November 11, 1918 could be specified either as “1918-11-11 11:00:00” or as “1918-11-11T11:00:00”. <strong><em>Note that the yields table stores only the date and so any time-of-day information given in a yields data file or specified interactively will be ignored.</em></strong>.</p></li>
+</ul>
+<p>Note that the date and time should always be the date and time at the site where the trait measurement was made.<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> When uploading trait data, each site associated with the data file must be associated with a valid time zone!<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a><a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a></p></li>
+</ul></li>
+<li><p>Rounding</p>
+<ul>
+<li><p>The amount of rounding for numerical data can only be specified interactively. Any value from 1 to 4 significant digits may be chosen. The amount of rounding for the standard error SE (if present) may be specified separately from the amount of rounding for yield and for trait variables and their covariates.</p></li>
+<li><p>By default, all numerical measurements are rounded to three significant digits. For example, with this default in place, 999.1 will be rounded to 999 and 1001.1 will be rounded to 1000.</p></li>
+<li><p>Standard error values (if given) are by default rounded to two significant digits.</p></li>
+</ul></li>
+</ol>
+</div>
+</div>
+<div id="numerical-data" class="section level4">
+<h4><span class="header-section-number">5.2.2.4</span> Numerical Data</h4>
+<p>Numerical data is <em>never</em> specified interactively since typically each measurement will have a different numerical value so there will never be a uniform value for all data in the data set.</p>
+<div id="data-for-yields" class="section level5 unnumbered">
+<h5>Data for Yields</h5>
+<ol style="list-style-type: decimal">
+<li><p>Yield</p>
+<p>Every yield data upload file must have a <code>yield</code> column. The data in this column must always be a parsable non-negative number and must never be blank. Scientific notation is not currently supported. As noted above, the number given in the file is subject to rounding before being inserted into the database.</p></li>
+<li><p>Sample Size</p>
+<p>An <code>n</code> column is required if and only if an <code>SE</code> column is included. The value must always be an integer greater than 1.</p></li>
+<li><p>Standard Error</p>
+<p>An <code>SE</code> column is required if and only if an <code>n</code> column is included; this datum will be inserted into the <code>stat</code> column of the <code>yields</code> table, and the <code>statname</code> column value will be set to “SE”. As with the yield column, the data in this column must never be blank, and values can’t be in scientific notation.<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a></p></li>
+</ol>
+</div>
+<div id="data-for-traits" class="section level5 unnumbered">
+<h5>Data for Traits</h5>
+<ol style="list-style-type: decimal">
+<li><p>Trait variable values</p>
+<ul>
+<li><p>Every trait data upload file must have at least one column whose heading matches the name of some recognized trait variable. A list of recognized trait variables is listed on the BETYdb web site. If multiple trait variable columns are used, each row in the CSV file will produce one row in the <code>traits</code> table for each trait variable column having a non-blank entry.<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a> (These resulting rows will be effectively <em>grouped</em> by assigning them a unique entity id. Said another way, there is a one-to-one correspondence between rows in the CSV file and resultant rows in the <code>entities</code> table, the table that keeps track of this grouping.) As with yield numbers, the data in this column must always be a parsable number and is subject to rounding before being inserted into the database. In addition, it must conform to any range restrictions on the value of the variable.</p></li>
+<li><p>The template for traits uploads provides dummy column headings <code>[trait variable 1]</code>, <code>[trait variable 2]</code>, etc., which must be changed to actual variable names before data can be uploaded.</p></li>
+</ul></li>
+<li><p>Covariate values</p>
+<ul>
+<li><p>If any of the included trait variables has a required covariate, there must be a column corresponding to that covariate.</p></li>
+<li><p>For any of the included trait variables that has an optional covariate, a column corresponding to that covariate <em>may</em> be included.</p></li>
+<li><p>As with trait variable columns, entries in a covariate variable column may be left blank.<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a></p></li>
+<li><p>The template for traits uploads provides dummy column headings <code>[covariate 1]</code>, <code>[covariate 2]</code>, etc., which must be changed to actual variable names before data can be uploaded.</p></li>
+</ul></li>
+<li><p>Sample Size and Standard Error</p>
+<p>An <code>SE</code> column is required if and only if an <code>n</code> column is included; this datum will be inserted into the <code>stat</code> column of the <code>traits</code> table, and the <code>statname</code> column value will be set to “SE”. *<strong>Note that if you have more than one trait variable column, the <code>n</code> and <code>SE</code> columns are not allowed.</strong> This is because there is currently no way to use different standard error values for different trait variables, and it is unlikely that different variables would share the same value for the standard error.<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a></p>
+<p>Note that even if <code>n</code> and <code>SE</code> values <em>are</em> specified, the <code>n</code> and <code>SE</code> values for any associated covariates will be set to NULL: There is currently no way to specify standard error values for covariates in a bulk upload file.</p>
+<p>Again, values of <code>n</code> must be at least 2, and columns for <code>n</code> and <code>SE</code> must both be present or both be absent.</p></li>
+</ol>
+</div>
+</div>
+<div id="optional-data" class="section level4">
+<h4><span class="header-section-number">5.2.2.5</span> Optional data</h4>
+<ol style="list-style-type: decimal">
+<li><p>Sample Size and Standard Error</p>
+<p>As noted above, these are both optional, but if one of these is included, the other must be included as well. In other words, the column heading list must include both of <code>n</code> and <code>SE</code> or neither. Note that if <code>n</code> and <code>SE</code> are not included in the uploaded CSV file, the value of the <code>n</code> column of the traits or yields table will default to 1 and the <code>stat</code> and <code>statname</code> column values will default to NULL and the empty string, respectively.</p></li>
+<li><p>Cultivar</p>
+<ul>
+<li><p>If a uniform value for the species is provided interactively when uploading the data set, the cultivar may be specified this way as well, provided that it also has a uniform value for the whole data set.</p></li>
+<li><p>Otherwise, to include cultivar information in the upload file, both a <code>species</code> and a <code>cultivar</code> column must be included. The values in the <code>cultivar</code> column are allowed to be blank (in which case a value of NULL is inserted into the <code>cultivar_id</code> column for the given row); but if provided, the value must match the value of the <code>name</code> column in some row of the <code>cultivars</code> table; moreover, this row must be a row associated with the species corresponding to the value given in the <code>species</code> column. Again, matching is case insensitive, and leading, trailing, and excess internal whitespace is ignored.</p></li>
+</ul></li>
+<li><p>Notes</p>
+<p>To include notes, use a <code>notes</code> column. There is no restriction on what can be included in this column, but leading and trailing space will be stripped before insertion into the database. Non-ascii characters entered in the file in UTF-8 encoding are allowed. If there is no <code>notes</code> column, each row inserted into the <code>traits</code> or <code>yields</code> table will use the empty string as the value for the <code>notes</code> column.</p></li>
+<li><p>Entities</p>
+<p>Entities are a way of grouping related traits. For example, trait measurements made at the same time on the same plant group, plant, or plant part are intrinsically related. To show this in the database, they may be given a common value for the <code>entity_id</code> attribute.</p>
+<p>The Bulk Upload Wizard handles entities as follows:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>The data file is for yields. In this case, no entities are created, and all yield rows created will have NULL as their <code>entity_id</code> attribute.</p></li>
+<li><p>The data file is for traits and has no “entity” column but has at least two trait-variable columns. In this case, what happens for a given row will depend on whether that row has any non-blank trait-variable column values.</p>
+<ol style="list-style-type: lower-roman">
+<li><p>If the row has at least one non-empty trait-variable column value, a new, anonymous entity will be created and each trait created for the row will be assigned the new entity.</p></li>
+<li><p>If all trait-variable column values in the row are blank, no entities or traits are created for that row.</p></li>
+</ol></li>
+<li><p>The data file is for traits, has no “entity” column, and has only one trait-variable column. In this case, no entities are created, and all trait rows created will have NULL as their <code>entity_id</code> attribute.</p></li>
+<li><p>The data file is for traits and <em>does</em> have an “entity” column. In this case, what happens for a given row will depend on whether the “entity” column and the trait-variable columns are blank.</p>
+<ol style="list-style-type: lower-roman">
+<li><p>If the “entity” column is not blank and the name given there matches the name of an existing entity, the new traits created for the row will be assigned to that entity.</p></li>
+<li><p>If the “entity” column is not blank but does not match the name of any existing entity, and if at least one trait-variable column value is non-blank, a new entity will be created whose name is the value specified in the “entity” column, and new traits created for the row will be assigned to this new entity.</p></li>
+<li><p>If the “entity” column is not blank but all trait-variable column values <em>are</em> blank, no new entity will be created whether or not the value in the “entity” column matches the name of an existing entity.</p></li>
+<li><p>Rows in which the “entity” column is blank are treated as in the case that the entity column does not exist: that is, anonymous entities are only created if there are at least two trait-variable columns and then only for rows for which at least one trait-variable column value is non-blank.</p></li>
+</ol></li>
+</ol></li>
+<li><p>Methods</p>
+<p>A method <em>may</em> be specified for each trait variable in the data file. Methods must be specified interactively on the Upload Options and Global Values page. This means of course that for each file, each trait variable must be assigned uniformly to the same method; trait values in different rows can not be assigned different methods.</p></li>
+</ol>
+</div>
+</div>
+<div id="using-the-bulk-upload-wizard" class="section level3">
+<h3><span class="header-section-number">5.2.3</span> Using the Bulk Upload Wizard</h3>
+<p>Once a CSV data file has been composed, you are ready to start an upload using the Bulk Upload Wizard.</p>
+<p>The Bulk Upload Wizard is a sequence of pages designed to guide the user through the process of uploading a data file and having its data added to the database. Here is a step-be-step guide to using the wizard. This guide assumes you have already composed a data file, and that it is accessible in the file system of the computer you are using to access the wizard.</p>
+<ol style="list-style-type: decimal">
+<li><p>Click the Bulk Upload menu item at the top of any BETYdb page.</p></li>
+<li><p>On the “New Bulk Upload” page, click the “Choose File” button. In the file chooser that comes up, find the file you want to upload and double-click on it.</p></li>
+<li><p>Click the “Upload and validate file” button.</p></li>
+<li><p>If you do not have citation information in your file and you have not chosen a citation to use in your browser session, you will be taken to the “Choose a Citation” page. Otherwise, skip the next steps.</p>
+<p>Type into the auto-completion citation text box and choose from among the list of citations that come up. Note that the list of citations will be filtered by trying to match the author, year, title, or DOI against the string of characters you type into the box.</p></li>
+<li><p>Once you have chosen a citation, click the “View Validation Results” button.</p></li>
+<li><p>View the validation results. This page will display your data file and will highlight any errors or possible errors. For details on potential problems, see the <a href="adding-trait-and-yield-data.html#troubleshooting">Troubleshooting</a> section.</p></li>
+<li><p>If there are no errors to be dealt with, click the link on the upper-right to go on to the “Specify Upload Options and Global Values” page.</p></li>
+<li><p>The “Specify Upload Options and Global Values” page allows for specifying global value that apply to the whole data set.</p>
+<ul>
+<li><p>At a minimum—if all meta-data which can be specified in the data file <em>is</em> specified there—one will be presented with the option to specify the amount of rounding of yield values.</p></li>
+<li><p>If the file contains standard error information, one will also be presented with the option to specify the amount of rounding of standard error values.</p></li>
+<li><p>If any of the attributes “site”, “species”, “treatment”, “access_level”, or “date” was not specified in the data file, one is required to enter values for them here.</p></li>
+<li><p>If the species is being specified interactively, one will be presented with the option to specify the cultivar interactively as well.</p></li>
+<li><p>For trait uploads, one will be presented with the option to specify a method for each trait variable in the file.</p></li>
+</ul></li>
+<li><p>Once you have specified all required values and any optional value you with to specify, click “Confirm Data”.</p></li>
+<li><p>The “Verify Upload Specifications and Data-Set References” will present a summary both of information specified in the data file and information you specified interactively.</p>
+<ul>
+<li><p>If the upload file is a trait file, each trait variable will be listed along with any associated covariates specified in the data file and any methods specified on the previous page.</p></li>
+<li><p>If the data access level was specified interactively, the value chosen will be displayed.</p></li>
+<li><p>The amount of rounding chosen for yield or trait values and (if applicable) for standard error values will be displayed.</p></li>
+<li><p>All reference data (meta-data) for the data set will be listed:</p>
+<ul>
+<li><p>All citations referenced will be listed, with the author, title, year, DOI, and journal (if specified).</p></li>
+<li><p>If any named entities were specified in the file, they will be listed along with their parent entity (if any) and notes (if any).</p></li>
+<li><p>The names of all associated sites will be listed, along with their city, state, country, latitude and longitude, and (if specified) the soil type and soil notes.</p></li>
+<li><p>Each associated species will be listed, including (if specified) the full scientific name, the genus, the common name, and the accepted symbol.</p></li>
+<li><p>If cultivars were specified, their names will be listed along with their ecotype and associated species.</p></li>
+<li><p>Names of all treatments specified will be listed, together with (if specified) their definition, whether or not they are a control, and the author of the associated citation.</p></li>
+</ul></li>
+<li><p>Once the summary has been checked over for any errors or omissions, click the “Insert Data” button if all is OK. If the upload was successful, you will be returned to the start page of the wizard and a success message will be displayed.</p></li>
+</ul></li>
+</ol>
+</div>
+<div id="troubleshooting" class="section level3">
+<h3><span class="header-section-number">5.2.4</span> Troubleshooting</h3>
+<p>[to-do]</p>
+<script>
+
+// This code is an adapted version of code found in the section "Complex
+// Example: Copy to clipboard without displaying input" in an answer to a
+// StackOverflow post at
+// https://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript.
+
+
+function copyTextToClipboard(text) {
+  var textArea = document.createElement("textarea");
+
+  //
+  // *** This styling is an extra step which is likely not required. ***
+  //
+  // Why is it here? To ensure:
+  // 1. the element is able to have focus and selection.
+  // 2. if element was to flash render it has minimal visual impact.
+  // 3. less flakyness with selection and copying which **might** occur if
+  //    the textarea element is not visible.
+  //
+  // The likelihood is the element won't even render, not even a flash,
+  // so some of these are just precautions. However in IE the element
+  // is visible whilst the popup box asking the user for permission for
+  // the web page to copy to the clipboard.
+  //
+
+  // Place in top-left corner of screen regardless of scroll position.
+  textArea.style.position = 'fixed';
+  textArea.style.top = 0;
+  textArea.style.left = 0;
+
+  // Ensure it has a small width and height. Setting to 1px / 1em
+  // doesn't work as this gives a negative w/h on some browsers.
+  textArea.style.width = '2em';
+  textArea.style.height = '2em';
+
+  // We don't need padding, reducing the size if it does flash render.
+  textArea.style.padding = 0;
+
+  // Clean up any borders.
+  textArea.style.border = 'none';
+  textArea.style.outline = 'none';
+  textArea.style.boxShadow = 'none';
+
+  // Avoid flash of white box if rendered for any reason.
+  textArea.style.background = 'transparent';
+
+
+  textArea.value = text;
+
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+
+  try {
+    var successful = document.execCommand('copy');
+    var msg = successful ? 'successful' : 'unsuccessful';
+    console.log('Copying text command was ' + msg);
+  } catch (err) {
+    console.log('Oops, unable to copy');
+  }
+
+  document.body.removeChild(textArea);
+}
+
+
+var copyBtnArray = document.querySelectorAll('.js-copy-btn');
+
+copyBtnArray.forEach(function(button) {
+    button.addEventListener('click', function(event) {
+        var sourceId = event.target.getAttribute("data");
+        var text = document.getElementById(sourceId).textContent;
+        # alert(text);
+        copyTextToClipboard(text);
+    });
+});
+
+
+</script>
+
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>In some cases, it is allowable for data in some columns to be missing from some rows. In this case, there will be two consecutive commas with only zero or more white-space characters in between, or, in the case of the first or last columns, there may be only whitespace before the first or after the last comma of the row. If items are omitted from the end of a line, the trailing commas may be omitted as well.<a href="adding-trait-and-yield-data.html#fnref1">↩</a></p></li>
+<li id="fn2"><p>If such information is already included in the data set and you want to keep such columns for purely informational purposes, the string <code>-ignore</code> may be appended to each of these headings. (In fact, renaming the columns to any non-recognized heading name will do.)</p>
+<p>One might want to do this, for example, to keep a visual record of the author, year, and title even when it is the citation DOI that is being used to determine how the data will associated with a citation in the database.<a href="adding-trait-and-yield-data.html#fnref2">↩</a></p></li>
+<li id="fn3"><p>Again, if some DOI information is already included and you wish to retain it for purely informational purposes, you could append <code>-ignore</code> to the <code>citation_doi</code> heading.<a href="adding-trait-and-yield-data.html#fnref3">↩</a></p></li>
+<li id="fn4"><p>This column can also be called <code>date</code>, but using this as the column heading is deprecated: <code>local-datetime</code> more clearly emphasizes that the dates or dates-and-time specified in this column are interpreted as being the date/time in the time zone of the site where the trait measurement was made.<a href="adding-trait-and-yield-data.html#fnref4">↩</a></p></li>
+<li id="fn5"><p>The <code>dateloc</code> (Date Level of Confidence) value is always set automatically to 5 (“day”). The <code>timeloc</code> (Time Level of Confidence) value is automatically set to 1 (“second”) if the time of day is given and 9 (“no data”) otherwise.<a href="adding-trait-and-yield-data.html#fnref5">↩</a></p></li>
+<li id="fn6"><p>Currently, there is not way to specify a site timezone via the BETYdb web application. One must manipulate the database directly.<a href="adding-trait-and-yield-data.html#fnref6">↩</a></p></li>
+<li id="fn7"><p>The rule is slightly different for a site that is specified interactively: If a time zone has been specified for the site, it must still be a valid one. But it isn’t an error to specify a site whose time zone attribute is null. In this case, the date or date-and-time values specified will be interpreted as being in UTC.<a href="adding-trait-and-yield-data.html#fnref7">↩</a></p></li>
+<li id="fn8"><p>Values <em>should</em> be non-negative, but this isn’t currently enforced.</p>
+<p>It is conceivable that one might have a data set in which some rows have SE values and some do not. The Bulk Upload Wizard doesn’t currently handle such a case, and such a data set would have to be separated into two files: one with columns for <code>n</code> and <code>SE</code>, and one without.<a href="adding-trait-and-yield-data.html#fnref8">↩</a></p></li>
+<li id="fn9"><p>Unlike yield data files, entries in trait or covariate variable columns of a trait data file are allowed to be blank. In this case, no trait is inserted into the database for that variable of that row of the data file.<a href="adding-trait-and-yield-data.html#fnref9">↩</a></p></li>
+<li id="fn10"><p>There is a small loophole in the way required covariates are enforced. While it is true that if a column for a trait having a required covariate is included, there must also be a column for that covariate, it is not flagged as an error if certain rows leave that covariate column blank.<a href="adding-trait-and-yield-data.html#fnref10">↩</a></p></li>
+<li id="fn11"><p>Eventually, we may enable associating differing values of <code>n</code> and <code>SE</code> to different trait variables and covariates. In this case, we might add columns <code>[trait variable 1] n</code> and <code>[trait variable 1] SE</code>, etc. or <code>[covariate 1] n</code> and <code>[covariate 1] SE</code>, prefixing the usual column heading with a variable name to indicate which variable the sample size and standard error value is to be associated with.<a href="adding-trait-and-yield-data.html#fnref11">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="entering-meta-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="inserting-new-traits-via-the-api.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
