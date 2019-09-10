@@ -2,7 +2,7 @@
 
 Before entering your trait data, you must first add associated metadata into BETYdb.
 
-Each data point should have an associated experiment, site, treatment, and citation. Each site should be associated with a cultivar.
+Each data point should have an associated experiment, site, treatment, and citation. Cultivar information is also required when available.
 
 There are a few methods in which metadata may be entered into BETYdb. Avaialble methods include the BETYdb web interface, BETYdb-YABA and its python client, or SQL and R. Each method has a different use case. 
 
