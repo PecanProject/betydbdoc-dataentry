@@ -1,4 +1,4 @@
-### Adding Managements
+#### Adding Managements
 
 There are two ways to add management information, through the web interface or from a spreadsheet. These are discussed in turn, below. Recall that managements can be associated with one or more treatments. 
 
@@ -24,7 +24,7 @@ For a multi-year experiment, there may be multiple entries for the same type of 
     
 
 
-#### Types of Managements
+##### Types of Managements
 
 The following table shows a list of  managements to enter.  It is more important to have management records for yields than for traits. For greenhouse experiments, it is not necessary to include informaton on fertilizaton, lighting, or greenhouse temperature.
 
@@ -49,7 +49,7 @@ Table: Management Types
 
 
 
-#### Via Web interface
+##### Via Web interface
 
 
 Managements can be entered via the web interface. First enter the management, and then associate it with one or more treatments. To associate a management with multiple treatments, first create the
@@ -60,14 +60,14 @@ management, then edit the management and add treatment relationships.
 
 
 
-#### Preparing a managements spreadsheet for Upload
+##### Preparing a managements spreadsheet for Upload
 
 When there is a long list of managements, the `insert_managements` scripts enables users to insert data organized in a text based (csv) file.
 
 Preparing the csv file can be done in any spreadsheet program such as Excel or Google Sheets. The insertion is straightforward, but requires familiarity with the bash shell as well as administrative access to the Postgres database.
 
 
-##### File format {-}
+###### File format {-}
 
 **Required Fields** the spreadsheet or CSV file must contain the following column headings:
 
@@ -92,14 +92,14 @@ Each optional column heading corresponds to an optional field in the database ma
 
 If the table is prepared in a spreadsheet program, use the "save as → .csv" option to export a single text based .csv file. 
 
-#### Inserting Management Insertion Script
+##### Inserting Management Insertion Script
 
 The [`insert_managements.rb`](https://github.com/PecanProject/bety/blob/master/script/insert_managements.rb){target="_blank"} script takes a CSV file describing managements to be added to the database as input and outputs a file containing SQL statements to do the required insertions.
 
 
 The script `insert_managements.rb` is in the directory `RAILS_ROOT/script`.  The complete usage instructions (also obtainable by running `./insert_managements --man`) follow.  For additional information, see [Github issue #288](https://github.com/PecanProject/bety/issues/288#issuecomment-153440839){target="_blank"}.
 
-##### `insert_managements.rb` {-}
+###### `insert_managements.rb` {-}
 
 
 ```
@@ -114,12 +114,12 @@ where [options] are:
   -h, --help               Show this message
 ```
 
-##### Database Specification {-}
+###### Database Specification {-}
 
 The database used by the script is determined by the environment specified by the '--environment' option (or 'development' if not specified) and the contents of the configuration file 'config/database.yml'.  
 (Run 'rake dbconf' to view the contents of this file on the command line.)
 
-##### Using the Script to Update the Production Database {-}
+###### Using the Script to Update the Production Database {-}
 
 There are three options for using this script to update the production database.
 
