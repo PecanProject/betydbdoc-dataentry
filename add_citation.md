@@ -1,4 +1,4 @@
-## Adding a Citation
+### Adding a Citation
 
 Citation provides information regarding the source of the data. 
 A PDF copy of each paper should be available through Mendeley.
