@@ -1,4 +1,4 @@
-## Adding a PFT, Species, or Cultivar
+### Adding a PFT, Species, or Cultivar
 
 Plant functional types (PFTs) are used to group plants for statistical
 modeling and analysis. PFTs are associated with both a specific set of
