@@ -1,8 +1,8 @@
-## R and SQL
+## SQL
 
-SQL can also be used for bulk uploads. However, these should primarily be used when data errors need to be fixed, or your data upload requires features that are not available through the web interface or BETYdb-YABA. 
+SQL can also be used for bulk uploads. However, SQL should primarily be used when data errors need to be fixed, or your data upload requires features that are not available through the web interface or BETYdb-YABA. 
 
-### SQL 
+### Example SQL workflow
 
 Here is an example workflow that you can use to add your metadata:
 
