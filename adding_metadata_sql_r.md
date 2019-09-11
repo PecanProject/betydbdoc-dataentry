@@ -1,8 +1,10 @@
 ## R and SQL
 
+SQL can also be used for bulk uploads. However, these should primarily be used when data errors need to be fixed, or your data upload requires features that are not available through the web interface or BETYdb-YABA. 
+
 ### SQL 
 
-Here is a workflow that you can use to add your metadata:
+Here is an example workflow that you can use to add your metadata:
 
 1.) Add experiments
 
@@ -62,5 +64,3 @@ insert into citations_sites (citation_id, site_id)
 values ((select id from citations where author = 'Newcomb, Maria' and year = 2016 and title = 'MAC Field Activities'),
 (select id from sites where sitename = 'MAC Field Scanner Season 6 Range 1 Column 1 E'))
 ```
-
-### R library
