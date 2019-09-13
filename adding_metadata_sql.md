@@ -1,6 +1,6 @@
 ## SQL
 
-SQL can also be used for bulk uploads. However, SQL should primarily be used when data errors need to be fixed, you need to remove / replace records, or your data upload requires features that are not available through the web interface or BETYdb-YABA.
+SQL can also be used for bulk uploads. However, SQL should primarily be used when data errors need to be fixed, you need to remove duplicate records / replace records, or your data upload requires features that are not available through the web interface or BETYdb-YABA.
 
 ### How to insert, update, or delete records
 
