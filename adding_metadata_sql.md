@@ -6,9 +6,9 @@ SQL can also be used for bulk uploads. However, SQL should primarily be used whe
 
 #### Insert a record to a table
 
-* x: name of the table
+* x: name of table
 
-* field1 and field2: names of the fields that you want to add data to
+* field1 and field2: names of fields that you want to add data to
 
 * a and b: data values to be added
 
@@ -18,9 +18,9 @@ insert into x (field1, field2) values (a, b);
 
 #### Update a record in a table
 
-* x: name of the table
+* x: name of table
 
-* field1: name of the field you would like to update
+* field1: name of field you would like to update
 
 * a: updated value
 
@@ -33,3 +33,17 @@ update x
 set field1 = a
 where field2 = b;
 ```
+
+#### Delete a record from a table
+
+* x: name of table
+
+* field1: name of conditional field
+
+* a: conditional value
+
+```sql
+delete from x
+where field1 = a;
+```
+
