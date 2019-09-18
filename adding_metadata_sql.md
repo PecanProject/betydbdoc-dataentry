@@ -10,7 +10,7 @@ SQL can also be used for bulk uploads. However, SQL should primarily be used in 
 
 * metadata upload requires features that are not available through the web interface or BETYdb-YABA
 
-   * for more information on how to use SQL to add a new season (TERRA REF Project), see the [Metadata Entry Workflow for BETYdb](https://osf.io/v7f9t/wiki/Metadata%20Entry%20Workflow/)
+   * for more information on how to use SQL to add data to BETYdb and specific examples for how to add a new season (TERRA REF project), see the [Metadata Entry Workflow for BETYdb](https://osf.io/v7f9t/wiki/Metadata%20Entry%20Workflow/)
 
 ### How to insert, update, or delete records
 
