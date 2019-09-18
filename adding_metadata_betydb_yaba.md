@@ -22,7 +22,7 @@ curl -F "fileName=@input_files/sites.csv"   \
      http://localhost:5001/yaba/v1/sites
 ```
 
-For examples of how to hit other endpoints, see the README.
+For examples of how to hit other endpoints, see the [README](https://github.com/PecanProject/BETYdb-YABA/blob/master/README.md).
 
 
 
