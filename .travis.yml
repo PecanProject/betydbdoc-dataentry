@@ -6,6 +6,10 @@ env:
   global:
     - secure: "dwokXKGW3FGhsnjZ5d4ZIV3HuYWh0v88AYj50S5DfmKd8bAeZknkJso9flYPrYc/zUj/Hqp7zja5Y/7xO+9JpCcQS/GJWVxaPFlJJxwZ2CMQ8GDLSH1f9d7V8PQV8l35l5S0x27D3k2DF2v8us1vkIrwjyIQTIOe0CprSHliml7tuN4TnbOxAJ6HdyxwFMAds0dhqFO4gglW7npr/05rRIFWL9TOSYY2i9DpNbr3XrjFMo6PjznFZeuDvCs9mZhFEplS6HgplNZ85pYq45V3wz34QxYJlu1Pp2VRP/7n/Z8KEcHgNReXfy6IMrRXEW3+JUQY12GMUo/SuaAv1KoWVfQs0t/PFhuEhpEY9V0z0Ws7q2f27fV6V0RUCNxy/6O7MRm9+X/4G1rpcLJJi90nwpJrA00CunGgx5Dpv4mtf5NbL9yJ9t6jfeA8oADUAlAB2fV9/uqLieVf2nKwMdBuR31vJW5RdGJNCzKCnDWdQJH4CreiRLSOFBPsAupAdyoxrqk4ePfE36fcr6zBN63K9NI6CGs6gP2qV+/r56P1eSkh1N1In5pTZb49sEZ3pFOCXSOZQazrPBjb1QDCBKWp50pQNBG4le9yrH7YQBXf+RnZYmW+9L91IJCPLxbD21tzW6EIy9eTUmB19p1tdFcBQjlpmdY0dNwj9m9u3DNfWis="
 
-script:
-  - ./_build.sh
-  - ./_deploy.sh
+jobs:
+  include:
+    - stage: Build Documentation
+      script: ./_build.sh
+    - stage: Deploy Documentation
+      if: branch = master
+      script: ./_deploy.sh
