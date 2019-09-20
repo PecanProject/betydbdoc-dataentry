@@ -8,4 +8,11 @@ env:
 
 script:
   - ./_build.sh
-  - ./_deploy.sh
+
+deploy:
+  - provider: script
+    script: ./_deploy.sh
+    on:
+      branches:
+        only:
+        - master
