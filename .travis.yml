@@ -11,7 +11,7 @@ script:
 
 deploy:
   - provider: script
-    script: ./_deploy.sh
+    script: ./_build.sh && ./_deploy.sh
     on:
       branches:
         only:
