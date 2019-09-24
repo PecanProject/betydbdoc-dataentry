@@ -7,54 +7,128 @@ SQL can also be used for bulk uploads. However, SQL should primarily be used in 
 * replace records
 * metadata upload requires features that are not available through the web interface or BETYdb-YABA
 
-   * for more information on how to use SQL to add data to BETYdb and specific examples for how to add a new season (TERRA REF project), see the [Metadata Entry Workflow for BETYdb](https://osf.io/v7f9t/wiki/Metadata%20Entry%20Workflow/){target="_blank"}.
 
-### How to insert, update, or delete records
+### Metadata Entry Workflow for BETYdb
 
-#### Insert a record to a table
+The following steps have been implemented in the BETYdb-YABA API and python client, but are described below for reference
 
-* x: name of table
+Here we show SQL code used to add metadata required each season by the TERRA REF database, including experiments, sites, treatments, cultivars, and citations that is required prior to uploading the trait or yield data. Most PEcAn users _will not_ need to add experiments and cultivars, or associate these records with sites.
 
-* field1 and field2: names of fields that you want to add data to
+Also note that in the TERRA REF and other agronomic applications, each record in the 'sites' table will correspond to an experimental plot.
 
-* a and b: data values to be added
-
-```sql
-insert into x (field1, field2) values (a, b);
-```
-
-#### Update a record in a table
-
-* x: name of table
-
-* field1: name of field you would like to update
-
-* a: updated value
-
-* field2: name of conditional field
-
-* b: conditional value
+### Step 1: Add new experiments
 
 ```sql
-update x
-set field1 = a
-where field2 = b;
+insert into experiments (name, start_date, end_date, user_id) 
+values ('MAC Season 6: Sorghum BAP', '2018-04-06', '2018-08-01', 'some text', 'some text', 6000000004)
 ```
 
-#### Delete a record from a table
+### Step 2: Add new sites
 
-* x: name of table
-
-* field1: name of conditional field
-
-* a: conditional value
+_must provide shapefile for a site to get geometry_
 
 ```sql
-delete from x
-where field1 = a;
+insert into sites (city, state, country, sitename) 
+values ('Maricopa', 'Arizona', 'USA', 'MAC Field Scanner Season 7 Range 9 Column 15')
 ```
 
-#### Remove duplicate records
+For the TERRA REF Project, plot definitions may be copied from previous season if same plots are used.
+
+```sql
+with season6 as (
+  select city, state, replace(sitename, 'Season 4', 'Season 6') as sitename, greenhouse, geometry, time_zone from sites where sitename like '%Season 4%' 
+)
+insert into sites (city, state, sitename, greenhouse, geometry, time_zone) select * from season6
+```
+
+
+### Step 3: Add new treatments
+
+```sql
+insert into treatments (name, definition, control) 
+values ('MAC Season 6: Sorghum', 'some text', 't')
+```
+
+### Step 4: Add new cultivars
+
+_each cultivar should be associated with a specie_
+
+_new species must be added to species table before referencing_
+
+```sql
+insert into cultivars (name, specie_id) 
+values ('RIL-CS27_(TX2910/(Macia/R07007)-CS44)-CSF1-PRF2-CS27', 2588)
+```
+
+### Step 5: Add new citations
+
+```sql
+insert into citations (author, year, title) 
+values ('Newcomb, Maria', 2016, 'Maricopa Agricultural Center Field Activities')
+```
+
+### Step 6: Associate experiments with sites
+
+```sql
+insert into experiments_sites (experiment_id, site_id) values ((select id from experiments where name = 'MAC Season 6: Sorghum BAP'),
+(select id from sites where sitename = 'MAC Field Scanner Season 6 Range 1 Column 1 E'))
+```
+
+When adding a new season for the TERRA REF project, a statement like the following can be used for associating experiments and sites since MAC Field Center sites are consistently named following the format `MAC Field Scanner Season x Range a Column b`.
+
+```sql
+insert into experiments_sites (experiment_id, site_id) 
+   select e.experiment_id, s.site_id 
+        from (select id as experiment_id from experiments where name = 'MAC Season 6: Sorghum BAP')  as e 
+     cross join 
+         (select id as site_id from sites where sitename like 'MAC Field Scanner Season 6%') as s
+```
+
+## Step 7: Associate experiments with treatments
+
+```sql
+insert into experiments_treatments (experiment_id, treatment_id) 
+values ((select id from experiments where name = 'MAC Season 6: Sorghum BAP'),
+(select id from treatments where name = 'MAC Season 6: Sorghum'))
+```
+When adding a new season for the TERRA REF project, a statement like the following can be used to associate experiments with treatments since experiment and treatment names are usually named following the format `MAC Season x: subexperiment name`.
+
+```sql
+insert into experiments_treatments (experiment_id, treatment_id) 
+   select e.experiment_id, t.treatment_id 
+        from (select id as experiment_id from experiments where name like 'MAC Season 6:%')  as e 
+     cross join 
+         (select id as treatment_id from treatments where name like 'MAC Season 6:%') as s
+```
+
+### Step 8: Associate sites with cultivars
+
+```sql
+insert into sites_cultivars (site_id, cultivar_id) 
+values ((select id from sites where sitename = 'MAC Field Scanner Season 8 Range 1 Column 1 E'),
+(select id from cultivars where name = 'Tiburon' and specie_id = 2588))
+```
+
+### Step 9: Associate sites with citations
+
+```sql
+insert into citations_sites (citation_id, site_id)
+values ((select id from citations where author = 'Newcomb, Maria' and year = 2016 and title = 'MAC Field Activities'),
+(select id from sites where sitename = 'MAC Field Scanner Season 6 Range 1 Column 1 E'))
+```
+When adding a new season for the TERRA REF project, a statement like the following can be used to associate citations with sites since MAC Field Center sites are consistently named following the format `MAC Field Scanner Season x Range a Column b`
+
+```sql
+insert into citations_sites (citation_id, site_id) 
+   select c.id, s.id 
+      from (select id from citations where author = 'Newcomb, Maria') 
+     AS c 
+      cross join 
+         (select id from sites where sitename like 'MAC Field Scanner Season 6%') AS s;
+```
+
+
+## Removing duplicate records
 
 The following function can be used to combine duplicates or replace an old record with a new one. There are many caveats described in [Issue 185](https://github.com/PecanProject/bety/issues/185){target="_blank"}.
 
