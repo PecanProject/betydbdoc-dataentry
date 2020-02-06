@@ -108,12 +108,8 @@ As an example, this statement could be used to associate the site name MAC Field
 ```sql
 insert into sites_cultivars (site_id, cultivar_id) 
     values ((select id from sites where sitename = 'MAC Field Scanner Season 8 Range 1 Column 1 E'),
-            (select id from cultivars where name = 'Tiburon' and specie_id = (select id from species where scientificname = 'Sorghum bicolor')));
-              
-```sql
-insert into sites_cultivars (site_id, cultivar_id) 
-values ((select id from sites where sitename = 'MAC Field Scanner Season 8 Range 1 Column 1 E'),
-(select id from cultivars where name = 'Tiburon' and specie_id = 2588))
+            (select id from cultivars where name = 'Tiburon' and specie_id = 
+            (select id from species where scientificname = 'Sorghum bicolor')));
 ```
 
 ### Step 9: Associate sites with citations
