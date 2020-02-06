@@ -10,11 +10,11 @@ Here is a list of the some of the more commonly used public databases running BE
 
 | Institution                  | URL                                     | contact | 
 |------------------------------|-----------------------------------------|-------|
-| Energy Biosciences Institute | https://betydb.org                      |kooper@illinois.edu|
-| Boston University            | https://psql-pecan.bu.edu/bety          |dietze@bu.edu|
-| Brookhaven National Lab      | https://modex.bnl.gov/bety              |serbin@bnl.gov |
-| University of Wisconsin      | http://tree.aos.wisc.edu:6480/bety      | desai@aos.wisc.edu|
-| TERRA-REF                    | https://terraref.ncsa.illinois.edu/bety |dlebauer@email.arizona.edu|
-| University of Arizona        | http://welsch.cyverse.org:8000/bety/    |julianp@email.arizona.edu|
+| Energy Biosciences Institute | [https://betydb.org](https://betydb.org){target="_blank"}                |kooper@illinois.edu|
+| Boston University            | [https://psql-pecan.bu.edu/bety](https://psql-pecan.bu.edu/bety){target="_blank"}          |dietze@bu.edu|
+| Brookhaven National Lab      | [https://modex.bnl.gov/bety](https://modex.bnl.gov/bety){target="_blank"}              |serbin@bnl.gov |
+| University of Wisconsin      | [http://tree.aos.wisc.edu:6480/bety](http://tree.aos.wisc.edu:6480/bety){target="_blank"}      | desai@aos.wisc.edu|
+| TERRA-REF                    | [https://terraref.org/bety](https://terraref.org/bety){target="_blank"} |dlebauer@email.arizona.edu|
+| University of Arizona        | [http://welsch.cyverse.org:8000/bety/](http://welsch.cyverse.org:8000/bety/){target="_blank"}    |julianp@email.arizona.edu|
 
 You must have creator or manager permissions and be logged in to add new data. Contact the project lead for information and permissions. 
