@@ -116,7 +116,9 @@ insert into citations_sites (citation_id, site_id)
 values ((select id from citations where author = 'Newcomb, Maria' and year = 2016 and title = 'MAC Field Activities'),
 (select id from sites where sitename = 'MAC Field Scanner Season 6 Range 1 Column 1 E'))
 ```
-When adding a new season for the TERRA REF project, a statement like the following can be used to associate citations with sites since MAC Field Center sites are consistently named following the format `MAC Field Scanner Season x Range a Column b`
+
+When adding a new season for the TERRA REF project, a statement like the following can be used to associate all citations with author "Newcomb, Maria" with all Season 6 sites since MAC Field Center sites are consistently named following the format `MAC Field Scanner Season x Range a Column b`
+
 
 ```sql
 insert into citations_sites (citation_id, site_id) 
