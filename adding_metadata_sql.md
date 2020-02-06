@@ -103,6 +103,12 @@ insert into experiments_treatments (experiment_id, treatment_id)
 
 ### Step 8: Associate sites with cultivars
 
+As an example, this statement could be used to associate the site name MAC Field Scanner Season 8 Range 1 Column 1 E with the Sorghum bicolor cultivar Tiburon:
+
+insert into sites_cultivars (site_id, cultivar_id) 
+    values ((select id from sites where sitename = 'MAC Field Scanner Season 8 Range 1 Column 1 E'),
+            (select id from cultivars where name = 'Tiburon' and specie_id = (select id from species where scientificname = 'Sorghum bicolor')));
+              
 ```sql
 insert into sites_cultivars (site_id, cultivar_id) 
 values ((select id from sites where sitename = 'MAC Field Scanner Season 8 Range 1 Column 1 E'),
