@@ -129,7 +129,12 @@ insert into citations_sites (citation_id, site_id)
 
 
 ## Removing duplicate records
+It sometimes happens that multiple rows in a BETYdb table are duplicates, e.g., two species or two sites that were independently added but reference the same entity. A function such as the one that follows could be used to delete a duplicate row and change all references to it to point to a row that we are retaining. (Note that there are serious problems associated with the use of this function, as outlined in [this comment in issue 185](https://github.com/PecanProject/bety/issues/185#issuecomment-530554650){target="_blank"}. We present it here only to outline what might be possible along the lines of partially automating the correction of data errors.)
 
+The function takes three arguments: the name of the table we wish to update (as a string), the id number of the row we wish to remove (the "duplicate"), and the id number of the similar row we wish to retain. For example, if we have two citation rows having essentially the same information having id numbers 286 and 289, we could remove the first and update references to it to point to the second with the statement
+
+```sql
+SELECT update_refs_from_to('citations', 286, 289);
 The following function can be used to combine duplicates or replace an old record with a new one. There are many caveats described in [Issue 185](https://github.com/PecanProject/bety/issues/185){target="_blank"}.
 
 But the basic usage, e.g. to convert all records with `citation_id = 286` to `citation_id = 289`:
