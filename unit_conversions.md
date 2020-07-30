@@ -22,7 +22,7 @@ Table: Useful conversions for entering site, management, yield, and trait data [
 | DD\(^{\circ}\) MM' SS'' | XX.ZZZZ | \(\textrm{XX.ZZZZ} = \textrm{DD} + \textrm{MM}/60+\textrm{SS}/3600\) | to convert latitude or longitude from degrees, minutes, seconds to  decimal degrees |
 | lb | kg | \(Y=X\times 2.2\) | |
 | mm/s | \(\mu\) mol CO\(_2\) m\(^{2}\) s\(^{-1}\) | \(Y=X\times 0.04\) | |
-| m\(^2\) | ha | \(Y = X/10^6\) | |
+| m\(^2\) | ha | \(Y = X/10^5\) | |
 | g/m\(^2\) | kg/ha | \(Y=X\times 10\) | |
 | US ton/acre | Mg/ha | \(Y = X\times 2.24\) | |
 | m\(^3\)/ha | cm | \(Y=X/100\) | units used for irrigation and rainfall |
