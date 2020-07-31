@@ -5,22 +5,19 @@ BETYdb-YABA and its python client library provides an automated bulk upload to m
 Here are some examples of how to hit Experiments and Sites endpoints:
 
 * Experiments:
-
-```sh
-curl -F "fileName=@input_files/experiments.csv"   \
-     http://localhost:5001/yaba/v1/experiments?username=guestuser
-```
-
+    ```sh
+    curl -F "fileName=@input_files/experiments.csv"   \
+         http://localhost:5001/yaba/v1/experiments?username=guestuser
+    ```
 * Sites:
-
-```sh
-curl -F "fileName=@input_files/sites.csv"   \
-     -F "shp_file=@input_files/S8_two_row_polys.shp"  \
-     -F "dbf_file=@input_files/S8_two_row_polys.dbf"  \
-     -F "prj_file=@input_files/S8_two_row_polys.prj"  \
-     -F "shx_file=@input_files/S8_two_row_polys.shx"  \
-     http://localhost:5001/yaba/v1/sites
-```
+    ```sh
+    curl -F "fileName=@input_files/sites.csv"   \
+         -F "shp_file=@input_files/S8_two_row_polys.shp"  \
+         -F "dbf_file=@input_files/S8_two_row_polys.dbf"  \
+         -F "prj_file=@input_files/S8_two_row_polys.prj"  \
+         -F "shx_file=@input_files/S8_two_row_polys.shx"  \
+         http://localhost:5001/yaba/v1/sites
+    ```
 
 
 
