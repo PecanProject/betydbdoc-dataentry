@@ -24,13 +24,20 @@ values ('MAC Season 6: Sorghum BAP', '2018-04-06', '2018-08-01', 'some text', 's
 
 ### Step 2: Add new sites
 
-_must provide shapefile for a site to get geometry_
+To add sites (or many plots at a single site) using the BETYdb-YABA API, you must provide shapefile for a site to have an associated geometry. 
+
+Otherwise, you can add sites with points or polygons to the database as follows.
 
 ```sql
 insert into sites (city, state, country, sitename) 
 values ('Maricopa', 'Arizona', 'USA', 'MAC Field Scanner Season 7 Range 9 Column 15');
 ```
 
+You can add simple locations with a single point thus:
+
+```sql
+insert into sites (city, state, country, sitename, geometry) 
+values ('Urbana', 'Illinois', 'United States', 'My garden plot', ST_SetSRID(ST_makePoint(88, 40, 222), 4326));
 For the TERRA REF Project, plot definitions may be copied from previous season if same plots are used.
 
 ```sql
@@ -50,9 +57,8 @@ values ('MAC Season 6: Sorghum', 'some text', 't');
 
 ### Step 4: Add new cultivars
 
-_each cultivar should be associated with a specie_
+Each cultivar must be associated with a species. If there is no entry for the species in the species table, it must be added before adding the new cultivar.
 
-_new species must be added to species table before referencing_
 
 ```sql
 insert into cultivars (name, specie_id) 
@@ -68,13 +74,14 @@ values ('Newcomb, Maria', 2016, 'Maricopa Agricultural Center Field Activities')
 
 ### Step 6: Associate experiments with sites
 
+As an example, this statement could be used to associate the experiment named "MAC Season 6: Sorghum BAP" with the site named "MAC Field Scanner Season 6 Range 1 Column 1 E".
 ```sql
 insert into experiments_sites (experiment_id, site_id) values 
   ((select id from experiments where name = 'MAC Season 6: Sorghum BAP'),
   (select id from sites where sitename = 'MAC Field Scanner Season 6 Range 1 Column 1 E'));
 ```
 
-When adding a new season for the TERRA REF project, a statement like the following can be used for associating experiments and sites since MAC Field Center sites are consistently named following the format `MAC Field Scanner Season x Range a Column b`.
+When adding a new season for the TERRA REF project, a statement like the following can be used for associating the new season's experiment [or "an experiment for the new season"] with all of the new season's sites. For example, since MAC Field Center sites are consistently named following the format MAC Field Scanner Season x Range a Column b, we could use the following statement to associate the experment named "MAC Season 6: Sorghum BAP" with all Season 6 sites:
 
 ```sql
 insert into experiments_sites (experiment_id, site_id) 
@@ -84,14 +91,14 @@ insert into experiments_sites (experiment_id, site_id)
          (select id as site_id from sites where sitename like 'MAC Field Scanner Season 6%') as s;
 ```
 
-## Step 7: Associate experiments with treatments
+### Step 7: Associate experiments with treatments
 
 ```sql
 insert into experiments_treatments (experiment_id, treatment_id) 
 values ((select id from experiments where name = 'MAC Season 6: Sorghum BAP'),
 (select id from treatments where name = 'MAC Season 6: Sorghum'));
 ```
-When adding a new season for the TERRA REF project, a statement like the following can be used to associate experiments with treatments since experiment and treatment names are usually named following the format `MAC Season x: subexperiment name`.
+When adding a new season for the TERRA REF project, a statement like the following can be used to associate all season 6 experiments with all season 6 treatments assuming the experiment and treatment names follow the format convention `MAC Season x: subexperiment name`.
 
 ```sql
 insert into experiments_treatments (experiment_id, treatment_id) 
