@@ -1,11 +1,15 @@
 ## SQL
 
-SQL can also be used for bulk uploads. However, SQL should primarily be used in the following cases:
+SQL should be used only when the data manipulation to be done either can't be done using the web interface or where doing so would be exceedingly tedious.
+For example, some of the steps below can't be done in either the web interface, and the BETYdb-YABA API is not always available. 
 
-1. correcting systemic data errors involving large numbers of rows
-2. assigning non-point geometries to sites [this might be possible in YABA, I don't know]
-3. associating experiments with sites and treatments
-4. associating sites with cultivars
+SQL should primarily be used in the following cases:
+
+* correcting systemic data errors involving large numbers of rows
+* assigning non-point geometries to sites
+* associating experiments with sites and treatments 
+* associating sites with cultivars
+
 
 ### Metadata Entry Workflow for BETYdb
 
