@@ -19,4 +19,4 @@ This document has guided research teams through the process of extracting data f
 
 ## Authors
 
-David LeBauer, Moein Azimi, David Bettinardi, Rachel Bonet, Emily Cheng, Michael Dietze, Patrick Mulrooney, Scott Rohde, Andy Tu
+David LeBauer, Scott Rohde, Patrick Mulrooney, Michael Dietze, Moein Azimi, David Bettinardi, Rachel Bonet, Emily Cheng, Kimberly Huynh, Andy Tu
