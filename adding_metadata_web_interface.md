@@ -1,10 +1,8 @@
 ## BETYdb web interface
 
-The following sections provide detailed information on how to add new metadata using the web interface.
+The following sections provide detailed information on how to add new metadata using the web interface. [This video on YouTube](https://www.youtube.com/watch?v=vZjXMfafCig) walks through the process of annotating a publication, entering metadata, and preparing data for use in the bulk upload interface.  
 
-To access the web interface, go to the web interface for the version of BETYdb that you are using.
-
-The full list of BETYdb web interfaces is in the [BETYdb Technical Documentation](https://pecanproject.github.io/bety-documentation/technical/distributed-instances-of-betydb.html){target="_blank"}. 
+To access the web interface, go to the instance of BETYdb that you are using. The full list of BETYdb web interfaces is in the [BETYdb Technical Documentation](https://pecanproject.github.io/bety-documentation/technical/distributed-instances-of-betydb.html){target="_blank"}. 
 
 Here is a list of the some of the more commonly used public databases running BETYdb software:
 
