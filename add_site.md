@@ -1,4 +1,4 @@
-## Adding a Site
+### Adding a Site
 
 Each experiment is conducted at a unique site. In the context of BETY,
 the term 'site' refers to a specific location and it is common for many
@@ -59,15 +59,15 @@ Interface for adding a new site:
 | Rooting Zone Depth | Measured in Meters (m) |
 |Depth of Water Table| Measured in Meters (m) |
 
-### When not to enter a new site
+#### When not to enter a new site
 
 Do **not** enter a new site when plants (or seeds) are collected from multiple locations and then grown in the same location; this is called "common garden experiment".  In this case, the location of the study is included as site information.  Information about the seed source can be entered as a distinct cultivar.
  
-### Site Location 
+#### Site Location 
 
 Points can be added via the web interface; spatial geometries, e.g. a plot, site, or country boundary, must be entered via the PostgreSQL command line. 
 
-#### Point Locations
+##### Point Locations
 
 If latitude and longitude coordinates are not available, it is often
 possible to determine the site location based on the site name, city,
@@ -91,12 +91,12 @@ Table: Level of accuracy to record in lat and lon fields.
 | Acre            |                    0.001 |
 | 10 Meters       |                   0.0001 |
  
-#### Boundaries
+##### Boundaries
 
 A vector boundary must be obtained. Here is one way to obtain a site boundary using R:
 
 
-##### A rectangular plot (with bounding box) {-}
+###### A rectangular plot (with bounding box) {-}
 
 Here I set the bounding box for a plot by specifying the plot corners and elevation. Notice that it is necessary to specify the first point twice, once at the beginning and once at the end. 
 
@@ -110,7 +110,7 @@ Here I set the bounding box for a plot by specifying the plot corners and elevat
         ID = 1123;
     
 
-##### A country boundary: {-}
+###### A country boundary: {-}
 
 
     library(prevR)# for `create.boundary` function
@@ -127,7 +127,7 @@ Then import at the command line (can also copy / paste to terminal, but this bou
 
     psql -U bety -d bety < uk.sql
 
-#### References
+##### References
 
 * PostGIS `ST_GeomFromText` documentation: [http://www.postgis.org/docs/ST_GeomFromText.html](http://www.postgis.org/docs/ST_GeomFromText.html){target="_blank"}
 * gis.stackexchange: [http://gis.stackexchange.com/q/111212/1239](http://gis.stackexchange.com/q/111212/1239){target="_blank"}
